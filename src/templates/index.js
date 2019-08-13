@@ -20,7 +20,7 @@ const Index = ({ data, location, pageContext }) => {
         <>
             <MetaData location={location} />
             <Layout isHome={true}>
-                <div className="container">
+                <main className="site-main">
                     <section className="post-feed">
                         {posts.map(({ node }) => (
                             // The tag below includes the markup for each post - components/common/PostCard.js
@@ -28,7 +28,7 @@ const Index = ({ data, location, pageContext }) => {
                         ))}
                     </section>
                     <Pagination pageContext={pageContext} />
-                </div>
+              </main>
             </Layout>
         </>
     )

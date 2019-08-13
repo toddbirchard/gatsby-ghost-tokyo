@@ -22,7 +22,7 @@ what's here to work the way you'd like it to.
 :root {
 
     /* Colours */
-    --color-primary: #3eb0ef;
+    --color-primary: #b15d5d;
     --color-base: #15171A;
     --color-secondary: #5B7A81;
     --color-border: #c7d5d8;
@@ -524,10 +524,12 @@ h6 {
     min-height: 100vh;
 }
 
-.container {
-    max-width: 1120px;
-    margin: 0 auto;
-    padding: 0 4vw;
+.home-container {
+  max-width: 1020px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 40px;
+  grid-template-columns: 1.5fr 3fr;
 }
 
 .content {
@@ -688,7 +690,7 @@ h6 {
 }
 
 .site-logo {
-    height: 25px;
+
 }
 
 .site-mast {
@@ -759,33 +761,25 @@ h6 {
 /* ---------------------------------------------------------- */
 
 .site-main {
-    padding: 4vw 0;
+    /*padding: 4vw 0;*/
 }
 
 /* Index
 /* ---------------------------------------------------------- */
 
 .post-feed {
-    display: grid;
-    justify-content: space-between;
-    grid-gap: 30px;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-@media (max-width: 980px) {
-    .post-feed {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-@media (max-width: 680px) {
-    .post-feed {
-        grid-template-columns: 1fr;
-    }
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr;
 }
 
 .post-card {
-    color: inherit;
-    text-decoration: none;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 0 10px #e8e9ef;
+  overflow: hidden;
+  padding: 10px;
+
 }
 
 .post-card:hover {
@@ -808,12 +802,13 @@ h6 {
 .post-card-excerpt {
     font-size: 1.6rem;
     line-height: 1.55em;
+    color: #7b7b7b;
 }
 
 .post-card-image {
     margin: 0 0 10px 0;
     width: auto;
-    height: 200px;
+    height: 300px;
     background: var(--color-secondary) no-repeat center center;
     background-size: cover;
 }
