@@ -19,17 +19,19 @@ const PostCard = ({ post }) => {
                 {post.featured && <span>Featured</span>}
                 <h2 className="post-card-title">{post.title}</h2>
             </header>
-            <section className="post-card-excerpt">{post.excerpt}</section>
-            <footer className="post-card-footer">
-                <div className="post-card-footer-left">
-                    <div className="meta-item">
-                      <i className="fal fa-tags"></i>  {post.tags &&  <Tags post={post} limit={1} visibility="public" autolink={false} />}
-                    </div>
-                    <div className="meta-item">
-                        <i className="fal fa-tags"></i> {readingTime}
-                    </div>
-                </div>
-            </footer>
+              <div className="post-card-detail">
+              <section className="post-card-excerpt">{post.excerpt}</section>
+              <footer className="post-card-footer">
+                  <div className="post-card-footer-left">
+                      <div className="meta-item">
+                        <i className="fal fa-tags"></i>  {post.tags &&  <Tags post={post} limit={1} visibility="public" autolink={false} />}
+                      </div>
+                      <div className="meta-item">
+                          <i className="fal fa-tags"></i> {readingTime}
+                      </div>
+                  </div>
+              </footer>
+            </div>
         </Link>
     )
 }

@@ -526,9 +526,9 @@ h6 {
 
 .home-container {
   max-width: 1020px;
-  margin: 0 auto;
+  margin: 20px auto;
   display: grid;
-  grid-gap: 40px;
+  grid-gap: 60px;
   grid-template-columns: 1.5fr 3fr;
 }
 
@@ -769,7 +769,7 @@ h6 {
 
 .post-feed {
   display: grid;
-  grid-gap: 20px;
+  grid-gap: 30px;
   grid-template-columns: 1fr;
 }
 
@@ -779,7 +779,10 @@ h6 {
   box-shadow: 0 0 10px #e8e9ef;
   overflow: hidden;
   padding: 10px;
+}
 
+.post-card .meta-item {
+  margin-right: 10px;
 }
 
 .post-card:hover {
