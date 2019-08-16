@@ -82,6 +82,14 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                           }
                           <p className="description">{site.description}</p>
                         </div>
+                        <div class="widget social">
+                          <a href="https://twitter.com/ToddRBirchard" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
+                          <a href="https://angel.co/todd-birchard?public_profile=1" target="_blank" class="angellist"><i class="fab fa-angellist"></i></a>
+                          <a href="https://www.linkedin.com/in/toddbirchard/" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                          <a href="https://github.com/toddbirchard" target="_blank" class="github"><i class="fab fa-github"></i></a>
+                          <a href="https://www.quora.com/profile/Todd-Birchard" target="_blank" class="quora"><i class="fab fa-quora"></i></a>
+                          <a href="{{@site.url}}/rss/" target="_blank" class="rss"><i class="fal fa-rss"></i></a>
+                        </div>
 
                         <div className="widget tags">
                             { site.twitter && <a href={ twitterUrl } className="site-nav-item" target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/twitter.svg" alt="Twitter" /></a>}

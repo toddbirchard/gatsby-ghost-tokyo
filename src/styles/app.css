@@ -532,6 +532,15 @@ h6 {
   grid-template-columns: 1.5fr 3fr;
 }
 
+@media (max-width: 800px) {
+    .home-container {
+        grid-template-columns: 1fr;
+        max-width: unset;
+        width: 90%;
+        margin: 20px auto;
+    }
+}
+
 .content {
     margin: 0 auto;
     font-size: 2rem;
