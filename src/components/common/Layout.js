@@ -39,9 +39,13 @@ const DefaultLayout = ({ data, children, bodyClass, isHome, isTag, template }) =
         </Helmet>
 
         <div className="viewport">
-
-            { isHome ? <Navigation data={site.navigation} navClass="site-nav-item" navType="home-nav" logo={site.icon} url={site.url} /> : <Navigation data={site.navigation} navClass="site-nav-item" navType="post-nav" logo={site.icon} url={site.url} /> }
-            { isTag }
+            { isHome &&
+                <div>
+                    <Link to="/" className="mobile-logo">
+                        {site.logo ? <img src={site.logo} alt={site.title} /> : <h1> {site.title} </h1> }
+                    </Link>
+                </div> }
+            <Navigation data={site.navigation} navClass="site-nav-item" navType="home-nav" logo={site.icon} url={site.url} />
             <div className={ isHome ? "home-container" : "container" }>
                 {/* All the main content gets inserted here, index.js, post.js */}
                 { isHome ? <Sidebar /> : null}

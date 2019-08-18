@@ -548,7 +548,7 @@ h6 {
         grid-template-columns: 1fr;
         max-width: unset;
         width: 90%;
-        margin: 20px auto;
+        margin: 0 auto 20px;
     }
 }
 
@@ -570,7 +570,7 @@ h6 {
     margin: 0 auto;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .post-full-content {
       max-width: 85%;
   }
@@ -604,13 +604,17 @@ h6 {
 }
 
 .content-title {
-    margin: 0 0 0.8em;
+    margin: 0 0 0.2em;
     font-size: 4rem;
+}
+@media (max-width: 800px) {
+    .content-title {
+        font-size: 3rem;
+    }
 }
 @media (max-width: 500px) {
     .content-title {
         margin: 0.8em 0;
-        font-size: 3.4rem;
     }
     .content {
         font-size: 1.8rem;
@@ -719,9 +723,11 @@ h6 {
 
 .site-nav-item {
     display: inline-block;
-    padding: 5px 15px;
+    padding: 0;
     color: #777;
     opacity: 0.7;
+    margin-left: 30px;
+    font-family: var(--font-title);
     text-transform: uppercase;
     transition: 0.2s all ease-out;
 }
@@ -819,6 +825,13 @@ h6 {
   text-align: right;
 }
 
+@media(max-width: 800px){
+  .home-template .navigation,
+  .tag-template .navigation {
+    max-width: 90%;
+  }
+}
+
 .home-template .navigation .nav-logo,
 .tag-template .navigation .nav-logo {
   display: none;
@@ -836,7 +849,7 @@ h6 {
   align-items: center;
 }
 
-@media(max-width: 600px) {
+@media(max-width: 800px) {
   .post-template .navigation {
     max-width: 85%;
   }
@@ -899,6 +912,12 @@ h6 {
   box-shadow: 0 0 10px #e8e9ef;
   overflow: hidden;
   padding: 10px;
+}
+
+@media(max-width: 800px) {
+  .post-card {
+    padding: 0;
+  }
 }
 
 .post-card:hover .post-card-image {
@@ -1011,6 +1030,13 @@ h6 {
   margin-right: 10px;
   font-size: .8em;
 }
+@media(max-width: 800px){
+  .post-meta .meta-item {
+    margin-right: 30px;
+    font-size: .7em;
+  }
+}
+
 
 .post-tags .tag {
   display: inline-block;
@@ -1260,9 +1286,30 @@ h6 {
   color: white;
 }
 
-@media(max-width: 600px){
+@media(max-width: 800px){
   .widget,
   .sidebar {
     display: none !important;
   }
+}
+
+.mobile-logo {
+  width: 100%;
+  display: none;
+  max-width: 90%;
+  margin: 20px auto 0;
+  transition: 0.2s all ease-out;
+}
+@media(max-width: 800px){
+  .mobile-logo {
+    display: block;
+  }
+}
+
+.mobile-logo:hover {
+  opacity: .7;
+}
+
+.mobile-logo img {
+  width: 100%;
 }
