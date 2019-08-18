@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { Link, StaticQuery, graphql } from 'gatsby'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Img from 'gatsby-image'
 
 import { Navigation } from '.'
@@ -83,7 +85,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                           <p className="description">{site.description}</p>
                         </div>
                         <div class="widget social">
-                          <a href="https://twitter.com/ToddRBirchard" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
+                          <a href="https://twitter.com/ToddRBirchard" target="_blank" class="twitter"><FontAwesomeIcon icon="twitter" /></a>
                           <a href="https://angel.co/todd-birchard?public_profile=1" target="_blank" class="angellist"><i class="fab fa-angellist"></i></a>
                           <a href="https://www.linkedin.com/in/toddbirchard/" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
                           <a href="https://github.com/toddbirchard" target="_blank" class="github"><i class="fab fa-github"></i></a>
