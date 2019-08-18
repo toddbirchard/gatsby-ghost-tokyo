@@ -7,7 +7,7 @@ import { Link, StaticQuery, graphql } from 'gatsby'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCheckSquare, faCoffee, faRss, faTag } from '@fortawesome/free-solid-svg-icons'
+import { faRss, faTag } from '@fortawesome/free-solid-svg-icons'
 
 import Img from 'gatsby-image'
 
@@ -26,7 +26,7 @@ import '../../styles/app.css'
 *
 */
 
-library.add(fab, faCheckSquare, faCoffee, faRss, faTag)
+library.add(fab, faRss, faTag)
 
 const DefaultLayout = ({ data, children, bodyClass, isHome, tags }) => {
     const site = data.allGhostSettings.edges[0].node
@@ -43,7 +43,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome, tags }) => {
         </Helmet>
 
         <div className="viewport">
-            { isHome ? <Navigation data={site.navigation} navClass="site-nav-item" navType="home-nav" /> : <Navigation data={site.navigation} navClass="site-nav-item" navType="post-nav" />}
+            { isHome ? <Navigation data={site.navigation} navClass="site-nav-item" navType="home-nav" logo={site.icon} url={site.url} /> : <Navigation data={site.navigation} navClass="site-nav-item" navType="post-nav" logo={site.icon} url={site.url} /> }
             <div className={ isHome ? "home-container" : "container" }>
                 {/* All the main content gets inserted here, index.js, post.js */}
                 { isHome ?

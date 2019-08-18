@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-ghost",
+  "name": "tokyo",
   "description": "A starter template to build lightning fast websites with Ghost and Gatsby",
   "version": "1.0.0",
   "license": "MIT",
-  "author": "Ghost Foundation",
+  "author": "Todd Birchard",
   "homepage": "https://docs.ghost.org/api/gatsby/",
   "repository": {
     "type": "git",
@@ -46,6 +46,7 @@
     "gatsby-plugin-advanced-sitemap": "1.4.0",
     "gatsby-plugin-feed": "2.3.6",
     "gatsby-plugin-force-trailing-slashes": "1.0.4",
+    "gatsby-plugin-less": "^2.1.2",
     "gatsby-plugin-manifest": "2.2.4",
     "gatsby-plugin-offline": "2.2.4",
     "gatsby-plugin-react-helmet": "3.1.2",
@@ -53,6 +54,7 @@
     "gatsby-source-filesystem": "2.1.7",
     "gatsby-source-ghost": "3.4.4",
     "gatsby-transformer-sharp": "2.2.5",
+    "less": "^3.10.1",
     "lodash": "4.17.15",
     "react": "16.8.6",
     "react-dom": "16.8.6",

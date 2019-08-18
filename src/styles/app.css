@@ -1,3 +1,9 @@
+@import url("//hello.myfonts.net/count/39f4d4");
+
+@font-face {font-family: 'FFMarkWebProBook';src: url('webfonts/39F4D4_0_0.eot');src: url('webfonts/39F4D4_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/39F4D4_0_0.woff2') format('woff2'),url('webfonts/39F4D4_0_0.woff') format('woff'),url('webfonts/39F4D4_0_0.ttf') format('truetype');}
+@font-face {font-family: 'FFMarkWebProMedium';src: url('webfonts/39F4D4_1_0.eot');src: url('webfonts/39F4D4_1_0.eot?#iefix') format('embedded-opentype'),url('webfonts/39F4D4_1_0.woff2') format('woff2'),url('webfonts/39F4D4_1_0.woff') format('woff'),url('webfonts/39F4D4_1_0.ttf') format('truetype');}
+
+
 /* App.css
 /* ---------------------------------------------------------- /*
 
@@ -29,7 +35,8 @@ what's here to work the way you'd like it to.
     --color-bg: #f5f5f5;
 
     /* Fonts */
-    --font-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    --font-sans-serif: 'FFMarkWebProBook', Helvetica, Sans-Serif;
+    --font-title: 'FFMarkWebProMedium', Helvetica, Sans-Serif;
     --font-serif: Georgia, Times, serif;
     --font-mono: Menlo, Courier, monospace;
     --font-light: 100;
@@ -159,7 +166,7 @@ img {
 }
 html {
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'FFMarkWebProBook', Helvetica, Sans-Serif;
 
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
@@ -188,6 +195,7 @@ dfn {
 h1 {
     margin: 0.67em 0;
     font-size: 2em;
+    font-family: var(--font-title);
 }
 small {
     font-size: 80%;
@@ -310,7 +318,7 @@ html {
 body {
     overflow-x: hidden;
     color: #3c484e;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-family: 'FFMarkWebProBook', Helvetica, Sans-Serif;
     font-size: 1.5rem;
     line-height: 1.6em;
     font-weight: 400;
@@ -459,6 +467,7 @@ h5,
 h6 {
     margin-top: 0;
     color: var(--color-base);
+    font-family: var(--font-title);
     line-height: 1.15;
     font-weight: 700;
     text-rendering: optimizeLegibility;
@@ -554,7 +563,7 @@ h6 {
 }
 
 .post-full-content {
-    max-width: 720px;
+    max-width: 800px;
     margin: 0 auto;
     background: #fff;
 }
@@ -588,7 +597,7 @@ h6 {
 
 .content-title {
     margin: 0 0 0.8em;
-    font-size: 5rem;
+    font-size: 4rem;
 }
 @media (max-width: 500px) {
     .content-title {
@@ -667,6 +676,11 @@ h6 {
     background: var(--color-base);
     color: #fff;
     border-radius: 12px;
+}
+
+.content-body p {
+  font-size: 1.7rem;
+  line-height: 1.8;
 }
 
 /* Header
@@ -782,8 +796,44 @@ h6 {
   text-align: right;
 }
 
+.home-nav .nav-logo {
+  display: none;
+}
+
 .post-nav {
   position: absolute;
+  max-width: 800px;
+  width: 100%;
+  margin: 20px auto;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-nav .nav-logo {
+  width: 50px;
+  height: 50px;
+  display: block;
+  transition: all .2s ease-out;
+}
+
+.post-nav .nav-logo:hover {
+  opacity: .7;
+  cursor: pointer;
+}
+
+.post-social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+      margin: 20px 0;
+}
+
+.post-social svg {
+  font-size: 2em;
+  color: #c3c3c3;
 }
 
 /* Main
@@ -899,6 +949,49 @@ h6 {
 
 .post-card-avatar .default-avatar {
     width: 26px;
+}
+
+/* Posts
+/* ---------------------------------------------------------- */
+
+.post-meta {
+  margin-bottom: 2em;
+}
+
+.post-meta .meta-item {
+  display: inline-block;
+  margin-right: 40px;
+  font-size: .9em;
+  opacity: .7;
+}
+
+.post-meta .meta-item svg {
+  margin-right: 10px;
+  font-size: .8em;
+}
+
+.post-tags .tag {
+  display: inline-block;
+  font-size: .8em;
+  margin: 0 8px 8px 0;
+  padding: 6px 14px;
+  color: #797979;
+  border-radius: 4px;
+  background: #fff;
+  text-decoration: none;
+  border: 1px solid #ececec;
+  transition: 0.2s all ease-out;
+}
+
+.post-tags .tag:hover {
+  background: #b15d5d;
+  border-color: #b15d5d;
+  color: white;
+}
+
+.post-footer {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 
@@ -1106,5 +1199,4 @@ h6 {
   background: #b15d5d;
   border-color: #b15d5d;
   color: white;
-
 }
