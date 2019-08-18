@@ -681,12 +681,6 @@ h6 {
     background-size: cover;
 }
 
-.navigation {
-  max-width: 1020px;
-  margin: 20px auto;
-  width: 100%;
-  text-align: right;
-}
 
 .site-nav-item {
     display: inline-block;
@@ -778,6 +772,20 @@ h6 {
     text-decoration: none;
 }
 
+/* Navigation
+/* ---------------------------------------------------------- */
+
+.home-nav {
+  max-width: 1020px;
+  margin: 20px auto;
+  width: 100%;
+  text-align: right;
+}
+
+.post-nav {
+  position: absolute;
+}
+
 /* Main
 /* ---------------------------------------------------------- */
 
@@ -800,6 +808,10 @@ h6 {
   box-shadow: 0 0 10px #e8e9ef;
   overflow: hidden;
   padding: 10px;
+}
+
+.post-card:hover .post-card-image {
+  opacity: .7;
 }
 
 .post-card-detail {
@@ -846,6 +858,7 @@ h6 {
     height: 300px;
     background: var(--color-secondary) no-repeat center center;
     background-size: cover;
+    transition: opacity .2s ease-out;
 }
 
 .post-card-footer {
@@ -1047,6 +1060,15 @@ h6 {
 
 /* Sidebar
 /* ---------------------------------------------------------- */
+
+.widget.about .about-logo-link {
+  transition: 0.2s all ease-out;
+}
+
+.widget.about .about-logo-link:hover {
+  opacity: .7;
+}
+
 .widget.about .description {
   line-height: 1.5em;
 }

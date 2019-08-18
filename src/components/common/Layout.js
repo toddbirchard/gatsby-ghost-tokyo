@@ -31,7 +31,6 @@ library.add(fab, faCheckSquare, faCoffee, faRss, faTag)
 const DefaultLayout = ({ data, children, bodyClass, isHome, tags }) => {
     const site = data.allGhostSettings.edges[0].node
     const twitterUrl = site.twitter ? `https://twitter.com/${site.twitter.replace(/^@/, ``)}` : null
-    const facebookUrl = site.facebook ? `https://www.facebook.com/${site.facebook.replace(/^\//, ``)}` : null
     const publicTags = data.allGhostTag.edges
 
 
@@ -44,18 +43,15 @@ const DefaultLayout = ({ data, children, bodyClass, isHome, tags }) => {
         </Helmet>
 
         <div className="viewport">
-            <nav className="navigation">
-                <Navigation data={site.navigation} navClass="site-nav-item" />
-            </nav>
+            { isHome ? <Navigation data={site.navigation} navClass="site-nav-item" navType="home-nav" /> : <Navigation data={site.navigation} navClass="site-nav-item" navType="post-nav" />}
             <div className={ isHome ? "home-container" : "container" }>
                 {/* All the main content gets inserted here, index.js, post.js */}
                 { isHome ?
                     <aside className="sidebar">
                         <div className="widget about">
-                            {site.logo ?
-                                <img className="site-logo" src={site.logo} alt={site.title} />
-                                : <Img fixed={ data.file.childImageSharp.fixed } alt={site.title} />
-                            }
+                            <a href="{site.url}" className="about-logo-link">
+                                {site.logo ? <img className="site-logo" src={site.logo} alt={site.title} /> : <h1> {site.title} </h1> }
+                            </a>
                             <p className="description">{site.description}</p>
                         </div>
 
@@ -124,12 +120,13 @@ const DefaultLayoutSettingsQuery = props => (
                         }
                     }
                 }
-                allGhostTag(sort: {order: ASC, fields: name}) {
+                allGhostTag(sort: {order: DESC, fields: postCount}) {
                   edges {
                     node {
                       name
                       slug
                       url
+                      postCount
                     }
                   }
                 }

@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
+import { Tags } from '@tryghost/helpers-gatsby'
 
 import { Layout } from '../components/common'
 import { MetaData } from '../components/common/meta'
@@ -42,6 +43,10 @@ const Post = ({ data, location }) => {
                                 />
                             </section>
                         </article>
+                        <section className="post-footer">
+                            <div className="post-social"></div>
+                            <div className="post-tags">{post.tags && <Tags post={post} limit={1} visibility="public" autolink={false}/>}</div>
+                        </section>
                     </div>
                 </Layout>
             </>
@@ -54,6 +59,7 @@ Post.propTypes = {
             title: PropTypes.string.isRequired,
             html: PropTypes.string.isRequired,
             feature_image: PropTypes.string,
+            tags: PropTypes.object.isRequired,
         }).isRequired,
     }).isRequired,
     location: PropTypes.object.isRequired,
