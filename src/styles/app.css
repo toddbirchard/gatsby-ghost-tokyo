@@ -526,7 +526,7 @@ h6 {
 
 .home-container {
   max-width: 1020px;
-  margin: 20px auto;
+  margin: 0 auto 20px;
   display: grid;
   grid-gap: 60px;
   grid-template-columns: 1.5fr 3fr;
@@ -550,7 +550,7 @@ h6 {
 .content-body {
     display: flex;
     flex-direction: column;
-    font-family: var(--font-serif);
+    font-family: var(--font-sans-serif);
 }
 
 .post-full-content {
@@ -681,11 +681,23 @@ h6 {
     background-size: cover;
 }
 
+.navigation {
+  max-width: 1020px;
+  margin: 20px auto;
+  width: 100%;
+  text-align: right;
+}
+
 .site-nav-item {
     display: inline-block;
     padding: 5px 10px;
-    color: #fff;
+    color: #777;
     opacity: 0.7;
+    transition: 0.2s all ease-out;
+}
+
+.site-nav-item:hover{
+    color: var(--color-primary);
 }
 
 .site-nav-item:hover {
@@ -790,8 +802,17 @@ h6 {
   padding: 10px;
 }
 
+.post-card-detail {
+      padding: 10px 20px;
+}
+
 .post-card .meta-item {
-  margin-right: 10px;
+  margin-right: 30px;
+  color: #797979;
+}
+
+.post-card .meta-item svg {
+  margin-right: 5px;
 }
 
 .post-card:hover {
@@ -810,12 +831,13 @@ h6 {
     margin: 0 0 10px 0;
     padding: 0;
     font-size: 2em;
+    color: #44495e;
 }
 
 .post-card-excerpt {
     font-size: 1.6rem;
     line-height: 1.55em;
-    color: #7b7b7b;
+    color: #44495e;
 }
 
 .post-card-image {
@@ -830,7 +852,7 @@ h6 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 10px 0 0 0;
+    margin: 30px 0 0 0;
     color: var(--color-secondary);
 }
 
@@ -1027,4 +1049,40 @@ h6 {
 /* ---------------------------------------------------------- */
 .widget.about .description {
   line-height: 1.5em;
+}
+
+.widget.social {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 0;
+}
+
+.widget.social a {
+  fill: #707070;
+  opacity: .7;
+}
+
+.widget.social svg {
+  font-size: 1.5em;
+  color: #707070;
+}
+
+.widget.tags .tag {
+  display: inline-block;
+  font-size: .8em;
+  margin: 0 8px 8px 0;
+  padding: 6px 14px;
+  color: #797979;
+  border-radius: 4px;
+  background: #fff;
+  text-decoration: none;
+  border: 1px solid #ececec;
+  transition: 0.2s all ease-out;
+}
+
+.widget.tags .tag:hover {
+  background: #b15d5d;
+  border-color: #b15d5d;
+  color: white;
+
 }

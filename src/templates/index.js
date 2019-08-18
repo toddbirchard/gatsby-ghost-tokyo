@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
-import { Layout, PostCard, Pagination } from '../components/common'
+import { Layout, PostCard, Pagination, Navigation } from '../components/common'
 import { MetaData } from '../components/common/meta'
 
 /**
@@ -28,7 +28,7 @@ const Index = ({ data, location, pageContext }) => {
                         ))}
                     </section>
                     <Pagination pageContext={pageContext} />
-              </main>
+                </main>
             </Layout>
         </>
     )

@@ -1,7 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+import { Tags } from '@tryghost/helpers-gatsby'
+
 import { Link, StaticQuery, graphql } from 'gatsby'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheckSquare, faCoffee, faRss, faTag } from '@fortawesome/free-solid-svg-icons'
+
 import Img from 'gatsby-image'
 
 import { Navigation } from '.'
@@ -18,10 +25,15 @@ import '../../styles/app.css'
 * styles, and meta data for each page.
 *
 */
-const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
+
+library.add(fab, faCheckSquare, faCoffee, faRss, faTag)
+
+const DefaultLayout = ({ data, children, bodyClass, isHome, tags }) => {
     const site = data.allGhostSettings.edges[0].node
     const twitterUrl = site.twitter ? `https://twitter.com/${site.twitter.replace(/^@/, ``)}` : null
     const facebookUrl = site.facebook ? `https://www.facebook.com/${site.facebook.replace(/^\//, ``)}` : null
+    const publicTags = data.allGhostTag.edges
+
 
     return (
     <>
@@ -32,58 +44,52 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
         </Helmet>
 
         <div className="viewport">
-
-            <div className="viewport-top">
-                <div className={ isHome ? "home-container" : "container" }>
-                    {/* All the main content gets inserted here, index.js, post.js */}
-                    { isHome ?
-                        <aside className="sidebar">
-                            <div className="widget about">
+            <nav className="navigation">
+                <Navigation data={site.navigation} navClass="site-nav-item" />
+            </nav>
+            <div className={ isHome ? "home-container" : "container" }>
+                {/* All the main content gets inserted here, index.js, post.js */}
+                { isHome ?
+                    <aside className="sidebar">
+                        <div className="widget about">
                             {site.logo ?
-                              <img className="site-logo" src={site.logo} alt={site.title} />
-                              : <Img fixed={ data.file.childImageSharp.fixed } alt={site.title} />
-                          }
-                          <p className="description">{site.description}</p>
+                                <img className="site-logo" src={site.logo} alt={site.title} />
+                                : <Img fixed={ data.file.childImageSharp.fixed } alt={site.title} />
+                            }
+                            <p className="description">{site.description}</p>
                         </div>
+
                         <div className="widget social">
-                          <a href="https://twitter.com/ToddRBirchard" className="twitter"><i className="fab fa-twitter"></i></a>
-                          <a href="https://angel.co/todd-birchard?public_profile=1" className="angellist"><i className="fab fa-angellist"></i></a>
-                          <a href="https://www.linkedin.com/in/toddbirchard/" className="linkedin"><i className="fab fa-linkedin-in"></i></a>
-                          <a href="https://github.com/toddbirchard" className="github"><i className="fab fa-github"></i></a>
-                          <a href="https://www.quora.com/profile/Todd-Birchard" className="quora"><i className="fab fa-quora"></i></a>
-                          <a href="{{@site.url}}/rss/" className="rss"><i className="fal fa-rss"></i></a>
+                            <a href={ twitterUrl } className="twitter"><FontAwesomeIcon icon={['fab', 'twitter']} /></a>
+                            <a href="https://angel.co/todd-birchard?public_profile=1" className="angellist"><FontAwesomeIcon icon={['fab', 'angellist']} /></a>
+                            <a href="https://www.linkedin.com/in/toddbirchard/" className="linkedin"><FontAwesomeIcon icon={['fab', 'linkedin']} /></a>
+                            <a href="https://github.com/toddbirchard" className="github"><FontAwesomeIcon icon={['fab', 'github']} /></a>
+                            <a href="https://www.quora.com/profile/Todd-Birchard" className="quora"><FontAwesomeIcon icon={['fab', 'quora']} /></a>
+                            <a href="{{@site.url}}/rss/" className="rss"><FontAwesomeIcon icon='rss' /></a>
                         </div>
 
                         <div className="widget tags">
-                            { site.twitter && <a href={ twitterUrl } className="site-nav-item" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/twitter.svg" alt="Twitter" /></a>}
-                            { site.facebook && <a href={ facebookUrl } className="site-nav-item" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/facebook.svg" alt="Facebook" /></a>}
-                            <a className="site-nav-item" href={ `https://feedly.com/i/subscription/feed/${config.siteUrl}/rss/` } rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/rss.svg" alt="RSS Feed" /></a>
+                            {publicTags.map(({ node }) => (
+                                <a href="{ node.url }" className="tag" key="{ node.name }">{ node.name }</a>
+                            ))}
                         </div>
-                        <div className="widget about">
+                    </aside> :
+                    null}
 
-                        </div>
-                      </aside> :
-                        null}
-
-                    {children}
-                </div>
-
+                {children}
             </div>
 
-            <div className="viewport-bottom">
-                {/* The footer at the very bottom of the screen */}
-                <footer className="site-foot">
-                    <div className="site-foot-nav container">
-                        <div className="site-foot-nav-left">
-                            <Link to="/">{site.title}</Link> © 2019 &mdash; Published with <a className="site-foot-nav-item" href="https://ghost.org" rel="noopener noreferrer">Ghost</a>
-                        </div>
-                        <div className="site-foot-nav-right">
-                            <Navigation data={site.navigation} navclassName="site-foot-nav-item" />
-                        </div>
+            {/* The footer at the very bottom of the screen */}
+            <footer className="site-foot">
+                <div className="site-foot-nav container">
+                    <div className="site-foot-nav-left">
+                        <Link to="/">{site.title}</Link> © 2019 &mdash; Published with <a className="site-foot-nav-item" href="https://ghost.org" rel="noopener noreferrer">Ghost</a>
                     </div>
-                </footer>
-
-            </div>
+                    <div className="site-foot-nav-right">
+                        <Navigation data={site.navigation} navclassName="site-foot-nav-item" />
+                    </div>
+                </div>
+            </footer>
         </div>
 
     </>
@@ -96,6 +102,7 @@ DefaultLayout.propTypes = {
     isHome: PropTypes.bool,
     data: PropTypes.shape({
         allGhostSettings: PropTypes.object.isRequired,
+        allGhostTag: PropTypes.object.isRequired,
     }).isRequired,
 }
 
@@ -116,6 +123,15 @@ const DefaultLayoutSettingsQuery = props => (
                             ...GatsbyImageSharpFixed
                         }
                     }
+                }
+                allGhostTag(sort: {order: ASC, fields: name}) {
+                  edges {
+                    node {
+                      name
+                      slug
+                      url
+                    }
+                  }
                 }
             }
         `}
