@@ -27,22 +27,21 @@ import '../../styles/app.css'
 
 library.add(fab, faRss, faTag)
 
-const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
+const DefaultLayout = ({ data, children, bodyClass, isHome, isTag, template }) => {
     const site = data.allGhostSettings.edges[0].node
-    const twitterUrl = site.twitter ? `https://twitter.com/${site.twitter.replace(/^@/, ``)}` : null
-    const publicTags = data.allGhostTag.edges
-
 
     return (
     <>
         <Helmet>
             <html lang={site.lang} />
             <style type="text/css">{`${site.codeinjection_styles}`}</style>
-            <body className={bodyClass} />
+            <body className={template} />
         </Helmet>
 
         <div className="viewport">
+
             { isHome ? <Navigation data={site.navigation} navClass="site-nav-item" navType="home-nav" logo={site.icon} url={site.url} /> : <Navigation data={site.navigation} navClass="site-nav-item" navType="post-nav" logo={site.icon} url={site.url} /> }
+            { isTag }
             <div className={ isHome ? "home-container" : "container" }>
                 {/* All the main content gets inserted here, index.js, post.js */}
                 { isHome ? <Sidebar /> : null}
@@ -68,6 +67,8 @@ DefaultLayout.propTypes = {
     children: PropTypes.node.isRequired,
     bodyClass: PropTypes.string,
     isHome: PropTypes.bool,
+    isTag: PropTypes.bool,
+    isPost: PropTypes.bool,
     data: PropTypes.shape({
         allGhostSettings: PropTypes.object.isRequired,
         allGhostTag: PropTypes.object.isRequired,

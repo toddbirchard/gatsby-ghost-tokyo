@@ -25,7 +25,7 @@ const Page = ({ data, location }) => {
             <Helmet>
                 <style type="text/css">{`${page.codeinjection_styles}`}</style>
             </Helmet>
-            <Layout>
+            <Layout template="post-template">
                 <article className="content">
                     { page.feature_image ?
                         <figure className="post-feature-image">

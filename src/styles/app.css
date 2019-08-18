@@ -700,7 +700,7 @@ h6 {
 .content-body p,
 .content-body blockquote,
 .content-body li {
-  font-size: 1.7rem;
+  font-size: 1.6rem;
   line-height: 1.8;
 }
 
@@ -811,18 +811,20 @@ h6 {
 /* Navigation
 /* ---------------------------------------------------------- */
 
-.home-nav {
+.home-template .navigation,
+.tag-template .navigation {
   max-width: 1020px;
   margin: 20px auto;
   width: 100%;
   text-align: right;
 }
 
-.home-nav .nav-logo {
+.home-template .navigation .nav-logo,
+.tag-template .navigation .nav-logo {
   display: none;
 }
 
-.post-nav {
+.post-template .navigation {
   position: absolute;
   max-width: 800px;
   width: 100%;
@@ -835,24 +837,24 @@ h6 {
 }
 
 @media(max-width: 600px) {
-  .post-nav {
+  .post-template .navigation {
     max-width: 85%;
   }
 }
 
-.post-nav .nav-logo {
+.post-template .navigation .nav-logo {
   width: 50px;
   height: 50px;
   display: block;
   transition: all .2s ease-out;
 }
 
-.post-nav .nav-logo:hover {
+.post-template .navigation .nav-logo:hover {
   opacity: .7;
   cursor: pointer;
 }
 
-.post-nav .site-nav-item {
+.post-template .navigation .site-nav-item {
   color: #fff;
   opacity: 1;
   font-weight: 600;
@@ -1050,6 +1052,7 @@ h6 {
     margin: 0 0 1rem 0;
     font-size: 2em;
     color: #44495e;
+    font-weight: 100;
 }
 
 .tag-header p {

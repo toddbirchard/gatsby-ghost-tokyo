@@ -22,7 +22,7 @@ const Tag = ({ data, location, pageContext }) => {
                 location={location}
                 type="series"
             />
-            <Layout>
+            <Layout template="tag-template">
                 <div className="tag-container">
                     <Sidebar />
                     <section className="post-feed">
@@ -54,6 +54,7 @@ Tag.propTypes = {
         pathname: PropTypes.string.isRequired,
     }).isRequired,
     pageContext: PropTypes.object,
+    icon: PropTypes.string,
 }
 
 export default Tag
@@ -75,5 +76,12 @@ export const pageQuery = graphql`
                 }
             }
         }
+        allGhostSettings {
+          edges {
+            node {
+              icon
+            }
+          }
+      }
     }
 `

@@ -12,10 +12,10 @@ import { Link } from 'gatsby'
 * to a `site-nav-item` class.
 *
 */
-const Navigation = ({ data, navClass, navType, isHome, logo, url }) => (
+const Navigation = ({ data, navClass, navType, logo }) => (
     <>
-        <nav className={navType}>
-            <Link to={url} className="nav-logo"><img src={logo} alt="logo" /></Link>
+        <nav className="navigation">
+            <Link to="/" className="nav-logo"><img src={logo} alt="logo" /></Link>
             <div className="right-nav">
                 {data.map((navItem, i) => {
                     if (navItem.url.match(/^\s?http(s?)/gi)) {

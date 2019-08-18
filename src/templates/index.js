@@ -19,7 +19,7 @@ const Index = ({ data, location, pageContext }) => {
     return (
         <>
             <MetaData location={location} />
-            <Layout isHome={true}>
+            <Layout isHome={true} template="home-template">
                 <main className="site-main">
                     <section className="post-feed">
                         {posts.map(({ node }) => (

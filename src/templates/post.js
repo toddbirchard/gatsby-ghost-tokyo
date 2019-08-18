@@ -34,7 +34,7 @@ const Post = ({ data, location }) => {
                 <Helmet>
                     <style type="text/css">{`${post.codeinjection_styles}`}</style>
                 </Helmet>
-                <Layout>
+                <Layout template="post-template">
                     <article className="content">
                         { post.feature_image ?
                             <figure className="post-feature-image">
