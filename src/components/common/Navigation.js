@@ -15,7 +15,7 @@ import { Link } from 'gatsby'
 const Navigation = ({ data, navClass, navType, isHome, logo, url }) => (
     <>
         <nav className={navType}>
-            <a href={url} className="nav-logo"><img src={logo} alt="logo" /></a>
+            <Link to={url} className="nav-logo"><img src={logo} alt="logo" /></Link>
             <div className="right-nav">
                 {data.map((navItem, i) => {
                     if (navItem.url.match(/^\s?http(s?)/gi)) {

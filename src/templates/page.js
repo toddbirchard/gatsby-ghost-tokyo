@@ -26,8 +26,12 @@ const Page = ({ data, location }) => {
                 <style type="text/css">{`${page.codeinjection_styles}`}</style>
             </Helmet>
             <Layout>
-                <div className="container">
-                    <article className="content">
+                <article className="content">
+                    { page.feature_image ?
+                        <figure className="post-feature-image">
+                            <img src={ page.feature_image } alt={ page.title } />
+                        </figure> : null }
+                    <div className="post-full-content">
                         <h1 className="content-title">{page.title}</h1>
 
                         {/* The main page content */}
@@ -35,8 +39,8 @@ const Page = ({ data, location }) => {
                             className="content-body load-external-scripts"
                             dangerouslySetInnerHTML={{ __html: page.html }}
                         />
-                    </article>
-                </div>
+                    </div>
+                </article>
             </Layout>
         </>
     )
