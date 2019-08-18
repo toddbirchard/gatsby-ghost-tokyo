@@ -699,7 +699,7 @@ h6 {
 }
 
 .site-logo {
-
+  margin-bottom: 10px;
 }
 
 .site-mast {
@@ -809,6 +809,7 @@ h6 {
 .post-card-title {
     margin: 0 0 10px 0;
     padding: 0;
+    font-size: 2em;
 }
 
 .post-card-excerpt {
@@ -1019,4 +1020,11 @@ h6 {
 
 .site-foot-nav-right a:last-child {
     padding-right: 0;
+}
+
+
+/* Sidebar
+/* ---------------------------------------------------------- */
+.widget.about .description {
+  line-height: 1.5em;
 }

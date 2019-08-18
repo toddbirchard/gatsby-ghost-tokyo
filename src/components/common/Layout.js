@@ -34,67 +34,30 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
         <div className="viewport">
 
             <div className="viewport-top">
-                {/* The main header section on top of the screen */}
-                  {/* <header className="site-head" style={{ ...site.cover_image && { backgroundImage: `url(${site.cover_image})` } }}>
-                    <div className="container">
-                        <div className="site-mast">
-                            <div className="site-mast-left">
-                                <Link to="/">
-                                    {site.logo ?
-                                        <img className="site-logo" src={site.logo} alt={site.title} />
-                                        : <Img fixed={data.file.childImageSharp.fixed} alt={site.title} />
-                                    }
-                                </Link>
-                            </div>
-                            <div className="site-mast-right">
-                                { site.twitter && <a href={ twitterUrl } className="site-nav-item" target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/twitter.svg" alt="Twitter" /></a>}
-                                { site.facebook && <a href={ facebookUrl } className="site-nav-item" target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/facebook.svg" alt="Facebook" /></a>}
-                                <a className="site-nav-item" href={ `https://feedly.com/i/subscription/feed/${config.siteUrl}/rss/` } target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/rss.svg" alt="RSS Feed" /></a>
-                            </div>
-                        </div>
-                        { isHome ?
-                            <div className="site-banner">
-                                <h1 className="site-banner-title">{site.title}</h1>
-                                <p className="site-banner-desc">{site.description}</p>
-                            </div> :
-                            null}
-                        <nav className="site-nav">
-                            <div className="site-nav-left">
-                                <Navigation data={site.navigation} navClass="site-nav-item" />
-                            </div>
-                            <div className="site-nav-right">
-                                <Link className="site-nav-button" to="/about">About</Link>
-                            </div>
-                        </nav>
-                    </div>
-                </header> */}
-
                 <div className={ isHome ? "home-container" : "container" }>
-
-
                     {/* All the main content gets inserted here, index.js, post.js */}
                     { isHome ?
-                      <aside className="sidebar">
-                        <div className="widget about">
-                          {site.logo ?
+                        <aside className="sidebar">
+                            <div className="widget about">
+                            {site.logo ?
                               <img className="site-logo" src={site.logo} alt={site.title} />
-                              : <Img fixed={data.file.childImageSharp.fixed} alt={site.title} />
+                              : <Img fixed={ data.file.childImageSharp.fixed } alt={site.title} />
                           }
                           <p className="description">{site.description}</p>
                         </div>
-                        <div class="widget social">
-                          <a href="https://twitter.com/ToddRBirchard" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
-                          <a href="https://angel.co/todd-birchard?public_profile=1" target="_blank" class="angellist"><i class="fab fa-angellist"></i></a>
-                          <a href="https://www.linkedin.com/in/toddbirchard/" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
-                          <a href="https://github.com/toddbirchard" target="_blank" class="github"><i class="fab fa-github"></i></a>
-                          <a href="https://www.quora.com/profile/Todd-Birchard" target="_blank" class="quora"><i class="fab fa-quora"></i></a>
-                          <a href="{{@site.url}}/rss/" target="_blank" class="rss"><i class="fal fa-rss"></i></a>
+                        <div className="widget social">
+                          <a href="https://twitter.com/ToddRBirchard" className="twitter"><i className="fab fa-twitter"></i></a>
+                          <a href="https://angel.co/todd-birchard?public_profile=1" className="angellist"><i className="fab fa-angellist"></i></a>
+                          <a href="https://www.linkedin.com/in/toddbirchard/" className="linkedin"><i className="fab fa-linkedin-in"></i></a>
+                          <a href="https://github.com/toddbirchard" className="github"><i className="fab fa-github"></i></a>
+                          <a href="https://www.quora.com/profile/Todd-Birchard" className="quora"><i className="fab fa-quora"></i></a>
+                          <a href="{{@site.url}}/rss/" className="rss"><i className="fal fa-rss"></i></a>
                         </div>
 
                         <div className="widget tags">
-                            { site.twitter && <a href={ twitterUrl } className="site-nav-item" target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/twitter.svg" alt="Twitter" /></a>}
-                            { site.facebook && <a href={ facebookUrl } className="site-nav-item" target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/facebook.svg" alt="Facebook" /></a>}
-                            <a className="site-nav-item" href={ `https://feedly.com/i/subscription/feed/${config.siteUrl}/rss/` } target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/rss.svg" alt="RSS Feed" /></a>
+                            { site.twitter && <a href={ twitterUrl } className="site-nav-item" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/twitter.svg" alt="Twitter" /></a>}
+                            { site.facebook && <a href={ facebookUrl } className="site-nav-item" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/facebook.svg" alt="Facebook" /></a>}
+                            <a className="site-nav-item" href={ `https://feedly.com/i/subscription/feed/${config.siteUrl}/rss/` } rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/rss.svg" alt="RSS Feed" /></a>
                         </div>
                         <div className="widget about">
 
@@ -112,10 +75,10 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                 <footer className="site-foot">
                     <div className="site-foot-nav container">
                         <div className="site-foot-nav-left">
-                            <Link to="/">{site.title}</Link> © 2019 &mdash; Published with <a className="site-foot-nav-item" href="https://ghost.org" target="_blank" rel="noopener noreferrer">Ghost</a>
+                            <Link to="/">{site.title}</Link> © 2019 &mdash; Published with <a className="site-foot-nav-item" href="https://ghost.org" rel="noopener noreferrer">Ghost</a>
                         </div>
                         <div className="site-foot-nav-right">
-                            <Navigation data={site.navigation} navClass="site-foot-nav-item" />
+                            <Navigation data={site.navigation} navclassName="site-foot-nav-item" />
                         </div>
                     </div>
                 </footer>
