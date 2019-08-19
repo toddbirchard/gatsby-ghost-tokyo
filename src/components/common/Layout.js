@@ -71,8 +71,6 @@ DefaultLayout.propTypes = {
     children: PropTypes.node.isRequired,
     bodyClass: PropTypes.string,
     isHome: PropTypes.bool,
-    isTag: PropTypes.bool,
-    isPost: PropTypes.bool,
     data: PropTypes.shape({
         allGhostSettings: PropTypes.object.isRequired,
         allGhostTag: PropTypes.object.isRequired,
