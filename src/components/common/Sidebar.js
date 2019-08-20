@@ -6,9 +6,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRss, faTag } from '@fortawesome/free-solid-svg-icons'
-import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton } from 'react-twitter-embed';
-
-
+import { TwitterTimelineEmbed } from 'react-twitter-embed'
 
 // Styles
 import '../../styles/app.css'
@@ -56,15 +54,16 @@ const Sidebar = ({ data }) => {
             </div>
 
             <TwitterTimelineEmbed
-              sourceType="profile"
-              screenName="toddrbirchard"
-              options={{height: 800}}
-              transparent
-              noScrollbar
-              noHeader
-              noFooter
-              linkColor="#b15d5d"
-              className="widget twitter"
+                sourceType="profile"
+                screenName="toddrbirchard"
+                options={{ height: 1100 }}
+                transparent
+                noScrollbar
+                noHeader
+                noFooter
+                noBorders
+                linkColor="#b15d5d"
+                className="widget twitter"
             />
         </aside>
     </>

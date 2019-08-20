@@ -57,9 +57,6 @@ const DefaultLayout = ({ data, children, bodyClass, isHome, isTag, template }) =
                 <div className="footer-text">
                     <Link to="/">{site.title}</Link> © 2019 &mdash;
                 </div>
-                <div className="footer-links">
-                    <Navigation data={site.navigation} navclassName="site-foot-nav-item" />
-                </div>
             </footer>
         </div>
 

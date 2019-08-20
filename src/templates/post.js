@@ -56,14 +56,28 @@ const Post = ({ data, location }) => {
                         </section>
                     </article>
                     <section className="post-footer">
-                        <div className="post-social">
+                        {/* <div className="post-social">
                             <a href="" className="twitter"><FontAwesomeIcon icon={['fab', 'twitter']} /></a>
                             <a href="" className="facebook"><FontAwesomeIcon icon={['fab', 'facebook']} /></a>
                             <a href="" className="linkedin"><FontAwesomeIcon icon={['fab', 'reddit']} /></a>
                             <a href="" className="linkedin"><FontAwesomeIcon icon={['fab', 'linkedin']} /></a>
-                        </div>
+                        </div>  */}
                         <div className="post-tags">
                             <Tags post={post} visibility="public" autolink={true} />
+                        </div>
+                        <div className="post-author">
+                            <div className="post-author-content">
+                                <h4 className="post-author-name">{post.primary_author.name}</h4>
+                                {post.primary_author.bio && <p className="post-author-bio">{post.primary_author.bio}</p>}
+                                <div className="post-author-meta">
+                                    {post.primary_author.website && <a className="post-author-item" href={post.primary_author.website} target="_blank" rel="noopener noreferrer">Website</a>}
+                                    {post.primary_author.twitterUrl && <a className="post-author-item" href={post.primary_author.twitterUrl} target="_blank" rel="noopener noreferrer">Twitter</a>}
+                                    {post.primary_author.facebookUrl && <a className="post-author-item" href={post.primary_author.facebookUrl} target="_blank" rel="noopener noreferrer">Facebook</a>}
+                                </div>
+                            </div>
+                            <div className="post-author-image">
+                                {post.primary_author.profile_image && <img src={post.primary_author.profile_image} alt={post.primary_author.name} />}
+                            </div>
                         </div>
                     </section>
                 </Layout>
@@ -84,6 +98,10 @@ Post.propTypes = {
             primary_author: PropTypes.shape({
                 name: PropTypes.string.isRequired,
                 url: PropTypes.string.isRequired,
+                profile_image: PropTypes.string.isRequired,
+                website: PropTypes.string.isRequired,
+                twitterUrl: PropTypes.string.isRequired,
+                facebookUrl: PropTypes.string.isRequired,
             }).isRequired,
         }).isRequired,
     }).isRequired,
@@ -99,6 +117,10 @@ export const postQuery = graphql`
             primary_author {
               name
               url
+              bio
+              website
+              twitter
+              facebook
             }
         }
     }
