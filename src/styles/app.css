@@ -49,6 +49,9 @@ what's here to work the way you'd like it to.
     --margin: 2rem;
     --radius: 0.6rem;
 
+    /* Breakpoints */
+    --mobile-breakpoint: 800px;
+    --tablet-breakpoint: 600px;
 }
 
 
@@ -750,44 +753,6 @@ h6 {
   margin-bottom: 10px;
 }
 
-.site-mast {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.site-mast-right {
-    display: flex;
-    align-items: center;
-}
-
-.site-mast-right .site-nav-item:last-child {
-    padding-right: 0;
-}
-
-.site-banner {
-    max-width: 80%;
-    margin: 0 auto;
-    padding: 10vw 0;
-    text-align: center;
-}
-
-.site-banner-title {
-    margin: 0;
-    padding: 0;
-    color: #fff;
-    font-size: 4rem;
-    line-height: 1.3em;
-}
-
-.site-banner-desc {
-    margin: 5px 0 0 0;
-    padding: 0;
-    font-size: 2.4rem;
-    line-height: 1.3em;
-    opacity: 0.7;
-}
-
 .site-nav {
     display: flex;
     align-items: center;
@@ -799,20 +764,6 @@ h6 {
     margin: 0 20px 0 -10px;
 }
 
-.site-nav-button {
-    display: inline-block;
-    padding: 5px 10px;
-    border: #fff 1px solid;
-    color: #fff;
-    font-size: 1.3rem;
-    line-height: 1em;
-    border-radius: var(--radius);
-    opacity: 0.7;
-}
-
-.site-nav-button:hover {
-    text-decoration: none;
-}
 
 /* Navigation
 /* ---------------------------------------------------------- */
@@ -829,6 +780,9 @@ h6 {
   .home-template .navigation,
   .tag-template .navigation {
     max-width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 

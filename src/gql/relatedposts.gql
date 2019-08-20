@@ -1,0 +1,11 @@
+query RelatedPostsQuery($tag: String!) {
+  allGhostPost(limit: 3, sort: {fields: published_at, order: DESC}, filter: {primary_tag: {name: {eq: $tag}}}) {
+    edges {
+      node {
+        feature_image
+        url
+        title
+      }
+    }
+  }
+}

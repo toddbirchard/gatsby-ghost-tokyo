@@ -1,0 +1,11 @@
+query RecentPostsQuery {
+  allGhostPost(limit: 3, sort: {fields: published_at, order: DESC}) {
+    edges {
+      node {
+        feature_image
+        url
+        title
+      }
+    }
+  }
+}
