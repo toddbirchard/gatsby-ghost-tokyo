@@ -98,6 +98,7 @@ Post.propTypes = {
             primary_author: PropTypes.shape({
                 name: PropTypes.string.isRequired,
                 url: PropTypes.string.isRequired,
+                bio: PropTypes.string.isRequired,
                 profile_image: PropTypes.string.isRequired,
                 website: PropTypes.string.isRequired,
                 twitterUrl: PropTypes.string.isRequired,

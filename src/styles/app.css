@@ -1,7 +1,7 @@
-@import url("//hello.myfonts.net/count/39f4d4");
+@import url("//hello.myfonts.net/count/39f963");
 
-@font-face {font-family: 'FFMarkWebProBook';src: url('webfonts/39F4D4_0_0.eot');src: url('webfonts/39F4D4_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/39F4D4_0_0.woff2') format('woff2'),url('webfonts/39F4D4_0_0.woff') format('woff'),url('webfonts/39F4D4_0_0.ttf') format('truetype');}
-@font-face {font-family: 'FFMarkWebProMedium';src: url('webfonts/39F4D4_1_0.eot');src: url('webfonts/39F4D4_1_0.eot?#iefix') format('embedded-opentype'),url('webfonts/39F4D4_1_0.woff2') format('woff2'),url('webfonts/39F4D4_1_0.woff') format('woff'),url('webfonts/39F4D4_1_0.ttf') format('truetype');}
+
+@font-face {font-family: 'TTCommons-Light';src: url('webfonts/39F963_0_0.eot');src: url('webfonts/39F963_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/39F963_0_0.woff2') format('woff2'),url('webfonts/39F963_0_0.woff') format('woff'),url('webfonts/39F963_0_0.ttf') format('truetype');}
 
 
 /* App.css
@@ -36,8 +36,8 @@ what's here to work the way you'd like it to.
     --color-content-title: #44495e;
 
     /* Fonts */
-    --font-sans-serif: 'FFMarkWebProBook', Helvetica, Sans-Serif;
-    --font-title: 'FFMarkWebProMedium', Helvetica, Sans-Serif;
+    --font-sans-serif: 'TTCommons-Light', Helvetica, Sans-Serif;
+    --font-title: 'TTCommons-Light', Helvetica, Sans-Serif;
     --font-serif: Georgia, Times, serif;
     --font-mono: Menlo, Courier, monospace;
     --font-light: 100;
@@ -634,7 +634,7 @@ h6 {
 
 .content-body h2 {
     margin: 0.8em 0 0.4em 0;
-    font-size: 3.2rem;
+    font-size: 3rem;
     font-weight: 700;
     color: var(--color-content-title);
 }
@@ -716,21 +716,11 @@ h6 {
 .content-body p,
 .content-body blockquote,
 .content-body li {
-  font-size: 1.6rem;
-  line-height: 1.8;
+  font-size: 1em;
+   line-height: 1.5;
 }
 
-.post-author {
-  display: flex;
-  margin: 40px 0;
-  padding-top: 40px;
-  border-top: 1px solid #e2e2e2;
-}
 
-.post-author-name {
-  margin: 0 0 1em 0;
-  font-size: 1.5em;
-}
 
 /* Header
 /* ---------------------------------------------------------- */
@@ -1028,7 +1018,6 @@ h6 {
   }
 }
 
-
 .post-tags .tag {
   display: inline-block;
   font-size: .8em;
@@ -1051,6 +1040,27 @@ h6 {
 .post-footer {
   max-width: 800px;
   margin: 0 auto;
+}
+
+.post-author {
+  display: flex;
+  margin: 40px 0;
+  padding-top: 40px;
+  border-top: 1px solid #e2e2e2;
+}
+
+.post-author-name {
+  margin: 0 0 1em 0;
+  font-size: 1.5em;
+}
+
+.post-author-bio {
+  margin: 0 0 1em 0;
+  line-height: 1.4em;
+}
+
+.post-author-image {
+  width: 160px;
 }
 
 
@@ -1099,7 +1109,7 @@ h6 {
 }
 
 .author-header h1 {
-    margin: 0 0 1rem 0;
+    margin: 0 0 .5rem 0;
 }
 
 .author-header p {
@@ -1145,6 +1155,8 @@ h6 {
         width: 80px;
     }
 }
+
+
 
 
 /* Pagination
