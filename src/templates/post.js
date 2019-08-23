@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import { readingTime as readingTimeHelper } from '@tryghost/helpers'
 import { Tags } from '@tryghost/helpers-gatsby'
@@ -43,7 +43,7 @@ const Post = ({ data, location }) => {
                         <section className="post-full-content">
                             <h1 className="content-title">{post.title}</h1>
                             <div className="post-meta">
-                                <div className="meta-item"> <FontAwesomeIcon icon='user-edit' /> {post.primary_author.name} </div>
+                                <div className="meta-item"> <Link to={post.primary_author.url}> <FontAwesomeIcon icon='user-edit' /> {post.primary_author.name} </Link> </div>
                                 <div className="meta-item"> <FontAwesomeIcon icon='tag' /> {post.tags && <Tags post={post} limit={1} visibility="public" autolink={false}/>} </div>
                                 <div className="meta-item"> <FontAwesomeIcon icon='eye' /> {readingTime} </div>
                             </div>

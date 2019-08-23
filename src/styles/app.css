@@ -1,4 +1,12 @@
---al
+@import url("//hello.myfonts.net/count/39f9ef");
+
+
+@font-face {font-family: 'HarmoniaSansPro-Bold';src: url('webfonts/39F9EF_1_0.eot');src: url('webfonts/39F9EF_1_0.eot?#iefix') format('embedded-opentype'),url('webfonts/39F9EF_1_0.woff2') format('woff2'),url('webfonts/39F9EF_1_0.woff') format('woff'),url('webfonts/39F9EF_1_0.ttf') format('truetype');}
+@font-face {font-family: 'AvenirNextLTPro-Regular';src: url('webfonts/39F9EF_4_0.eot');src: url('webfonts/39F9EF_4_0.eot?#iefix') format('embedded-opentype'),url('webfonts/39F9EF_4_0.woff2') format('woff2'),url('webfonts/39F9EF_4_0.woff') format('woff'),url('webfonts/39F9EF_4_0.ttf') format('truetype');}
+@font-face {font-family: 'TTNormsPro-Light';src: url('webfonts/39F9EF_5_0.eot');src: url('webfonts/39F9EF_5_0.eot?#iefix') format('embedded-opentype'),url('webfonts/39F9EF_5_0.woff2') format('woff2'),url('webfonts/39F9EF_5_0.woff') format('woff'),url('webfonts/39F9EF_5_0.ttf') format('truetype');}
+@font-face {font-family: 'TTNormsPro-Regular';src: url('webfonts/39F9EF_6_0.eot');src: url('webfonts/39F9EF_6_0.eot?#iefix') format('embedded-opentype'),url('webfonts/39F9EF_6_0.woff2') format('woff2'),url('webfonts/39F9EF_6_0.woff') format('woff'),url('webfonts/39F9EF_6_0.ttf') format('truetype');}
+@font-face {font-family: 'TTCommons-Light';src: url('webfonts/39F9EF_7_0.eot');src: url('webfonts/39F9EF_7_0.eot?#iefix') format('embedded-opentype'),url('webfonts/39F9EF_7_0.woff2') format('woff2'),url('webfonts/39F9EF_7_0.woff') format('woff'),url('webfonts/39F9EF_7_0.ttf') format('truetype');}
+
 
 /* App.css
 /* ---------------------------------------------------------- /*
@@ -32,8 +40,8 @@ what's here to work the way you'd like it to.
     --color-content-title: #44495e;
 
     /* Fonts */
-    --font-sans-serif: 'TTCommons-Light', Helvetica, Sans-Serif;
-    --font-title: 'TTCommons-Light', Helvetica, Sans-Serif;
+    --font-sans-serif: 'AvenirNextLTPro-Regular', Helvetica, Sans-Serif;
+    --font-title: 'HarmoniaSansPro-Bold', Helvetica, Sans-Serif;
     --font-serif: Georgia, Times, serif;
     --font-mono: Menlo, Courier, monospace;
     --font-light: 100;
@@ -613,6 +621,7 @@ h6 {
     margin: 0 0 0.2em;
     font-size: 4rem;
     color: var(--color-content-title);
+
 }
 @media (max-width: 800px) {
     .content-title {
@@ -712,7 +721,7 @@ h6 {
 .content-body p,
 .content-body blockquote,
 .content-body li {
-  font-size: 1em;
+  font-size: .85em;
    line-height: 1.5;
 }
 
@@ -1001,6 +1010,11 @@ h6 {
   margin-right: 40px;
   font-size: .8em;
   opacity: .7;
+  color: var(--color-secondary);
+}
+
+.post-meta .meta-item a {
+  color: var(--color-secondary);
 }
 
 .post-meta .meta-item svg {
