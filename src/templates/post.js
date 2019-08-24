@@ -1,16 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import { readingTime as readingTimeHelper } from '@tryghost/helpers'
 import { Tags } from '@tryghost/helpers-gatsby'
-import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faUserEdit, faGlobe } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 
 import { Layout } from '../components/common'
 import { MetaData } from '../components/common/meta'
+import { RelatedPosts } from '../components/common/posts'
 
 /**
 * Single post view (/:slug)
@@ -23,6 +23,8 @@ library.add(faUserEdit, faGlobe)
 const Post = ({ data, location }) => {
     const post = data.ghostPost
     const readingTime = readingTimeHelper(post)
+    const authorTwitterUrl = post.primary_author.twitter ? `https://twitter.com/${post.primary_author.twitter.replace(/^@/, ``)}` : null
+    const authorFacebookUrl = post.primary_author.facebook ? `https://www.facebook.com/${post.primary_author.facebook.replace(/^\//, ``)}` : null
 
     return (
             <>
@@ -43,9 +45,9 @@ const Post = ({ data, location }) => {
                         <section className="post-full-content">
                             <h1 className="content-title">{post.title}</h1>
                             <div className="post-meta">
-                                <div className="meta-item"> <FontAwesomeIcon icon='user-edit' />{post.primary_author.name} </div>
-                                <div className="meta-item"> <FontAwesomeIcon icon='tag' />{post.tags && <Tags post={post} limit={1} visibility="public" autolink={false}/>} </div>
-                                <div className="meta-item"> <FontAwesomeIcon icon='eye' />{readingTime} </div>
+                                <div className="meta-item"> <FontAwesomeIcon icon="user-edit" />{post.primary_author.name} </div>
+                                <div className="meta-item"> <FontAwesomeIcon icon="tag" />{post.tags && <Tags post={post} limit={1} visibility="public" autolink={false}/>} </div>
+                                <div className="meta-item"> <FontAwesomeIcon icon="eye" />{readingTime} </div>
                             </div>
 
                             {/* The main post content */ }
@@ -59,14 +61,15 @@ const Post = ({ data, location }) => {
                         <div className="post-tags">
                             <Tags post={post} visibility="public" autolink={true} />
                         </div>
+                        <RelatedPosts />
                         <div className="post-author">
                             <div className="post-author-content">
                                 <h4 className="post-author-name">{post.primary_author.name}</h4>
                                 {post.primary_author.bio && <p className="post-author-bio">{post.primary_author.bio}</p>}
                                 <div className="post-author-meta">
-                                    {post.primary_author.website &&  <a className="post-author-item" href={post.primary_author.website} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={['fas', 'globe']} />Website</a>}
-                                    {post.primary_author.twitter && <a className="post-author-item" href={post.primary_author.twitter} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={['fab', 'twitter']} />Twitter</a>}
-                                    {post.primary_author.facebook && <a className="post-author-item" href={post.primary_author.facebook} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={['fab', 'facebook']} />Facebook</a>}
+                                    {post.primary_author.website && <a className="post-author-item" href={post.primary_author.website} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={[`fas`, `globe`]} />Website</a>}
+                                    {authorTwitterUrl && <a className="post-author-item" href={ authorTwitterUrl } target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={[`fab`, `twitter`]} />Twitter</a>}
+                                    {authorFacebookUrl && <a className="post-author-item" href={ authorFacebookUrl } target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={[`fab`, `facebook`]} />Facebook</a>}
                                 </div>
                             </div>
                             <div className="post-author-image">

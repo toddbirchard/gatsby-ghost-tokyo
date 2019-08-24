@@ -27,7 +27,6 @@ const Sidebar = ({ data }) => {
     const twitterUrl = site.twitter ? `https://twitter.com/${site.twitter.replace(/^@/, ``)}` : null
     const publicTags = data.allGhostTag.edges
 
-
     return (
     <>
         <aside className="sidebar">
@@ -39,12 +38,12 @@ const Sidebar = ({ data }) => {
             </div>
 
             <div className="widget social">
-                <a href={ twitterUrl } className="twitter"><FontAwesomeIcon icon={['fab', 'twitter']} /></a>
-                <a href="https://angel.co/todd-birchard?public_profile=1" className="angellist"><FontAwesomeIcon icon={['fab', 'angellist']} /></a>
-                <a href="https://www.linkedin.com/in/toddbirchard/" className="linkedin"><FontAwesomeIcon icon={['fab', 'linkedin']} /></a>
-                <a href="https://github.com/toddbirchard" className="github"><FontAwesomeIcon icon={['fab', 'github']} /></a>
-                <a href="https://www.quora.com/profile/Todd-Birchard" className="quora"><FontAwesomeIcon icon={['fab', 'quora']} /></a>
-                <a href="{{@site.url}}/rss/" className="rss"><FontAwesomeIcon icon='rss' /></a>
+                <a href={ twitterUrl } className="twitter"><FontAwesomeIcon icon={[`fab`, `twitter`]} /></a>
+                <a href="https://angel.co/todd-birchard?public_profile=1" className="angellist"><FontAwesomeIcon icon={[`fab`, `angellist`]} /></a>
+                <a href="https://www.linkedin.com/in/toddbirchard/" className="linkedin"><FontAwesomeIcon icon={[`fab`, `linkedin`]} /></a>
+                <a href="https://github.com/toddbirchard" className="github"><FontAwesomeIcon icon={[`fab`, `github`]} /></a>
+                <a href="https://www.quora.com/profile/Todd-Birchard" className="quora"><FontAwesomeIcon icon={[`fab`, `quora`]} /></a>
+                <a href="{{@site.url}}/rss/" className="rss"><FontAwesomeIcon icon="rss" /></a>
             </div>
 
             <div className="widget tags">

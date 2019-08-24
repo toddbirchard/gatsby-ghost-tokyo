@@ -27,11 +27,11 @@ const PostCard = ({ post }) => {
             <footer className="post-card-footer">
                 <div className="post-card-footer-left">
                     <div className="meta-item">
-                        <FontAwesomeIcon icon='tag' />
+                        <FontAwesomeIcon icon="tag" />
                         {post.tags && <Tags post={post} limit={1} visibility="public" autolink={false}/>}
                     </div>
                     <div className="meta-item">
-                        <FontAwesomeIcon icon='eye' />
+                        <FontAwesomeIcon icon="eye" />
                         {readingTime}
                     </div>
                 </div>

@@ -3,10 +3,6 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
 import { Link, StaticQuery, graphql } from 'gatsby'
-import { fab } from '@fortawesome/free-brands-svg-icons'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faRss, faTag } from '@fortawesome/free-solid-svg-icons'
 
 import Img from 'gatsby-image'
 
@@ -25,9 +21,8 @@ import '../../styles/app.css'
 *
 */
 
-library.add(fab, faRss, faTag)
 
-const DefaultLayout = ({ data, children, bodyClass, isHome, isTag, template }) => {
+const DefaultLayout = ({ data, children, bodyClass, isHome, template }) => {
     const site = data.allGhostSettings.edges[0].node
 
     return (
@@ -35,7 +30,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome, isTag, template }) =
         <Helmet>
             <html lang={site.lang} />
             <style type="text/css">{`${site.codeinjection_styles}`}</style>
-            <body className={template} />
+            <body className={ template } />
         </Helmet>
 
         <div className="viewport">
@@ -46,7 +41,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome, isTag, template }) =
                     </Link>
                 </div> }
             <Navigation data={site.navigation} navClass="site-nav-item" navType="home-nav" logo={site.icon} url={site.url} />
-            <div className={ isHome ? "home-container" : "container" }>
+            <div className={ isHome ? `home-container` : `container` }>
                 {/* All the main content gets inserted here, index.js, post.js */}
                 { isHome ? <Sidebar /> : null}
                 {children}
@@ -67,6 +62,7 @@ DefaultLayout.propTypes = {
     children: PropTypes.node.isRequired,
     bodyClass: PropTypes.string,
     isHome: PropTypes.bool,
+    template: PropTypes.string,
     data: PropTypes.shape({
         allGhostSettings: PropTypes.object.isRequired,
         allGhostTag: PropTypes.object.isRequired,
