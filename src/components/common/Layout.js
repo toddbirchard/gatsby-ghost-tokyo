@@ -51,14 +51,13 @@ const DefaultLayout = ({ data, children, bodyClass, isHome, isTag, template }) =
                 { isHome ? <Sidebar /> : null}
                 {children}
             </div>
-
-            {/* The footer at the very bottom of the screen */}
-            <footer className="site-foot">
-                <div className="footer-text">
-                    <Link to="/">{site.title}</Link> © 2019 &mdash;
-                </div>
-            </footer>
         </div>
+        {/* The footer at the very bottom of the screen */}
+        <footer className="site-foot">
+            <div className="footer-text">
+                <Link to="/">{site.title}</Link> © 2019 &mdash;
+            </div>
+        </footer>
 
     </>
     )

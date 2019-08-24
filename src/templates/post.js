@@ -5,7 +5,7 @@ import Helmet from 'react-helmet'
 import { readingTime as readingTimeHelper } from '@tryghost/helpers'
 import { Tags } from '@tryghost/helpers-gatsby'
 import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faUserEdit } from '@fortawesome/free-solid-svg-icons'
+import { faUserEdit, faGlobe } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 
@@ -18,7 +18,7 @@ import { MetaData } from '../components/common/meta'
 * This file renders a single post and loads all the content.
 *
 */
-library.add(faUserEdit)
+library.add(faUserEdit, faGlobe)
 
 const Post = ({ data, location }) => {
     const post = data.ghostPost
@@ -43,9 +43,9 @@ const Post = ({ data, location }) => {
                         <section className="post-full-content">
                             <h1 className="content-title">{post.title}</h1>
                             <div className="post-meta">
-                                <div className="meta-item"> <Link to={post.primary_author.url}> <FontAwesomeIcon icon='user-edit' /> {post.primary_author.name} </Link> </div>
-                                <div className="meta-item"> <FontAwesomeIcon icon='tag' /> {post.tags && <Tags post={post} limit={1} visibility="public" autolink={false}/>} </div>
-                                <div className="meta-item"> <FontAwesomeIcon icon='eye' /> {readingTime} </div>
+                                <div className="meta-item"> <FontAwesomeIcon icon='user-edit' />{post.primary_author.name} </div>
+                                <div className="meta-item"> <FontAwesomeIcon icon='tag' />{post.tags && <Tags post={post} limit={1} visibility="public" autolink={false}/>} </div>
+                                <div className="meta-item"> <FontAwesomeIcon icon='eye' />{readingTime} </div>
                             </div>
 
                             {/* The main post content */ }
@@ -56,12 +56,6 @@ const Post = ({ data, location }) => {
                         </section>
                     </article>
                     <section className="post-footer">
-                        {/* <div className="post-social">
-                            <a href="" className="twitter"><FontAwesomeIcon icon={['fab', 'twitter']} /></a>
-                            <a href="" className="facebook"><FontAwesomeIcon icon={['fab', 'facebook']} /></a>
-                            <a href="" className="linkedin"><FontAwesomeIcon icon={['fab', 'reddit']} /></a>
-                            <a href="" className="linkedin"><FontAwesomeIcon icon={['fab', 'linkedin']} /></a>
-                        </div>  */}
                         <div className="post-tags">
                             <Tags post={post} visibility="public" autolink={true} />
                         </div>
@@ -70,9 +64,9 @@ const Post = ({ data, location }) => {
                                 <h4 className="post-author-name">{post.primary_author.name}</h4>
                                 {post.primary_author.bio && <p className="post-author-bio">{post.primary_author.bio}</p>}
                                 <div className="post-author-meta">
-                                    {post.primary_author.website && <a className="post-author-item" href={post.primary_author.website} target="_blank" rel="noopener noreferrer">Website</a>}
-                                    {post.primary_author.twitterUrl && <a className="post-author-item" href={post.primary_author.twitterUrl} target="_blank" rel="noopener noreferrer">Twitter</a>}
-                                    {post.primary_author.facebookUrl && <a className="post-author-item" href={post.primary_author.facebookUrl} target="_blank" rel="noopener noreferrer">Facebook</a>}
+                                    {post.primary_author.website &&  <a className="post-author-item" href={post.primary_author.website} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={['fas', 'globe']} />Website</a>}
+                                    {post.primary_author.twitter && <a className="post-author-item" href={post.primary_author.twitter} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={['fab', 'twitter']} />Twitter</a>}
+                                    {post.primary_author.facebook && <a className="post-author-item" href={post.primary_author.facebook} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={['fab', 'facebook']} />Facebook</a>}
                                 </div>
                             </div>
                             <div className="post-author-image">
@@ -101,8 +95,8 @@ Post.propTypes = {
                 bio: PropTypes.string.isRequired,
                 profile_image: PropTypes.string.isRequired,
                 website: PropTypes.string.isRequired,
-                twitterUrl: PropTypes.string.isRequired,
-                facebookUrl: PropTypes.string.isRequired,
+                twitter: PropTypes.string.isRequired,
+                facebook: PropTypes.string.isRequired,
             }).isRequired,
         }).isRequired,
     }).isRequired,
