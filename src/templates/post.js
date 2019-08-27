@@ -10,7 +10,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 
 import { Layout } from '../components/common'
 import { MetaData } from '../components/common/meta'
-// import { RelatedPosts } from '../components/common/posts'
+import { RelatedPosts } from '../components/common/posts'
 
 /**
 * Single post view (/:slug)
@@ -61,7 +61,7 @@ const Post = ({ data, location }) => {
                         <div className="post-tags">
                             <Tags post={post} visibility="public" autolink={true} />
                         </div>
-                        {/* <RelatedPosts /> */}
+                        <RelatedPosts />
                         <div className="post-author">
                             <div className="post-author-content">
                                 <h4 className="post-author-name">{post.primary_author.name}</h4>

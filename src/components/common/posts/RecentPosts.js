@@ -2,16 +2,16 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 
-const RelatedPosts = ({ data }) => {
+const RecentPosts = ({ data }) => {
     const posts = data.allGhostPost.edges
 
     return (
       <>
-          <div className="related-posts">
+          <div className="recent-posts">
               {posts.map(({ node }) => (
-                  <a href={ node.url } className="related-post-card" key={ node.name }>
+                  <a href={ node.url } className="recent-post-card" key={ node.name }>
                       <img src={ node.feature_image } />
-                      <h5 className="related-post-title"> { node.title } </h5>
+                      <h5 className="recent-post-title"> { node.title } </h5>
                   </a>
               ))}
           </div>
@@ -20,18 +20,18 @@ const RelatedPosts = ({ data }) => {
 }
 
 
-RelatedPosts.propTypes = {
+RecentPosts.propTypes = {
     data: PropTypes.shape({
-        RelatedPostsQuery: PropTypes.object.isRequired,
+        allGhostPost: PropTypes.object.isRequired,
     }).isRequired
 }
 
 
-const RelatedPostsQuery = props => (
+const RecentPostsQuery = props => (
     <StaticQuery
         query={graphql`
-            query($slug: String!) {
-              allGhostPost(limit: 3, sort: {order: DESC, fields: published_at}, filter: {primary_tag: {slug: {eq: "product"}}}) {
+            GhostRecentPostsQuery {
+              allGhostPost(limit: 3, sort: {order: DESC, fields: published_at}) {
                 edges {
                   node {
                     url
@@ -42,8 +42,8 @@ const RelatedPostsQuery = props => (
               }
             }`
         }
-        render={data => <RelatedPosts data={data} {...props} />}
+        render={data => <RecentPosts data={data} {...props} />}
     />
 )
 
-export default RelatedPostsQuery
+export default RecentPostsQuery
