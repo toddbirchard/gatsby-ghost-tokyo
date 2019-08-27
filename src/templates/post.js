@@ -10,7 +10,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 
 import { Layout } from '../components/common'
 import { MetaData } from '../components/common/meta'
-import { RecentPosts } from '../components/common/posts'
+import { RecentPosts, PostAuthor } from '../components/common/posts'
 
 /**
 * Single post view (/:slug)
@@ -23,8 +23,6 @@ library.add(faUserEdit, faGlobe)
 const Post = ({ data, location }) => {
     const post = data.ghostPost
     const readingTime = readingTimeHelper(post)
-    const authorTwitterUrl = post.primary_author.twitter ? `https://twitter.com/${post.primary_author.twitter.replace(/^@/, ``)}` : null
-    const authorFacebookUrl = post.primary_author.facebook ? `https://www.facebook.com/${post.primary_author.facebook.replace(/^\//, ``)}` : null
 
     return (
             <>
@@ -62,20 +60,7 @@ const Post = ({ data, location }) => {
                             <Tags post={post} visibility="public" autolink={true} />
                         </div>
                         <RecentPosts />
-                        <div className="post-author">
-                            <div className="post-author-content">
-                                <h4 className="post-author-name">{post.primary_author.name}</h4>
-                                {post.primary_author.bio && <p className="post-author-bio">{post.primary_author.bio}</p>}
-                                <div className="post-author-meta">
-                                    {post.primary_author.website && <a className="post-author-item" href={post.primary_author.website} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={[`fas`, `globe`]} />Website</a>}
-                                    {authorTwitterUrl && <a className="post-author-item" href={ authorTwitterUrl } target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={[`fab`, `twitter`]} />Twitter</a>}
-                                    {authorFacebookUrl && <a className="post-author-item" href={ authorFacebookUrl } target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={[`fab`, `facebook`]} />Facebook</a>}
-                                </div>
-                            </div>
-                            <div className="post-author-image">
-                                {post.primary_author.profile_image && <img src={post.primary_author.profile_image} alt={post.primary_author.name} />}
-                            </div>
-                        </div>
+                        <PostAuthor author={post.primary_author} />
                     </section>
                 </Layout>
             </>
@@ -92,15 +77,7 @@ Post.propTypes = {
                 name: PropTypes.string.isRequired,
                 url: PropTypes.string.isRequired,
             }).isRequired,
-            primary_author: PropTypes.shape({
-                name: PropTypes.string.isRequired,
-                url: PropTypes.string.isRequired,
-                bio: PropTypes.string.isRequired,
-                profile_image: PropTypes.string.isRequired,
-                website: PropTypes.string.isRequired,
-                twitter: PropTypes.string.isRequired,
-                facebook: PropTypes.string.isRequired,
-            }).isRequired,
+            primary_author: PropTypes.object.isRequired,
         }).isRequired,
     }).isRequired,
     location: PropTypes.object.isRequired,
