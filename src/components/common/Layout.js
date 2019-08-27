@@ -6,7 +6,7 @@ import { Link, StaticQuery, graphql } from 'gatsby'
 
 import Img from 'gatsby-image'
 
-import { Navigation, Sidebar } from '.'
+import { Navigation, Sidebar, Footer } from '.'
 import config from '../../utils/siteConfig'
 
 // Styles
@@ -48,12 +48,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome, template }) => {
             </div>
         </div>
         {/* The footer at the very bottom of the screen */}
-        <footer className="site-foot">
-            <div className="footer-text">
-                <Link to="/">{site.title}</Link> © 2019 &mdash;
-            </div>
-        </footer>
-
+        <Footer title={ site.title } />
     </>
     )
 }

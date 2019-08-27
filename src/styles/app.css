@@ -1122,13 +1122,15 @@ h6 {
     }
 }
 
-.related-posts {
+.related-posts,
+.recent-posts {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
 }
 
-.related-post-card {
+.related-post-card,
+.recent-post-card  {
   background: white;
   box-shadow: 0 0 10px #e8e9ef;
   border-radius: 5px;
@@ -1137,13 +1139,15 @@ h6 {
   transition: all .2s ease-out;
 }
 
-.related-post-card:hover {
+.related-post-card:hover,
+.recent-post-card:hover{
   background: var(--color-primary);
   color: white !important;
   text-decoration: none;
 }
 
-.related-post-title {
+.related-post-title,
+.recent-post-title {
   margin: 0;
   padding: 15px;
 }

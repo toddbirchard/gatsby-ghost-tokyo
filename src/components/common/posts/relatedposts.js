@@ -31,7 +31,7 @@ const RelatedPostsQuery = props => (
     <StaticQuery
         query={graphql`
             query($slug: String!) {
-              allGhostPost(limit: 3, sort: {order: DESC, fields: published_at}, filter: {primary_tag: {slug: {eq: "product"}}}) {
+              allGhostPost(limit: 3, sort: {order: DESC, fields: published_at}, filter: {primary_tag: {slug: {eq: $slug}}}) {
                 edges {
                   node {
                     url

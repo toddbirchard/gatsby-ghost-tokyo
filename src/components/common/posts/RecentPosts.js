@@ -30,7 +30,7 @@ RecentPosts.propTypes = {
 const RecentPostsQuery = props => (
     <StaticQuery
         query={graphql`
-            GhostRecentPostsQuery {
+            query GhostRecentPostsQuery {
               allGhostPost(limit: 3, sort: {order: DESC, fields: published_at}) {
                 edges {
                   node {
