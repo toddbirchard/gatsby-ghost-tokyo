@@ -2,7 +2,6 @@
   "name": "tokyo",
   "description": "A starter template to build lightning fast websites with Ghost and Gatsby",
   "version": "1.0.0",
-  "license": "MIT",
   "author": "Todd Birchard",
   "homepage": "https://docs.ghost.org/api/gatsby/",
   "repository": {

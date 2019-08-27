@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 
+import Img from 'gatsby-image'
+
 const RelatedPosts = ({ data }) => {
     const posts = data.allGhostPost.edges
 
@@ -10,7 +12,7 @@ const RelatedPosts = ({ data }) => {
           <div className="related-posts">
               {posts.map(({ node }) => (
                   <a href={ node.url } className="related-post-card" key={ node.name }>
-                      <img src={ node.feature_image } />
+                      <Img fluid={ node.feature_image } />
                       <h5 className="related-post-title"> { node.title } </h5>
                   </a>
               ))}

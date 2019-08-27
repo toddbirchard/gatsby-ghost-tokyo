@@ -771,6 +771,10 @@ h6 {
     line-height: 1.5;
 }
 
+.content-body hr {
+    margin: 0 0 1.5em 0;
+}
+
 /* Header
 /* ---------------------------------------------------------- */
 .site-head {
@@ -992,6 +996,12 @@ h6 {
     letter-spacing: 0;
 }
 
+@media(max-width: 600px) {
+  .post-card-title {
+    font-size: 1.7em;
+  }
+}
+
 .post-card-excerpt {
     font-size: 1.6rem;
     line-height: 1.55em;
@@ -1006,6 +1016,12 @@ h6 {
     background: var(--color-secondary) no-repeat center center;
     background-size: cover;
     transition: opacity .2s ease-out;
+}
+
+@media(max-width: 600px) {
+  .post-card-image {
+    height: 250px;
+  }
 }
 
 .post-card-footer {
@@ -1294,7 +1310,7 @@ h6 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 3vw 0;
+    margin: 30px 0;
 }
 
 .pagination a {
