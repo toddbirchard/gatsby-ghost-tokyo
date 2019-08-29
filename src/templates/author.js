@@ -24,22 +24,18 @@ const Author = ({ data, location, pageContext }) => {
                 location={location}
                 type="profile"
             />
-            <Layout>
+            <Layout template="post-template page-template">
                 <div className="container">
-                    <header className="author-header">
-                        <div className="author-header-content">
-                            <h1>{author.name}</h1>
-                            {author.bio && <p>{author.bio}</p>}
-                            <div className="author-header-meta">
-                                {author.website && <a className="author-header-item" href={author.website} target="_blank" rel="noopener noreferrer">Website</a>}
-                                {twitterUrl && <a className="author-header-item" href={twitterUrl} target="_blank" rel="noopener noreferrer">Twitter</a>}
-                                {facebookUrl && <a className="author-header-item" href={facebookUrl} target="_blank" rel="noopener noreferrer">Facebook</a>}
-                            </div>
+                    <article className="content">
+                        { author.cover_image ?
+                            <figure className="post-feature-image">
+                                <img src={ author.cover_image } alt={ author.name } />
+                            </figure> : null }
+                        <div className="post-full-content">
+                            <h1 className="content-title">{author.name}</h1>
+
                         </div>
-                        <div className="author-header-image">
-                            {author.profile_image && <img src={author.profile_image} alt={author.name} />}
-                        </div>
-                    </header>
+                    </article>
                     <section className="post-feed">
                         {posts.map(({ node }) => (
                             // The tag below includes the markup for each post - components/common/PostCard.js

@@ -507,7 +507,7 @@ h6 {
     margin-top: 0;
     color: var(--color-base);
     font-family: var(--font-title);
-    line-height: 1.15;
+    line-height: 1.1;
     font-weight: 700;
     text-rendering: optimizeLegibility;
 }
@@ -609,8 +609,9 @@ h6 {
 }
 
 .post-full-content {
-    max-width: 800px;
-    margin: 0 auto;
+  width: 800px;
+  max-width: 80%;
+  margin: 0 auto;
 }
 
 @media (max-width: 800px) {
@@ -665,7 +666,7 @@ h6 {
 
 @media (max-width: 800px) {
     .content-title {
-        font-size: 3rem;
+        font-size: 3.5rem;
     }
 }
 
@@ -801,6 +802,7 @@ h6 {
     font-family: var(--font-title);
     text-transform: uppercase;
     transition: 0.2s all ease-out;
+    line-height: 1;
 }
 
 @media(max-width: 800px) {
@@ -848,7 +850,7 @@ h6 {
 .home-template .navigation,
 .tag-template .navigation {
     max-width: 1020px;
-    margin: 20px auto;
+    margin: 30px auto;
     width: 100%;
     text-align: right;
 }
@@ -1079,13 +1081,12 @@ h6 {
     display: inline-block;
     margin-right: 40px;
     font-size: .7em;
-    opacity: .7;
-    color: var(--color-secondary);
+    opacity: .6;
 }
 
 .post-meta .meta-item a {
-    color: var(--color-secondary);
     font-weight: 400;
+    color: unset;
 }
 
 .post-meta .meta-item svg {
@@ -1093,7 +1094,7 @@ h6 {
     font-size: .8em;
 }
 
-@media(max-width: 800px) {
+@media(max-width: 600px) {
     .post-meta .meta-item {
       margin-right: 30px;
       display: block;
@@ -1199,7 +1200,7 @@ h6 {
 
 .post-author {
     display: flex;
-    margin: 60px 0;
+    margin: 60px 0 100px;
     padding-top: 60px;
     border-top: 1px solid #e2e2e2;
 }
@@ -1240,6 +1241,12 @@ h6 {
   font-size: .9em;
 }
 
+.page-template .content-title {
+  border-bottom: 1px solid #d8d8d8;
+      padding-bottom: 20px;
+}
+
+
 /* Tag Archives
 /* ---------------------------------------------------------- */
 .tag-header {
@@ -1261,6 +1268,7 @@ h6 {
     font-size: 1.6rem;
     line-height: 1.5em;
     color: #44495e;
+    margin: 0;
 }
 
 @media (max-width: 500px) {

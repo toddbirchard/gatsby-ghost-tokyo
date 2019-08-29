@@ -43,9 +43,9 @@ PostAuthor.propTypes = {
         url: PropTypes.string.isRequired,
         bio: PropTypes.string.isRequired,
         profile_image: PropTypes.string.isRequired,
-        website: PropTypes.string.isRequired,
-        twitter: PropTypes.string.isRequired,
-        facebook: PropTypes.string.isRequired,
+        website: PropTypes.string,
+        twitter: PropTypes.string,
+        facebook: PropTypes.string,
     }).isRequired,
 }
 

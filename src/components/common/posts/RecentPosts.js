@@ -19,13 +19,11 @@ const RecentPosts = ({ data }) => {
     )
 }
 
-
 RecentPosts.propTypes = {
     data: PropTypes.shape({
         allGhostPost: PropTypes.object.isRequired,
-    }).isRequired
+    }).isRequired,
 }
-
 
 const RecentPostsQuery = props => (
     <StaticQuery

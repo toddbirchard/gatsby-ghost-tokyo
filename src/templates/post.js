@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import { readingTime as readingTimeHelper } from '@tryghost/helpers'
 import { Tags } from '@tryghost/helpers-gatsby'
@@ -23,6 +23,7 @@ library.add(faUserEdit, faGlobe)
 const Post = ({ data, location }) => {
     const post = data.ghostPost
     const readingTime = readingTimeHelper(post)
+    const authorUrl = post.primary_author.slug ? `author/${post.primary_author.slug}` : null
 
     return (
             <>
@@ -43,7 +44,7 @@ const Post = ({ data, location }) => {
                         <section className="post-full-content">
                             <h1 className="content-title">{post.title}</h1>
                             <div className="post-meta">
-                                <div className="meta-item"> <FontAwesomeIcon icon="user-edit" />{post.primary_author.name} </div>
+                                <div className="meta-item"> <Link to="/about"><FontAwesomeIcon icon="user-edit" />{post.primary_author.name} </Link></div>
                                 <div className="meta-item"> <FontAwesomeIcon icon="tag" />{post.tags && <Tags post={post} limit={1} visibility="public" autolink={false}/>} </div>
                                 <div className="meta-item"> <FontAwesomeIcon icon="eye" />{readingTime} </div>
                             </div>
@@ -57,7 +58,10 @@ const Post = ({ data, location }) => {
                     </article>
                     <section className="post-footer">
                         <div className="post-tags">
-                            <Tags post={post} visibility="public" autolink={true} />
+                            {/* <Tags post={post} visibility="public" autolink={true} /> */}
+                            {post.tags.map(({ name, url }) => (
+                                <Link to={`/tag/${ url }`} className="tag" key={ name }>{ name }</Link>
+                            ))}
                         </div>
                         <RecentPosts />
                         <PostAuthor author={post.primary_author} />

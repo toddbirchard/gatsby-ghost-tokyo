@@ -7,7 +7,6 @@ import { faTag, faEye } from '@fortawesome/free-solid-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-
 library.add(faTag, faEye)
 
 const PostCard = ({ post }) => {
@@ -48,7 +47,9 @@ PostCard.propTypes = {
         featured: PropTypes.bool,
         tags: PropTypes.arrayOf(PropTypes.shape({ name: PropTypes.string })),
         excerpt: PropTypes.string.isRequired,
-        primary_author: PropTypes.shape({ name: PropTypes.string.isRequired, profile_image: PropTypes.string }).isRequired
+        primary_author: PropTypes.shape({
+            name: PropTypes.string.isRequired,
+            profile_image: PropTypes.string }).isRequired
     }).isRequired
 }
 

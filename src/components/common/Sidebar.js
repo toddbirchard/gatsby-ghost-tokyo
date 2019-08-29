@@ -48,29 +48,31 @@ const Sidebar = ({ data }) => {
 
             <div className="widget tags">
                 {publicTags.map(({ node }) => (
-                    <a href={ node.url } className="tag" key={ node.name }>{ node.name }</a>
+                    <Link to={`/tag/${ node.slug }`} className="tag" key={ node.name }>{ node.name }</Link>
                 ))}
             </div>
 
-            <TwitterTimelineEmbed
-                sourceType="profile"
-                screenName="toddrbirchard"
-                options={{ height: 1100 }}
-                transparent
-                noScrollbar
-                noHeader
-                noFooter
-                noBorders
-                linkColor="#b15d5d"
-                className="widget twitter"
-            />
+            {site.twitter ?
+                <div className="widget twitter">
+                    <TwitterTimelineEmbed
+                        sourceType="profile"
+                        options={{ height: 500 }}
+                        screenName="ToddRBirchard"
+                        transparent
+                        noScrollbar
+                        noHeader
+                        noFooter
+                        noBorders
+                        linkColor="#b15d5d"
+                        className="widget twitter"
+                    />
+                </div> : null }
         </aside>
     </>
     )
 }
 
 Sidebar.propTypes = {
-    children: PropTypes.node.isRequired,
     bodyClass: PropTypes.string,
     isHome: PropTypes.bool,
     data: PropTypes.shape({
