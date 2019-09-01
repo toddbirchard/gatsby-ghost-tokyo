@@ -1567,7 +1567,8 @@ h6 {
 }
 
 @media(max-width: 600px) {
-    .bm-burger-button {
+    .post-template .bm-burger-button,
+    .page-template .bm-burger-button {
     display: block;
   }
 }
