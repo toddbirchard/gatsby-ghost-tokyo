@@ -36,7 +36,7 @@ For information on installing the Ghost platform, please reference the [Ghost CL
 $ git clone https://github.com/toddbirchard/ghosttheme-tokyo.git
 $ cd ghosttheme-tokyo
 $ npm install
-$ npm run build
+$ gatsby develop
 ```
 
 ### First time developers

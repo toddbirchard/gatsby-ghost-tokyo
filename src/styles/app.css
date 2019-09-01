@@ -1,9 +1,9 @@
-@import url("//hello.myfonts.net/count/39fe42");
+@import url("//hello.myfonts.net/count/3a06a3");
 
 
-@font-face {font-family: 'FFMarkWebProMedium';src: url('webfonts/39FE42_0_0.eot');src: url('webfonts/39FE42_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/39FE42_0_0.woff2') format('woff2'),url('webfonts/39FE42_0_0.woff') format('woff'),url('webfonts/39FE42_0_0.ttf') format('truetype');}
-@font-face {font-family: 'AvenirNextLTPro-Medium';src: url('webfonts/39FE42_1_0.eot');src: url('webfonts/39FE42_1_0.eot?#iefix') format('embedded-opentype'),url('webfonts/39FE42_1_0.woff2') format('woff2'),url('webfonts/39FE42_1_0.woff') format('woff'),url('webfonts/39FE42_1_0.ttf') format('truetype');}
-@font-face {font-family: 'AvenirNextLTPro-Regular';src: url('webfonts/39FE42_2_0.eot');src: url('webfonts/39FE42_2_0.eot?#iefix') format('embedded-opentype'),url('webfonts/39FE42_2_0.woff2') format('woff2'),url('webfonts/39FE42_2_0.woff') format('woff'),url('webfonts/39FE42_2_0.ttf') format('truetype');}
+@font-face {font-family: 'FFMarkWebProMedium';src: url('https://toddbirchard-cdn.storage.googleapis.com/fonts/3A06A3_0_0.eot');src: url('https://toddbirchard-cdn.storage.googleapis.com/fonts/3A06A3_0_0.eot?#iefix') format('embedded-opentype'),url('https://toddbirchard-cdn.storage.googleapis.com/fonts/3A06A3_0_0.woff2') format('woff2'),url('https://toddbirchard-cdn.storage.googleapis.com/fonts/3A06A3_0_0.woff') format('woff'),url('https://toddbirchard-cdn.storage.googleapis.com/fonts/3A06A3_0_0.ttf') format('truetype');}
+@font-face {font-family: 'AvenirNextLTPro-Medium';src: url('https://toddbirchard-cdn.storage.googleapis.com/fonts/3A06A3_1_0.eot');src: url('https://toddbirchard-cdn.storage.googleapis.com/fonts/3A06A3_1_0.eot?#iefix') format('embedded-opentype'),url('https://toddbirchard-cdn.storage.googleapis.com/fonts/3A06A3_1_0.woff2') format('woff2'),url('https://toddbirchard-cdn.storage.googleapis.com/fonts/3A06A3_1_0.woff') format('woff'),url('https://toddbirchard-cdn.storage.googleapis.com/fonts/3A06A3_1_0.ttf') format('truetype');}
+@font-face {font-family: 'AvenirNextLTPro-Regular';src: url('https://toddbirchard-cdn.storage.googleapis.com/fonts/3A06A3_2_0.eot');src: url('https://toddbirchard-cdn.storage.googleapis.com/fonts/3A06A3_2_0.eot?#iefix') format('embedded-opentype'),url('https://toddbirchard-cdn.storage.googleapis.com/fonts/3A06A3_2_0.woff2') format('woff2'),url('https://toddbirchard-cdn.storage.googleapis.com/fonts/3A06A3_2_0.woff') format('woff'),url('https://toddbirchard-cdn.storage.googleapis.com/fonts/3A06A3_2_0.ttf') format('truetype');}
 
 
 /* App.css
@@ -1204,6 +1204,8 @@ h6 {
   margin: 0;
   padding: 20px;
   width: -webkit-fill-available;
+  font-size: 1.5rem;
+  line-height: 1.2;
 }
 
 .post-author {
@@ -1219,7 +1221,7 @@ h6 {
 
 .post-author-name {
     margin: 0 0 .5em 0;
-    font-size: 1.5em;
+    font-size: 1.7em;
     font-family: var(--font-title);
     color: var(--color-content-title);
 }
