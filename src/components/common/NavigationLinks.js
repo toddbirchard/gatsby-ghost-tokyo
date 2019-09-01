@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import { Menu, NavigationLinks } from '.'
 
 
 /**
@@ -15,11 +14,8 @@ import { Menu, NavigationLinks } from '.'
 *
 */
 
-const Navigation = ({ data, navClass, logo }) => (
+const NavigationLinks = ({ data, navClass }) => (
     <>
-        <nav className="navigation">
-            <Link to="/" className="nav-logo"><img src={logo} alt="logo" /></Link>
-            <div className="navigation-links">
                 {data.map((navItem, i) => {
                     if (navItem.url.match(/^\s?http(s?)/gi)) {
                         return <a className={navClass} href={navItem.url} key={i} target="_blank" rel="noopener noreferrer">{navItem.label}</a>
@@ -27,19 +23,15 @@ const Navigation = ({ data, navClass, logo }) => (
                         return <Link className={navClass} to={navItem.url} key={i}>{navItem.label}</Link>
                     }
                 })}
-            </div>
-
-        </nav>
-        <Menu right data={data} />
     </>
 )
 
-Navigation.defaultProps = {
+NavigationLinks.defaultProps = {
     navClass: `site-nav-item`,
     navType: `home-nav`,
 }
 
-Navigation.propTypes = {
+NavigationLinks.propTypes = {
     data: PropTypes.arrayOf(
         PropTypes.shape({
             label: PropTypes.string.isRequired,
@@ -50,4 +42,4 @@ Navigation.propTypes = {
     navType: PropTypes.string,
 }
 
-export default Navigation
+export default NavigationLinks
