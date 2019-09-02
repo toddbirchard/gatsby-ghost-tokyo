@@ -34,9 +34,11 @@ const Tag = ({ data, location, pageContext }) => {
                             // The tag below includes the markup for each post - components/common/PostCard.js
                             <PostCard key={node.id} post={node} />
                         ))}
+                        <Pagination pageContext={pageContext} />
                     </section>
-                    <Pagination pageContext={pageContext} />
+
                 </div>
+
             </Layout>
         </>
     )

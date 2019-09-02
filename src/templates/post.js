@@ -59,8 +59,8 @@ const Post = ({ data, location }) => {
                     <section className="post-footer">
                         <div className="post-tags">
                             {/* <Tags post={post} visibility="public" autolink={true} /> */}
-                            {post.tags.map(({ name, url }) => (
-                                <Link to={`/tag/${ url }`} className="tag" key={ name }>{ name }</Link>
+                            {post.tags.map(({ name, slug }) => (
+                                <Link to={`/tag/${ slug }`} className="tag" key={ name }>{ name }</Link>
                             ))}
                         </div>
                         <RecentPosts />
@@ -80,6 +80,7 @@ Post.propTypes = {
             tags: PropTypes.shape({
                 name: PropTypes.string.isRequired,
                 url: PropTypes.string.isRequired,
+                slug: PropTypes.string.isRequired,
             }).isRequired,
             primary_author: PropTypes.object.isRequired,
         }).isRequired,

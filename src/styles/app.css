@@ -455,9 +455,9 @@ dd {
 blockquote {
   margin: 0.3em auto 1.8em;
   padding: 0 1.6em 0 1.6em;
-  border-left: #bbd6e5 0.5em solid;
+  border-left: #a67585 0.5em solid;
   width: 90%;
-  color: #9ec1d3;
+  color: #a67585;
   font-style: italic;
   font-weight: bold;
 }
@@ -575,7 +575,8 @@ h6 {
     margin: 0 auto;
 }
 
-.home-template .viewport {
+.home-template .viewport,
+.tag-template .viewport {
     max-width: 90%;
 }
 
@@ -589,7 +590,8 @@ h6 {
 }
 
 @media (max-width: 800px) {
-    .home-container {
+    .home-container,
+    .tag-container {
         grid-template-columns: 1fr;
         max-width: unset;
     }
@@ -792,17 +794,19 @@ h6 {
     background-size: cover;
 }
 
-.site-nav-item {
+.navigation-links .site-nav-item {
     display: inline-block;
     padding: 0;
-    color: var(--secondary-color);
+    color: #fff;
     font-weight: 400;
-    opacity: 0.4;
+    opacity: 1;
     margin-left: 30px;
     font-family: var(--font-title);
     text-transform: uppercase;
     transition: 0.2s all ease-out;
     line-height: 1;
+    color: var(--secondary-color);
+    opacity: .8;
 }
 
 @media(max-width: 800px) {
@@ -810,7 +814,7 @@ h6 {
         margin: 0;
     }
 
-    .post-template .site-nav-item {
+    .post-template .navigation-links .site-nav-item {
         margin-left: 10px;
         font-size: .9em !important;
     }
@@ -964,7 +968,6 @@ h6 {
     background-color: #fff;
     box-shadow: 0 0 10px #e8e9ef;
     overflow: hidden;
-    padding: 10px;
 }
 
 @media(max-width: 800px) {
@@ -978,7 +981,7 @@ h6 {
 }
 
 .post-card-detail {
-    padding: 10px 20px;
+    padding: 10px 25px;
 }
 
 .post-card .meta-item {
@@ -1088,7 +1091,7 @@ h6 {
 .post-meta .meta-item {
     display: inline-block;
     margin-right: 40px;
-    font-size: .7em;
+    font-size: .8em;
     opacity: .6;
 }
 
@@ -1271,14 +1274,14 @@ h6 {
 .tag-header {
     margin: 0;
     background: white;
-    padding: 20px;
+    padding: 30px;
     border-radius: 8px;
     box-shadow: 0 0 10px #e8e9ef;
 }
 
 .tag-header h1 {
-    margin: 0 0 1rem 0;
-    font-size: 2em;
+    margin: 0 0 1.5rem 0;
+    font-size: 1.8em;
     color: #44495e;
     font-weight: 100;
 }
@@ -1532,16 +1535,13 @@ h6 {
     width: 100%;
 }
 
-
-
-
-
 .bm-item {
   display: inline-block;
   /* Our sidebar item styling */
   text-decoration: none;
-  margin-bottom: 10px;
-  color: #d1d1d1;
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 1.2em !important;
   transition: color 0.2s;
   outline-color: transparent;
   outline-style: none;
@@ -1557,9 +1557,9 @@ h6 {
 /* Position and sizing of burger button */
 .bm-burger-button {
   position: absolute;
-  width: 36px;
-  height: 30px;
-  right: 31px;
+  width: 32px;
+  height: 27px;
+  right: 35px;
   top: 29px;
   display: none;
   outline-color: transparent;
@@ -1581,18 +1581,20 @@ h6 {
 
 /* Position and sizing of clickable cross button */
 .bm-cross-button {
-  height: 24px;
-  width: 24px;
+  height: 34px !important;
+  width: 34px !important;
+  right: 15px !important;
 }
 
 /* Color/shape of close button cross */
 .bm-cross {
-  background: #bdc3c7;
+  background: #fff;
+  height: 30px !important;
 }
 
 /* General sidebar styles */
 .bm-menu {
-  background: #373a47;
+  background: var(--color-primary);
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
 }
@@ -1604,7 +1606,8 @@ h6 {
 
 /* Wrapper for item list */
 .bm-item-list {
-  color: #b8b7ad;
+  color: #fff;
+  opacity: 1;
 }
 
 /* Styling of overlay */
@@ -1615,4 +1618,8 @@ h6 {
 button {
   outline-color: transparent;
   outline-style: none;
+}
+
+.tag-template .bm-menu-wrap {
+  display: none;
 }

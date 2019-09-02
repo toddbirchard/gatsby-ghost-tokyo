@@ -1,25 +1,19 @@
 import React from "react"
 import { slide as Menu } from "react-burger-menu"
-import { NavigationLinks } from '.'
+import { Link } from 'gatsby'
+import { Links } from '.'
 
-export default props => {
+
+export default ({ data, navClass, props }) => {
     return (
     // Pass on our props
     <Menu {...props}>
-        <a className="menu-item" href="/">
-            Home
-        </a>
-
-        <a className="menu-item" href="/burgers">
-            Burgers
-        </a>
-
-        <a className="menu-item" href="/pizzas" displayName="pizzas">
-            Pizzas
-        </a>
-
-        <a className="menu-item" href="/desserts">
-            Desserts
-        </a>
+      {data.map((navItem, i) => {
+          if (navItem.url.match(/^\s?http(s?)/gi)) {
+              return <a className={navClass} href={navItem.url} key={i} target="_blank" rel="noopener noreferrer">{navItem.label}</a>
+          } else {
+              return <Link className={navClass} to={navItem.url} key={i}>{navItem.label}</Link>
+          }
+      })}
     </Menu>);
 };
