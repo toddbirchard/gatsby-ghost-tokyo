@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import { Layout, PostCard, Pagination } from '../components/common'
+import { PostAuthor } from '../components/common/posts'
+
 import { MetaData } from '../components/common/meta'
 
 /**
@@ -32,17 +34,19 @@ const Author = ({ data, location, pageContext }) => {
                                 <img src={ author.cover_image } alt={ author.name } />
                             </figure> : null }
                         <div className="post-full-content">
-                            <h1 className="content-title">{author.name}</h1>
-
+                            {/* <h1 className="content-title">{author.name}</h1> */}
+                            <PostAuthor author={author} />
+                            <section className="post-feed">
+                                {posts.map(({ node }) => (
+                                    // The tag below includes the markup for each post - components/common/PostCard.js
+                                    <PostCard key={node.id} post={node} />
+                                ))}
+                            </section>
+                            <Pagination pageContext={pageContext} />
                         </div>
+
                     </article>
-                    <section className="post-feed">
-                        {posts.map(({ node }) => (
-                            // The tag below includes the markup for each post - components/common/PostCard.js
-                            <PostCard key={node.id} post={node} />
-                        ))}
-                    </section>
-                    <Pagination pageContext={pageContext} />
+
                 </div>
             </Layout>
         </>
