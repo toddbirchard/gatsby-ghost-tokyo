@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import { Menu, NavigationLinks } from '.'
+import { Hamburger, NavigationLinks } from '.'
 
 
 /**
@@ -23,7 +23,7 @@ const Navigation = ({ data, navClass, logo, isHome }) => (
                 <NavigationLinks data={data} navClass={navClass} />
             </div>
         </nav>
-        { isHome ? null : <Menu left data={data} navClass={navClass} />}
+        { isHome ? null : <Hamburger right data={data} navClass={navClass} />}
 
     </>
 )
@@ -40,6 +40,7 @@ Navigation.propTypes = {
             url: PropTypes.string.isRequired,
         }).isRequired,
     ).isRequired,
+    logo: PropTypes.string.isRequired,
     navClass: PropTypes.string,
     navType: PropTypes.string,
 }
