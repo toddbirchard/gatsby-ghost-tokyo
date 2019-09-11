@@ -56,7 +56,7 @@ const Sidebar = ({ data }) => {
                 <div className="widget twitter">
                     <TwitterTimelineEmbed
                         sourceType="profile"
-                        options={{ height: 500 }}
+                        options={{ height: 700 }}
                         screenName="ToddRBirchard"
                         transparent
                         noScrollbar

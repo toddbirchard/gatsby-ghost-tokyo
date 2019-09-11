@@ -1,10 +1,10 @@
 {
   "development": {
     "apiUrl": "https://toddbirchard.app",
-    "contentApiKey": "edfd4896eb259c50cc4992a954"
+    "contentApiKey": "c8fb2163842cbde47b218ebee0"
   },
   "production": {
     "apiUrl": "https://toddbirchard.app",
-    "contentApiKey": "edfd4896eb259c50cc4992a954"
+    "contentApiKey": "c8fb2163842cbde47b218ebee0"
   }
 }
