@@ -1,7 +1,7 @@
-# Tokyo Ghost Theme
+# Tokyo: GatsbyJS Ghost Theme
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/efe12261-c4b4-498c-b74a-ba438133c252/deploy-status)](https://app.netlify.com/sites/sleepy-shirley-d61a1e/deploys)
-![Ghost](https://img.shields.io/badge/Ghost-^v2.0.0-lightgrey.svg?longCache=true&style=flat-square&logo=ghost&logoColor=white&colorB=656c82&colorA=4c566a)
+![Ghost](https://img.shields.io/badge/Ghost-^v3.0.0-lightgrey.svg?longCache=true&style=flat-square&logo=ghost&logoColor=white&colorB=656c82&colorA=4c566a)
 ![Node](https://img.shields.io/badge/NodeJS-v10.15.0-green.svg?longCache=true&style=flat-square&logo=node.js&logoColor=white&colorB=a3be8c&colorA=4c566a)
 ![Gatsby](https://img.shields.io/badge/Gatsby-v2-yellow.svg?longCache=true&style=flat-square&logo=Gatsby&logoColor=white&colorA=4c566a&colorB=b48ead)
 ![Sendgrid](https://img.shields.io/badge/Sendgrid-v6.3.0-blue.svg?longCache=true&logo=delicious&longCache=true&style=flat-square&logoColor=white&colorB=5e81ac&colorA=4c566a)
@@ -34,13 +34,11 @@ For information on installing the Ghost platform, please reference the [Ghost CL
 ### Quickstart
 
 ```
-$ git clone https://github.com/toddbirchard/ghosttheme-tokyo.git
-$ cd ghosttheme-tokyo
+$ git clone https://github.com/toddbirchard/tokyo-gatsby-ghost.git
+$ cd tokyo-gatsby-ghost
 $ npm install
 $ gatsby develop
 ```
-
-### First time developers
 
 Ghost uses a simple templating language called [Handlebars](http://handlebarsjs.com/). This theme is styled using [SaSS](https://sass-lang.com/) and compiled with [Gulp](https://gulpjs.com/).
 
@@ -54,18 +52,18 @@ Ghost uses a simple templating language called [Handlebars](http://handlebarsjs.
 - `custom-projects.hbs` - Project portfolio
 
 **Stack**
-- Ghost
-- Express
-- Handlebars
-- Webpack
-- Sass
+- GatsbyJS
+- Ghost CMS
+- React
+- GraphQL
+- LESS
 
 ## Roadmap
 
 This theme is still in active development.
 
 ### Known Issues
-- SASS refactor
+- LESS refactor
 - Configuration setup
 - Additional widget options
 - Speed optimizations
