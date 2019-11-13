@@ -8,9 +8,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRss, faTag } from '@fortawesome/free-solid-svg-icons'
 import { TwitterTimelineEmbed } from 'react-twitter-embed'
 
-// Styles
-import '../../styles/app.css'
-
 /**
 * Main layout component
 *

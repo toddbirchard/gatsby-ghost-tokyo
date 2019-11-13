@@ -1,0 +1,37 @@
+/* Pagination
+/* ---------------------------------------------------------- */
+.pagination {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 30px;
+}
+
+.pagination a {
+    display: inline-block;
+    padding: 10px 15px;
+    border: @color-border 1px solid;
+    color: @color-secondary;
+    text-decoration: none;
+    font-size: 1.4rem;
+    line-height: 1em;
+    border-radius: 3px;
+    transition: @transition;
+
+    &:hover {
+      background: @color-primary;
+      border: @color-primary 1px solid;
+      color: white;
+    }
+}
+
+.pagination-location {
+    position: absolute;
+    left: 50%;
+    width: 100px;
+    margin-left: -50px;
+    text-align: center;
+    color: @color-secondary;
+    font-size: 1.3rem;
+}

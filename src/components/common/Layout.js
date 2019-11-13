@@ -1,16 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-
 import { Link, StaticQuery, graphql } from 'gatsby'
-
 import Img from 'gatsby-image'
-
 import { Navigation, Sidebar, Footer } from '.'
 import config from '../../utils/siteConfig'
 
 // Styles
-import '../../styles/app.css'
+import '../../styles/app.less'
 
 /**
 * Main layout component
@@ -20,7 +17,6 @@ import '../../styles/app.css'
 * styles, and meta data for each page.
 *
 */
-
 
 const DefaultLayout = ({ data, children, bodyClass, isHome, template }) => {
     const site = data.allGhostSettings.edges[0].node

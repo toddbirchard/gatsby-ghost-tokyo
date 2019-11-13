@@ -1,0 +1,123 @@
+/* Index
+/* ---------------------------------------------------------- */
+.post-feed {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: 1fr;
+}
+
+.post-card {
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 10px #e8e9ef;
+    overflow: hidden;
+    @media(max-width: @tablet-breakpoint) {
+            padding: 0;
+    }
+
+    &:hover {
+        text-decoration: none;
+    }
+
+}
+
+
+.post-card:hover .post-card-image {
+    opacity: .7;
+}
+
+.post-card-detail {
+    padding: 10px 25px;
+}
+
+.post-card .meta-item {
+    margin-right: 30px;
+    color: @color-secondary;
+    font-weight: 400;
+
+    svg {
+        margin-right: 7px;
+        font-size: .8em;
+    }
+}
+
+
+.post-card-tags {
+    margin: 0 0 5px 0;
+    font-size: 1.4rem;
+    line-height: 1.15em;
+    color: @color-secondary;
+}
+
+.post-card-title {
+    margin: 0 0 15px 0;
+    padding: 0;
+    font-size: 2em;
+    color: #44495e;
+    letter-spacing: 0;
+    @media(max-width: @mobile-breakpoint) {
+            font-size: 1.7em;
+    }
+}
+
+.post-card-excerpt {
+    font-size: 1.15em;
+    line-height: 1.3em;
+    font-weight: 400;
+    color: #44495e;
+}
+
+.post-card-image {
+    margin: 0 0 10px 0;
+    width: auto;
+    height: 300px;
+    background: @color-secondary no-repeat center center;
+    background-size: cover;
+    transition: opacity .2s ease-out;
+}
+
+@media(max-width: @mobile-breakpoint) {
+    .post-card-image {
+        height: 225px;
+    }
+}
+
+.post-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px 0 10px 0;
+    color: @color-secondary;
+}
+
+.post-card-footer-left {
+    display: flex;
+    align-items: center;
+}
+
+.post-card-footer-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-card-avatar {
+    width: 30px;
+    height: 30px;
+    margin: 0 7px 0 0;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.post-card-avatar .author-profile-image {
+    display: block;
+    width: 100%;
+    background: @color-secondary;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+.post-card-avatar .default-avatar {
+    width: 26px;
+}

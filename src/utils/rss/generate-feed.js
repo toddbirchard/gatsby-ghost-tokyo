@@ -2,8 +2,8 @@ const cheerio = require(`cheerio`)
 const tagsHelper = require(`@tryghost/helpers`).tags
 const _ = require(`lodash`)
 
-const generateItem = function generateItem(post) {
-    const itemUrl = post.url
+const generateItem = function generateItem(siteUrl, post) {
+    const itemUrl = siteUrl + `/` + post.url
     const html = post.html
     const htmlContent = cheerio.load(html, { decodeEntities: false, xmlMode: true })
     const item = {
@@ -46,7 +46,7 @@ const generateItem = function generateItem(post) {
 
 const generateRSSFeed = function generateRSSFeed(siteConfig) {
     return {
-        serialize: ({ query: { allGhostPost } }) => allGhostPost.edges.map(edge => Object.assign({}, generateItem(edge.node))),
+        serialize: ({ query: { allGhostPost } }) => allGhostPost.edges.map(edge => Object.assign({}, generateItem(siteConfig.siteUrl, edge.node))),
         setup: ({ query: { allGhostSettings } }) => {
             const siteTitle = allGhostSettings.edges[0].node.title || `No Title`
             const siteDescription = allGhostSettings.edges[0].node.description || `No Description`
@@ -55,7 +55,7 @@ const generateRSSFeed = function generateRSSFeed(siteConfig) {
                 description: siteDescription,
                 // generator: `Ghost ` + data.safeVersion,
                 generator: `Ghost 2.9`,
-                feed_url: `${siteConfig.siteUrl}/rss/`,
+                feed_url: `${siteConfig.siteUrl}/rss`,
                 site_url: `${siteConfig.siteUrl}/`,
                 image_url: `${siteConfig.siteUrl}/${siteConfig.siteIcon}`,
                 ttl: `60`,
@@ -70,9 +70,7 @@ const generateRSSFeed = function generateRSSFeed(siteConfig) {
         },
         query: `
         {
-            allGhostPost(
-                sort: {order: DESC, fields: published_at}
-            ) {
+            allGhostPost(sort: {order: DESC, fields: published_at}, filter: {primary_tag: {slug: {ne: "roundup"}}}) {
                 edges {
                     node {
                         # Main fields
@@ -111,10 +109,11 @@ const generateRSSFeed = function generateRSSFeed(siteConfig) {
                         url
                     }
                 }
-            }
+              }
         }
   `,
         output: `/rss`,
+        title: siteConfig.siteTitleMeta,
     }
 }
 

@@ -1,23 +1,30 @@
 {
-  "name": "tokyo",
-  "description": "A starter template to build lightning fast websites with Ghost and Gatsby",
+  "name": "Tokyo",
+  "description": "GatsbyJS theme suitable for authors focused on quality content. Lightweight yet tasteful collection of features intended to elevate authors.",
   "version": "1.0.0",
-  "author": "Todd Birchard",
-  "homepage": "https://docs.ghost.org/api/gatsby/",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tryghost/gatsby-starter-ghost.git"
-  },
-  "engines": {
-    "node": ">= 8.9.0"
-  },
-  "bugs": {
-    "url": "https://github.com/tryghost/gatsby-starter-ghost/issues"
+  "homepage": "https://github.com/toddbirchard/gatsby-ghost-tokyo/",
+  "author": {
+    "name": "Todd Birchard",
+    "email": "toddbirchard@gmail.com",
+    "url": "https://toddbirchard.com"
   },
   "keywords": [
     "gatsby",
-    "ghost"
+    "ghost",
+    "blog",
+    "theme",
+    "JAMStack"
   ],
+  "engines": {
+    "node": ">= 10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toddbirchard/gatsby-ghost-tokyo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/toddbirchard/gatsby-ghost-tokyo/issues"
+  },
   "main": "n/a",
   "scripts": {
     "serve": "gatsby build && NODE_ENV=production gatsby serve",
@@ -27,40 +34,40 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "eslint": "6.1.0",
-    "eslint-plugin-ghost": "0.4.0",
-    "eslint-plugin-react": "7.14.3"
+    "eslint": "6.6.0",
+    "eslint-plugin-ghost": "0.6.0",
+    "eslint-plugin-react": "7.16.0"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.21",
-    "@fortawesome/free-brands-svg-icons": "^5.10.1",
-    "@fortawesome/free-solid-svg-icons": "^5.10.1",
-    "@fortawesome/react-fontawesome": "^0.1.4",
-    "@tryghost/helpers": "1.1.7",
-    "@tryghost/helpers-gatsby": "1.0.10",
+    "@fortawesome/fontawesome-svg-core": "^1.2.25",
+    "@fortawesome/free-brands-svg-icons": "^5.11.2",
+    "@fortawesome/free-solid-svg-icons": "^5.11.2",
+    "@fortawesome/react-fontawesome": "^0.1.7",
+    "@tryghost/helpers": "1.1.19",
+    "@tryghost/helpers-gatsby": "1.0.22",
     "cheerio": "1.0.0-rc.3",
-    "gatsby": "2.13.45",
-    "gatsby-awesome-pagination": "0.3.4",
-    "gatsby-cli": "^2.7.47",
-    "gatsby-image": "2.2.7",
-    "gatsby-plugin-advanced-sitemap": "1.4.0",
-    "gatsby-plugin-feed": "2.3.6",
+    "gatsby": "2.17.11",
+    "gatsby-awesome-pagination": "0.3.5",
+    "gatsby-cli": "^2.8.9",
+    "gatsby-image": "2.2.31",
+    "gatsby-plugin-advanced-sitemap": "1.4.5",
+    "gatsby-plugin-feed": "2.3.20",
     "gatsby-plugin-force-trailing-slashes": "1.0.4",
-    "gatsby-plugin-less": "^2.1.2",
-    "gatsby-plugin-manifest": "2.2.4",
-    "gatsby-plugin-offline": "2.2.4",
-    "gatsby-plugin-react-helmet": "3.1.2",
-    "gatsby-plugin-sharp": "2.2.9",
-    "gatsby-source-filesystem": "2.1.7",
-    "gatsby-source-ghost": "3.4.4",
-    "gatsby-transformer-sharp": "2.2.5",
+    "gatsby-plugin-less": "^3.0.13",
+    "gatsby-plugin-manifest": "2.2.27",
+    "gatsby-plugin-offline": "3.0.19",
+    "gatsby-plugin-react-helmet": "3.1.14",
+    "gatsby-plugin-sharp": "2.2.37",
+    "gatsby-source-filesystem": "2.1.36",
+    "gatsby-source-ghost": "4.0.2",
+    "gatsby-transformer-sharp": "2.3.3",
     "less": "^3.10.3",
     "lodash": "4.17.15",
-    "react": "16.8.6",
-    "react-burger-menu": "^2.6.11",
-    "react-dom": "16.8.6",
+    "react": "16.11.0",
+    "react-burger-menu": "^2.6.12",
+    "react-dom": "16.11.0",
     "react-hamburger-menu": "^1.1.1",
     "react-helmet": "5.2.1",
-    "react-twitter-embed": "^2.0.8"
+    "react-twitter-embed": "^3.0.3"
   }
 }

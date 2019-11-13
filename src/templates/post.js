@@ -44,9 +44,9 @@ const Post = ({ data, location }) => {
                         <section className="post-full-content">
                             <h1 className="content-title">{post.title}</h1>
                             <div className="post-meta">
-                                <div className="meta-item"> <Link to="/about"><FontAwesomeIcon icon="user-edit" />{post.primary_author.name} </Link></div>
+                                <div className="meta-item"> <Link to="/about"><FontAwesomeIcon icon="user-edit" /><span>{post.primary_author.name}</span></Link></div>
                                 <div className="meta-item"> <FontAwesomeIcon icon="tag" />{post.tags && <Tags post={post} limit={1} visibility="public" autolink={false}/>} </div>
-                                <div className="meta-item"> <FontAwesomeIcon icon="eye" />{readingTime} </div>
+                                <div className="meta-item"> <FontAwesomeIcon icon="eye" /><span>{readingTime}</span></div>
                             </div>
 
                             {/* The main post content */ }
@@ -58,7 +58,6 @@ const Post = ({ data, location }) => {
                     </article>
                     <section className="post-footer">
                         <div className="post-tags">
-                            {/* <Tags post={post} visibility="public" autolink={true} /> */}
                             {post.tags.map(({ name, slug }) => (
                                 <Link to={`/tag/${ slug }`} className="tag" key={ name }>{ name }</Link>
                             ))}
@@ -83,6 +82,7 @@ Post.propTypes = {
                 slug: PropTypes.string.isRequired,
             }).isRequired,
             primary_author: PropTypes.object.isRequired,
+            codeinjection_styles: PropTypes.string,
         }).isRequired,
     }).isRequired,
     location: PropTypes.object.isRequired,

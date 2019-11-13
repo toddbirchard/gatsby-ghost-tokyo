@@ -1,0 +1,140 @@
+.content-body h1,
+.content-body h2,
+.content-body h3,
+.content-body h4,
+.content-body h5,
+.content-body h6 {
+    font-family: @font-sans-serif;
+    color: @color-content-title;
+}
+
+.content-body h1 {
+    margin: 1.0em 0 0.5em;
+    font-size: 3.4rem;
+    font-weight: 700;
+}
+@media (max-width: 500px) {
+    .content-body h1 {
+        font-size: 2.8rem;
+    }
+}
+
+.content-title {
+    font-size: 1.7em;
+    color: @color-content-title;
+    @media (max-width: @tablet-breakpoint) {
+        font-size: 1.4em;
+    }
+    @media (max-width: @mobile-breakpoint) {
+        font-size: 1.3em;
+    }
+    @media (max-width: 500px) {
+        margin: 0.8em 0;
+    }
+}
+
+
+
+@media (max-width: 500px) {
+    .content {
+        font-size: 1.8rem;
+    }
+}
+
+.content-body h2 {
+    margin: 0.8em 0 0.4em;
+    font-size: 3rem;
+    font-weight: 700;
+    color: @color-content-title;
+}
+@media (max-width: @tablet-breakpoint) {
+    .content-body h2 {
+        font-size: 2.6rem;
+    }
+}
+
+.content-body h3 {
+    margin: 0.5em 0 0.2em;
+    font-size: 1em;
+    font-weight: 700;
+}
+@media (max-width: 500px) {
+    .content-body h3 {
+        font-size: 2.2rem;
+    }
+}
+
+.content-body h4 {
+    margin: 0.5em 0 0.2em;
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+@media (max-width: 500px) {
+    .content-body h4 {
+        font-size: 2.2rem;
+    }
+}
+
+.content-body h5 {
+    display: block;
+    margin: 0.5em 0;
+    padding: 1em 0 1.5em;
+    border: 0;
+    font-family: Georgia, serif;
+    color: @color-primary;
+    font-style: italic;
+    font-size: 3.2rem;
+    line-height: 1.35em;
+    text-align: center;
+}
+
+.content-body h6 {
+    margin: 0.5em 0 0.2em;
+    font-size: 2.0rem;
+    font-weight: 700;
+}
+
+.content-body figure {
+    margin: 0.4em 0 1.6em;
+    font-size: 2.8rem;
+    font-weight: 700;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.content-body figure figcaption {
+    text-align: center;
+    background: #fafafa;
+    margin: -5px 0 0;
+    padding: 10px;
+    color: #5a5a5a;
+    font-size: 14px;
+    font-weight: 100;
+    font-family: @font-sans-serif;
+}
+
+.content-body pre {
+    margin: 0.4em 0 1.8em;
+    font-size: 1.6rem;
+    line-height: 1.4em;
+    white-space: pre-wrap;
+    padding: 20px;
+    background: @color-base;
+    color: #fff;
+    border-radius: 12px;
+}
+
+.content-body blockquote,
+.content-body li,
+.content-body p {
+    font-size: 0.8em;
+    line-height: 1.5;
+}
+
+.content-body hr {
+    margin: 0 0 1.5em;
+}
+
+.content-body iframe {
+    width: 100%;
+}

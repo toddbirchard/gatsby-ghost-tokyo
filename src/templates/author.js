@@ -1,18 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-
 import { Layout, PostCard, Pagination } from '../components/common'
 import { PostAuthor } from '../components/common/posts'
-
 import { MetaData } from '../components/common/meta'
 
 /**
-* Author page (/author/:slug)
-*
-* Loads all posts for the requested author incl. pagination.
-*
+* Author page
 */
+
 const Author = ({ data, location, pageContext }) => {
     const author = data.ghostAuthor
     const posts = data.allGhostPost.edges
@@ -44,9 +40,7 @@ const Author = ({ data, location, pageContext }) => {
                             </section>
                             <Pagination pageContext={pageContext} />
                         </div>
-
                     </article>
-
                 </div>
             </Layout>
         </>
@@ -73,8 +67,6 @@ Author.propTypes = {
     pageContext: PropTypes.object,
 }
 
-export default Author
-
 export const pageQuery = graphql`
     query GhostAuthorQuery($slug: String!, $limit: Int!, $skip: Int!) {
         ghostAuthor(slug: { eq: $slug }) {
@@ -92,5 +84,6 @@ export const pageQuery = graphql`
                 }
             }
         }
-    }
-`
+    }`
+
+export default Author

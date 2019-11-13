@@ -1,7 +1,107 @@
+/* Posts
+/* ---------------------------------------------------------- */
+.post-feature-image {
+    margin-bottom: 30px;
+
+    img {
+        width: 100%;
+        height: 500px;
+        -o-object-fit: cover;
+        object-fit: cover;
+    }
+}
+
+.post-meta {
+    margin-bottom: 2em;
+    line-height: 1;
+
+    .meta-item {
+        display: inline-block;
+        margin-right: 40px;
+        font-size: 0.7em;
+        opacity: 0.6;
+        line-height: 1;
+        @media(max-width: @mobile-breakpoint) {
+            margin-right: 30px;
+            display: block;
+            line-height: 1.5;
+        }
+
+        a {
+            font-weight: 400;
+            color: unset;
+        }
+
+        svg {
+            margin-right: 7px;
+            font-size: 0.8em;
+        }
+    }
+}
+
+.post-full-content {
+    width: 750px;
+    max-width: 80%;
+    margin: 0 auto;
+    @media (max-width: @tablet-breakpoint) {
+        max-width: 85%;
+    }
+
+    p:last-of-type {
+        margin-bottom: 0;
+    }
+
+    img {
+        margin: 0 0 3vw;
+        width: 100%;
+        object-fit: cover;
+        @media(max-width: @tablet-breakpoint) {
+            height: 300px;
+        }
+    }
+}
+
+.post-tags .tag {
+    display: inline-block;
+    font-size: 0.8em;
+    margin: 0 8px 8px 0;
+    padding: 6px 14px;
+    color: #797979;
+    border-radius: 4px;
+    background: #fff;
+    text-decoration: none;
+    border: 1px solid #e1e1e1;
+    transition: 0.2s all ease-out;
+    line-height: 1.5;
+
+    &:hover {
+        background: #b15d5d;
+        border-color: #b15d5d;
+        color: white;
+    }
+}
+
 .post-footer {
-  .post-social {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+    max-width: @tablet-breakpoint;
+    margin: 0 auto;
+}
+
+.post-tags a {
+    display: inline-block;
+    margin-right: 5px;
+    color: @color-secondary;
+    opacity: 0.7;
+}
+@media (max-width: @tablet-breakpoint) {
+    .post-footer {
+        max-width: 85%;
+    }
+}
+
+.post-footer {
+    .post-social {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
