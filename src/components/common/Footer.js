@@ -1,23 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
 
-import { Link, StaticQuery, graphql } from 'gatsby'
-
-
-const Footer = ({ title }) => {
-
-    return (
+const Footer = ({ title }) => (
     <>
         {/* The footer at the very bottom of the screen */}
         <footer className="site-foot">
             <div className="footer-text">
-                <Link to="/">{title}</Link> © 2019 &mdash;
+                <span>{title} © 2019</span>
             </div>
         </footer>
     </>
-    )
-}
+)
 
+Footer.propTypes = {
+    title: PropTypes.string.isRequired,
+}
 
 export default Footer
