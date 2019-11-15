@@ -1,6 +1,7 @@
 const path = require(`path`)
 const config = require(`./src/utils/siteConfig`)
 const generateRSSFeed = require(`./src/utils/rss/generate-feed`)
+require(`dotenv`).config({ path: `.env.${process.env.NODE_ENV}`, })
 
 let ghostConfig
 
@@ -47,6 +48,28 @@ module.exports = {
                 path: path.join(__dirname, `src`, `images`),
                 name: `images`,
             },
+        },
+        {
+          resolve: `gatsby-source-twitter`,
+          options: {
+            credentials: {
+              consumer_key: process.env.TWITTER_CONSUMER_KEY,
+              consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
+              bearer_token: process.env.TWITTER_BEARER_TOKEN,
+            },
+            queries: {
+              HackersTweets: {
+                endpoint: `statuses/user_timeline`,
+                params: {
+                  screen_name: `toddrbirchard`,
+                  include_rts: false,
+                  exclude_replies: true,
+                  tweet_mode: `extended`,
+                  count: 4,
+                },
+              },
+            },
+          },
         },
         {
             resolve: `gatsby-plugin-less`,

@@ -51,6 +51,9 @@
     background: white;
     transition: @transition;
     text-decoration: none !important;
+    @media(max-width: @mobile-breakpoint) {
+      flex-direction: column-reverse;
+    }
 
     &:hover {
       background: @color-primary;
@@ -108,14 +111,26 @@
 .kg-bookmark-thumbnail {
     flex-basis: 15rem;
     flex-grow: 1;
+    position: relative;
+    @media(max-width: @mobile-breakpoint) {
+      max-height: 400px;
+      overflow: hidden;
+    }
+
+    img {
+        vertical-align: bottom;
+        object-fit: cover;
+        width: 100%;
+        margin-bottom: 0 !important;
+        @media(max-width: @mobile-breakpoint) {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+        }
+    }
 }
 
-.kg-bookmark-thumbnail img {
-    vertical-align: bottom;
-    object-fit: cover;
-    width: 100%;
-    margin-bottom: 0 !important;
-}
 
 .kg-bookmark-icon {
     width: 22px !important;

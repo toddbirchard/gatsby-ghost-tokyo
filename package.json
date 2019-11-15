@@ -60,14 +60,14 @@
     "gatsby-plugin-sharp": "2.2.38",
     "gatsby-source-filesystem": "2.1.36",
     "gatsby-source-ghost": "4.0.2",
+    "gatsby-source-twitter": "^3.0.0",
     "gatsby-transformer-sharp": "2.3.4",
     "less": "^3.10.3",
     "lodash": "4.17.15",
-    "react": "16.11.0",
+    "react": "16.12.0",
     "react-burger-menu": "^2.6.12",
-    "react-dom": "16.11.0",
+    "react-dom": "16.12.0",
     "react-hamburger-menu": "^1.1.1",
-    "react-helmet": "5.2.1",
-    "react-twitter-embed": "^3.0.3"
+    "react-helmet": "5.2.1"
   }
 }

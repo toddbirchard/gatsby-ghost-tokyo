@@ -1,21 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
 import { Link, StaticQuery, graphql } from 'gatsby'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRss, faTag } from '@fortawesome/free-solid-svg-icons'
-import { TwitterTimelineEmbed } from 'react-twitter-embed'
-
-/**
-* Main layout component
-*
-* The Layout component wraps around each page and template.
-* It also provides the header, footer as well as the main
-* styles, and meta data for each page.
-*
-*/
+import { TwitterWidget } from './widgets'
 
 library.add(fab, faRss, faTag)
 
@@ -49,21 +39,7 @@ const Sidebar = ({ data }) => {
                 ))}
             </div>
 
-            {site.twitter ?
-                <div className="widget twitter">
-                    <TwitterTimelineEmbed
-                        sourceType="profile"
-                        options={{ height: 700 }}
-                        screenName="ToddRBirchard"
-                        transparent
-                        noScrollbar
-                        noHeader
-                        noFooter
-                        noBorders
-                        linkColor="#b15d5d"
-                        className="widget twitter"
-                    />
-                </div> : null }
+            <TwitterWidget />
         </aside>
     </>
     )

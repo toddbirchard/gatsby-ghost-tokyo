@@ -436,10 +436,10 @@ a {
     color: @color-primary;
     text-decoration: none;
     font-weight: bold;
-}
 
-a:hover {
-    text-decoration: underline;
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 h1,
@@ -449,7 +449,7 @@ h4,
 h5,
 h6 {
     margin-top: 0;
-    color: @color-base;
+    color: @color-content-title;
     font-family: @font-title;
     line-height: 1.1;
     font-weight: 700;
@@ -458,21 +458,17 @@ h6 {
 
 h1 {
     margin: 0 0 0.5em;
-    font-size: 4rem;
+    font-size: 1.9em;
     font-weight: 700;
-}
-@media (max-width: 500px) {
-    h1 {
-        font-size: 2rem;
+    @media (max-width: @mobile-breakpoint) {
+        font-size: 1.5em;
     }
 }
 
 h2 {
     margin: 1.5em 0 0.5em;
     font-size: 2rem;
-}
-@media (max-width: 500px) {
-    h2 {
+    @media (max-width: 500px) {
         font-size: 1.8rem;
     }
 }
@@ -481,9 +477,7 @@ h3 {
     margin: 1.5em 0 0.5em;
     font-size: 1.8rem;
     font-weight: 500;
-}
-@media (max-width: 500px) {
-    h3 {
+    @media (max-width: 500px) {
         font-size: 1.7rem;
     }
 }
@@ -506,26 +500,22 @@ h6 {
     font-weight: 500;
 }
 
-
-
 .mobile-logo {
     width: 100%;
     display: none;
     margin: 20px auto 0;
     transition: 0.2s all ease-out;
-}
-@media(max-width: @tablet-breakpoint) {
-    .mobile-logo {
+    @media(max-width: @tablet-breakpoint) {
         display: block;
     }
-}
 
-.mobile-logo:hover {
-    opacity: 0.7;
-}
+    &:hover {
+        opacity: 0.7;
+    }
 
-.mobile-logo img {
-    width: 100%;
+    img {
+        width: 100%;
+    }
 }
 
 button {
