@@ -40,6 +40,12 @@ const Post = ({ data, location }) => {
                         { post.feature_image ?
                             <figure className="post-feature-image">
                                 <img src={ post.feature_image } alt={ post.title } />
+                                <header className="mobile-header">
+                                    <Link to="/" className="mobile-logo">
+                                        {site.logo ? <img src={site.logo} alt={site.title} /> : <h1> {site.title} </h1> }
+                                    </Link>
+                                    <Navigation data={site.navigation} navClass="site-nav-item" navType="home-nav" logo={site.icon} url={site.url} isHome={isHome} />
+                                </header>
                             </figure> : null }
                         <section className="post-full-content">
                             <h1 className="content-title">{post.title}</h1>

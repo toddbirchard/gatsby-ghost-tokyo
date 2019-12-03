@@ -30,13 +30,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome, template }) => {
         </Helmet>
 
         <div className="viewport">
-            { isHome &&
-                <div>
-                    <Link to="/" className="mobile-logo">
-                        {site.logo ? <img src={site.logo} alt={site.title} /> : <h1> {site.title} </h1> }
-                    </Link>
-                </div> }
-            <Navigation data={site.navigation} navClass="site-nav-item" navType="home-nav" logo={site.icon} url={site.url} isHome={isHome} />
+            
             <div className={ isHome ? `home-container` : `container` }>
                 {/* All the main content gets inserted here, index.js, post.js */}
                 { isHome ? <Sidebar /> : null}
