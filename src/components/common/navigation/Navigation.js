@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import { Hamburger, NavigationLinks } from '.'
 
-
 /**
 * Navigation component
 *
@@ -40,6 +39,7 @@ Navigation.propTypes = {
             url: PropTypes.string.isRequired,
         }).isRequired,
     ).isRequired,
+    isHome: PropTypes.string,
     logo: PropTypes.string.isRequired,
     navClass: PropTypes.string,
     navType: PropTypes.string,
