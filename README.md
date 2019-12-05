@@ -74,3 +74,7 @@ This theme is still in active development.
 - Additional widget options
 - Speed optimizations
 - Documentation
+
+-----
+
+This theme and all publically-visible repositories are free of charge. If you find this project to be helpful, a [small donation](https://www.buymeacoffee.com/hackersslackers) would be greatly appreciated to keep us in business. All proceeds go towards coffee, and all coffee goes towards improving these projects.
