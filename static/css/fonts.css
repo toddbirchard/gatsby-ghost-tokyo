@@ -1,0 +1,13 @@
+@import url("//hello.myfonts.net/count/3af143");
+
+@font-face {
+    font-display: swap;
+    src: url('/fonts/3AF143_0_0.woff2') format('woff2'), url('/fonts/3AF143_0_0.woff') format('woff');
+    font-family: 'FFMarkWebProBook';
+}
+
+@font-face {
+    font-display: swap;
+    src: url('/fonts/3AF143_1_0.woff2') format('woff2'), url('/fonts/3AF143_1_0.woff') format('woff');
+    font-family: 'FFMarkWebProMedium';
+}

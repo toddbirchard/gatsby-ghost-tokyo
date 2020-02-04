@@ -86,9 +86,9 @@ video {
 }
 
 body {
-    line-height: 1;
     background: #f8f8f8;
-    font-family: @font-sans-serif;
+    font-family: @font-body;
+    line-height: 1;
 }
 
 ol,
@@ -110,8 +110,8 @@ q:before {
 }
 
 table {
-    border-spacing: 0;
     border-collapse: collapse;
+    border-spacing: 0;
 }
 
 img {
@@ -119,10 +119,10 @@ img {
 }
 
 html {
-    box-sizing: border-box;
-    font-family: 'FFMarkWebProBook', Helvetica, Sans-Serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
+    box-sizing: border-box;
+    font-family: 'FFMarkWebProBook', Helvetica, Sans-Serif;
 }
 
 *,
@@ -153,8 +153,8 @@ i {
 
 h1 {
     margin: 0.67em 0;
-    font-size: 2em;
     font-family: @font-title;
+    font-size: 2em;
 }
 
 small {
@@ -221,8 +221,8 @@ button,
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-    cursor: pointer;
     -webkit-appearance: button;
+    cursor: pointer;
 }
 
 button[disabled],
@@ -256,8 +256,8 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 input[type="search"] {
-    box-sizing: content-box;
     -webkit-appearance: textfield;
+    box-sizing: content-box;
 }
 
 input[type="search"]::-webkit-search-cancel-button,
@@ -275,8 +275,8 @@ textarea {
 }
 
 table {
-    border-spacing: 0;
     border-collapse: collapse;
+    border-spacing: 0;
 }
 
 td,
@@ -286,41 +286,41 @@ th {
 /* Defaults
 /* ---------------------------------------------------------- */
 html {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     overflow-x: hidden;
     overflow-y: scroll;
-    font-size: 62.5%;
     background: @color-base;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    font-size: 62.5%;
 }
 
 body {
-    overflow-x: hidden;
-    color: #3c484e;
-    font-family: @font-sans-serif;
-    font-size: 1.5rem;
-    line-height: 1.6em;
-    font-weight: 400;
-    font-style: normal;
-    letter-spacing: 0;
-    text-rendering: optimizeLegibility;
-    background: #f8f8f8;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -moz-font-feature-settings: "liga";
+    overflow-x: hidden;
+    background: #f8f8f8;
+    color: #3c484e;
+    font-family: @font-body;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.6em;
+    text-rendering: optimizeLegibility;
 }
 
 ::selection {
-    text-shadow: none;
     background: #cbeafb;
+    text-shadow: none;
 }
 
 hr {
-    position: relative;
     display: block;
+    position: relative;
     width: 100%;
+    height: 1px;
     margin: 1.8em 0 2.4em;
     padding: 0;
-    height: 1px;
     border: 0;
     border-top: 1px solid #e3e9ed;
 }
@@ -354,8 +354,8 @@ ul {
 
 ol,
 ul {
-    padding-left: 1.3em;
     padding-right: 1.5em;
+    padding-left: 1.3em;
 }
 
 ol ol,
@@ -385,9 +385,9 @@ li {
 }
 
 dt {
-    float: left;
-    margin: 0 20px 0 0;
     width: 120px;
+    margin: 0 20px 0 0;
+    float: left;
     font-weight: 500;
     text-align: right;
 }
@@ -398,10 +398,10 @@ dd {
 }
 
 blockquote {
+    width: 90%;
     margin: 0.3em auto 1.8em;
     padding: 0 1.6em;
     border-left: #a67585 0.5em solid;
-    width: 90%;
     color: #a67585;
     font-style: italic;
     font-weight: bold;
@@ -434,8 +434,8 @@ blockquote {
 
 a {
     color: @color-primary;
-    text-decoration: none;
     font-weight: bold;
+    text-decoration: none;
 
     &:hover {
         text-decoration: underline;
@@ -451,8 +451,8 @@ h6 {
     margin-top: 0;
     color: @color-content-title;
     font-family: @font-title;
-    line-height: 1.1;
     font-weight: 700;
+    line-height: 1.1;
     text-rendering: optimizeLegibility;
 }
 
@@ -501,8 +501,8 @@ h6 {
 }
 
 .mobile-logo {
-    width: 100%;
     display: none;
+    width: 100%;
     margin: 20px auto 0;
     transition: 0.2s all ease-out;
     @media(max-width: @tablet-breakpoint) {

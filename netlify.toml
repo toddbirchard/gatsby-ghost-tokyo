@@ -4,3 +4,32 @@
 
 [template]
   incoming-hooks = ["Ghost"]
+
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    crossorigin = "anonymous"
+    type = "font/woff2"
+    accept = "application/font-woff2"
+    cache-control = '''
+        max-age=604800,
+        no-cache,
+        public'''
+
+[[headers]]
+  for = "/rss.xml"
+  [headers.values]
+      content-type = "text/xml; charset=utf-8"
+
+[build.processing]
+  skip_processing = false
+[build.processing.css]
+  bundle = true
+  minify = true
+[build.processing.js]
+  bundle = true
+  minify = true
+[build.processing.html]
+  pretty_urls = true
+[build.processing.images]
+  compress = true

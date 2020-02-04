@@ -1,7 +1,7 @@
 const path = require(`path`)
 const config = require(`./src/utils/siteConfig`)
 const generateRSSFeed = require(`./src/utils/rss/generate-feed`)
-require(`dotenv`).config({ path: `.env.${process.env.NODE_ENV}`, })
+require(`dotenv`).config({ path: `.env.${process.env.NODE_ENV}` })
 
 let ghostConfig
 
@@ -17,7 +17,7 @@ try {
 } finally {
     const {
         apiUrl,
-        contentApiKey
+        contentApiKey,
     } = process.env.NODE_ENV === `development` ? ghostConfig.development : ghostConfig.production
 
     if (!apiUrl || !contentApiKey || contentApiKey.match(/<key>/)) {
@@ -50,32 +50,32 @@ module.exports = {
             },
         },
         {
-          resolve: `gatsby-source-twitter`,
-          options: {
-            credentials: {
-              consumer_key: process.env.TWITTER_CONSUMER_KEY,
-              consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
-              bearer_token: process.env.TWITTER_BEARER_TOKEN,
-            },
-            queries: {
-              HackersTweets: {
-                endpoint: `statuses/user_timeline`,
-                params: {
-                  screen_name: `toddrbirchard`,
-                  include_rts: false,
-                  exclude_replies: true,
-                  tweet_mode: `extended`,
-                  count: 4,
+            resolve: `gatsby-source-twitter`,
+            options: {
+                credentials: {
+                    consumer_key: process.env.TWITTER_CONSUMER_KEY,
+                    consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
+                    bearer_token: process.env.TWITTER_BEARER_TOKEN,
                 },
-              },
+                queries: {
+                    HackersTweets: {
+                        endpoint: `statuses/user_timeline`,
+                        params: {
+                            screen_name: `toddrbirchard`,
+                            include_rts: false,
+                            exclude_replies: true,
+                            tweet_mode: `extended`,
+                            count: 4,
+                        },
+                    },
+                },
             },
-          },
         },
         {
             resolve: `gatsby-plugin-less`,
             options: {
                 javascriptEnabled: true,
-            }
+            },
         },
         `gatsby-plugin-sharp`,
         `gatsby-transformer-sharp`,
@@ -85,6 +85,20 @@ module.exports = {
                 ghostConfig.development :
                 ghostConfig.production,
         },
+        /**
+         *  Font Plugins
+         */
+        {
+            resolve: `gatsby-plugin-web-font-loader`,
+            options: {
+                custom: {
+                    families: [`FFMarkWebProMedium`, `FFMarkWebProBook`],
+                    urls: [`/css/fonts.css`],
+                },
+                timeout: 7000,
+            },
+        },
+        `gatsby-plugin-preload-fonts`,
         /**
          *  Utility Plugins
          */
