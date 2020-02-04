@@ -3,9 +3,9 @@ const tagsHelper = require(`@tryghost/helpers`).tags
 const _ = require(`lodash`)
 
 const generateItem = function generateItem(siteUrl, post) {
-    const itemUrl = siteUrl + `/` + post.url
-    const html = post.html
-    const htmlContent = cheerio.load(html, { decodeEntities: false, xmlMode: true })
+    const itemUrl = post.canonical_url || post.url
+    const html = post.html.replace(/[^\\x00-\x7F]/g, ``)
+    const htmlContent = cheerio.load(html, { decodeEntities: true, xmlMode: true })
     const item = {
         title: post.title,
         description: post.excerpt,
@@ -47,15 +47,15 @@ const generateItem = function generateItem(siteUrl, post) {
 const generateRSSFeed = function generateRSSFeed(siteConfig) {
     return {
         serialize: ({ query: { allGhostPost } }) => allGhostPost.edges.map(edge => Object.assign({}, generateItem(siteConfig.siteUrl, edge.node))),
-        setup: ({ query: { allGhostSettings } }) => {
-            const siteTitle = allGhostSettings.edges[0].node.title || `No Title`
-            const siteDescription = allGhostSettings.edges[0].node.description || `No Description`
+        setup: ({ query: { ghostSettings } }) => {
+            const siteTitle = ghostSettings.title || `No Title`
+            const siteDescription = ghostSettings.description || `No Description`
             const feed = {
                 title: siteTitle,
                 description: siteDescription,
                 // generator: `Ghost ` + data.safeVersion,
                 generator: `Ghost 2.9`,
-                feed_url: `${siteConfig.siteUrl}/rss`,
+                feed_url: `${siteConfig.siteUrl}/rss/`,
                 site_url: `${siteConfig.siteUrl}/`,
                 image_url: `${siteConfig.siteUrl}/${siteConfig.siteIcon}`,
                 ttl: `60`,
@@ -107,12 +107,12 @@ const generateRSSFeed = function generateRSSFeed(siteConfig) {
 
                         # Additional fields
                         url
+                        canonical_url
                     }
                 }
-              }
-        }
-  `,
-        output: `/rss`,
+            }
+        }`,
+        output: `/rss.xml`,
         title: siteConfig.siteTitleMeta,
     }
 }
