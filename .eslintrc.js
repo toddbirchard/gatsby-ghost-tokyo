@@ -7,11 +7,12 @@ module.exports = {
             'experimentalObjectRestSpread': true
         }
     },
-    plugins: ['ghost', 'react'],
+    plugins: ['ghost', 'react', 'node', 'promise'],
     extends: [
         'plugin:ghost/node',
         'plugin:ghost/ember',
-        'plugin:react/recommended'
+        'plugin:react/recommended',
+        'plugin:promise/recommended',
     ],
     "settings": {
         "react": {
@@ -21,6 +22,9 @@ module.exports = {
             "flowVersion": "0.53"
         },
         "propWrapperFunctions": ["forbidExtraProps"]
+    },
+    "env": {
+        "node": true
     },
     "rules": {
         "ghost/sort-imports-es6-autofix/sort-imports-es6": "off",
@@ -54,6 +58,6 @@ module.exports = {
             {
                 "ignore": ["children"]
             }
-        ]
+        ],
     }
 };
