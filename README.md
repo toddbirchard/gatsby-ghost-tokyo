@@ -2,7 +2,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/efe12261-c4b4-498c-b74a-ba438133c252/deploy-status)](https://app.netlify.com/sites/sleepy-shirley-d61a1e/deploys)
 ![Ghost](https://img.shields.io/badge/Ghost-^v3.0.0-lightgrey.svg?longCache=true&style=flat-square&logo=ghost&logoColor=white&colorB=656c82&colorA=4c566a)
-![Node](https://img.shields.io/badge/NodeJS-v10.15.0-green.svg?longCache=true&style=flat-square&logo=node.js&logoColor=white&colorB=a3be8c&colorA=4c566a)
+![Node](https://img.shields.io/badge/NodeJS-^v12-green.svg?longCache=true&style=flat-square&logo=node.js&logoColor=white&colorB=a3be8c&colorA=4c566a)
 ![Gatsby](https://img.shields.io/badge/Gatsby-v^2.8-yellow.svg?longCache=true&style=flat-square&logo=Gatsby&logoColor=white&colorA=4c566a&colorB=b48ead)
 ![Less](https://img.shields.io/badge/Less-v^3.10.3-blue.svg?longCache=true&logo=javascript&longCache=true&style=flat-square&logoColor=white&colorB=5e81ac&colorA=4c566a)
 ![GitHub Last Commit](https://img.shields.io/github/last-commit/google/skia.svg?style=flat-square&colorA=4c566a&colorB=a3be8c&logo=GitHub)
@@ -33,14 +33,12 @@ _Tokyo_ is a minimalist Ghost theme emphasizing readability, load times, and cus
 The easiest way to install is by using [gatsby-cli](https://www.npmjs.com/package/gatsby-cli):
 
 ```bash
-# With Gatsby CLI
 $ gatsby new gatsby-starter-ghost https://github.com/toddbirchard/gatsby-ghost-tokyo.git
 ```
 
 Otherwise the repo can be initiated as any other Gatsby app:
 
 ```bash
-# From Source
 $ git clone https://github.com/toddbirchard/gatsby-ghost-tokyo.git
 $ cd gatsby-starter-ghost
 $ npm install
@@ -56,19 +54,18 @@ This theme will source from toddbirchard.com by default; you'll need to edit the
 - `tag.js` - Tag archives
 - `author.js` - Author archives
 
-**Stack**
-- GatsbyJS
-- Ghost CMS
-- React
-- GraphQL
-- LESS
+**Widgets**
+- Twitter timeline
+- Tags
+- Social
+- Related posts
 
 ## Roadmap
 
 This theme is still in active development.
 
 ### Upcoming changes
-- Twitter source widget
+
 - Github profile widget
 - LESS refactor
 - Additional widget options

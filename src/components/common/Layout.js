@@ -2,12 +2,25 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { Link, StaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
-import { Navigation, Sidebar, Footer } from '.'
+import { library } from '@fortawesome/fontawesome-svg-core'
+
+import { Navigation, Footer } from '.'
+import { Sidebar } from '../sidebar/'
 import config from '../../utils/siteConfig'
 
 // Styles
 import '../../styles/app.less'
+
+import {
+  faCalendar,
+  faRetweet,
+  faHeartbeat,
+} from '@fortawesome/free-solid-svg-icons'
+
+library.add(faCalendar,
+  faRetweet,
+  faHeartbeat,
+)
 
 /**
 * Main layout component
@@ -19,50 +32,48 @@ import '../../styles/app.less'
 */
 
 const DefaultLayout = ({ data, children, bodyClass, isHome, template }) => {
-    const site = data.allGhostSettings.edges[0].node
+  const site = data.allGhostSettings.edges[0].node
 
-    return (
+  return (
     <>
-        <Helmet>
-            <html lang={site.lang} />
-            <style type="text/css">{`${site.codeinjection_styles}`}</style>
-            <body className={ template } />
-        </Helmet>
+      <Helmet>
+        <html lang={site.lang} />
+        <style type="text/css">{`${site.codeinjection_styles}`}</style>
+        <body className={ template } />
+      </Helmet>
 
-        <div className="viewport">
-            { isHome &&
+      <div className="viewport">
+        { isHome &&
                 <div>
-                    <Link to="/" className="mobile-logo">
-                        {site.logo ? <img src={site.logo} alt={site.title} /> : <h1> {site.title} </h1> }
-                    </Link>
+                  <Link to="/" className="mobile-logo">
+                    {site.logo ? <img src={site.logo} alt={site.title} /> : <h1> {site.title} </h1> }
+                  </Link>
                 </div> }
-            <Navigation data={site.navigation} navClass="site-nav-item" navType="home-nav" logo={site.icon} url={site.url} isHome={isHome} />
-            <div className={ isHome ? `home-container` : `container` }>
-                {/* All the main content gets inserted here, index.js, post.js */}
-                { isHome ? <Sidebar /> : null}
-                {children}
-            </div>
+        <Navigation data={site.navigation} navClass="site-nav-item" navType="home-nav" logo={site.icon} url={site.url} isHome={isHome} />
+        <div className={ isHome ? `home-container` : `container` }>
+          { isHome ? <Sidebar /> : null}
+          {children}
         </div>
-        {/* The footer at the very bottom of the screen */}
-        <Footer title={ site.title } />
+      </div>
+      <Footer title={ site.title } />
     </>
-    )
+  )
 }
 
 DefaultLayout.propTypes = {
-    children: PropTypes.node.isRequired,
-    bodyClass: PropTypes.string,
-    isHome: PropTypes.bool,
-    template: PropTypes.string,
-    data: PropTypes.shape({
-        allGhostSettings: PropTypes.object.isRequired,
-        allGhostTag: PropTypes.object.isRequired,
-    }).isRequired,
+  children: PropTypes.node.isRequired,
+  bodyClass: PropTypes.string,
+  isHome: PropTypes.bool,
+  template: PropTypes.string,
+  data: PropTypes.shape({
+    allGhostSettings: PropTypes.object.isRequired,
+    allGhostTag: PropTypes.object.isRequired,
+  }).isRequired,
 }
 
 const DefaultLayoutSettingsQuery = props => (
-    <StaticQuery
-        query={graphql`
+  <StaticQuery
+    query={graphql`
             query GhostSettings {
                 allGhostSettings {
                     edges {
@@ -90,8 +101,8 @@ const DefaultLayoutSettingsQuery = props => (
                 }
             }
         `}
-        render={data => <DefaultLayout data={data} {...props} />}
-    />
+    render={data => <DefaultLayout data={data} {...props} />}
+  />
 )
 
 export default DefaultLayoutSettingsQuery

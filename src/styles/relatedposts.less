@@ -9,21 +9,21 @@
 
     .recent-post-card,
     .related-post-card {
+        width: 32%;
+        overflow: hidden;
+        border-radius: 5px;
         background: white;
         box-shadow: 0 0 10px #e8e9ef;
-        border-radius: 5px;
-        overflow: hidden;
-        width: 32%;
         transition: all 0.2s ease-out;
         @media(max-width: @mobile-breakpoint) {
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
             width: 100%;
             margin-bottom: 10px;
 
             img {
-                width: 30%;
+                width: 33%;
                 height: 77px;
             }
         }
@@ -38,15 +38,16 @@
             }
         }
 
-
-
         .recent-post-title,
         .related-post-title {
-            margin: 0;
-            padding: 20px;
             width: -webkit-fill-available;
-            font-size: 1.5rem;
+            margin: 0;
+            padding: 20px 15px;
+            font-size: .9em;
             line-height: 1.2;
+            @media(max-width: @mobile-breakpoint) {
+              padding: 15px;
+            }
         }
     }
 }
