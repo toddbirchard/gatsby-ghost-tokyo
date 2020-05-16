@@ -7,18 +7,25 @@ module.exports = {
             'experimentalObjectRestSpread': true
         }
     },
+<<<<<<< HEAD
     plugins: ['ghost', 'react', 'node', 'promise'],
+=======
+    plugins: ['ghost', 'react', 'node'],
+>>>>>>> 4f7af532c8af628769293ff3a8edc889055b0efe
     extends: [
         'plugin:ghost/node',
         'plugin:ghost/ember',
         'plugin:react/recommended',
+<<<<<<< HEAD
         'plugin:promise/recommended',
+=======
+>>>>>>> 4f7af532c8af628769293ff3a8edc889055b0efe
     ],
     "settings": {
         "react": {
             "createClass": "createReactClass",
             "pragma": "React",
-            "version": "16.0",
+            "version": "16.13.1",
             "flowVersion": "0.53"
         },
         "propWrapperFunctions": ["forbidExtraProps"]
@@ -30,6 +37,7 @@ module.exports = {
         "ghost/sort-imports-es6-autofix/sort-imports-es6": "off",
         "ghost/ember/use-ember-get-and-set": "off",
         "no-console": "off",
+        "indent": ["error", 2],
         "no-inner-declarations": "off",
         "valid-jsdoc": "off",
         "require-jsdoc": "off",

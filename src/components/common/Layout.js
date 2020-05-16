@@ -2,7 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { Link, StaticQuery, graphql } from 'gatsby'
-import { Navigation, Sidebar, Footer } from '.'
+import { Navigation, Footer } from '.'
+import { Sidebar } from '../sidebar/'
+
 import config from '../../utils/siteConfig'
 
 // Styles
@@ -18,7 +20,7 @@ import '../../styles/app.less'
 */
 
 const DefaultLayout = ({ data, children, bodyClass, isHome, template }) => {
-    const site = data.allGhostSettings.edges[0].node
+  const site = data.allGhostSettings.edges[0].node
 
     return (
         <>
@@ -31,9 +33,9 @@ const DefaultLayout = ({ data, children, bodyClass, isHome, template }) => {
             <div className="viewport">
                 { isHome &&
                 <div>
-                    <Link to="/" className="mobile-logo">
-                        {site.logo ? <img src={site.logo} alt={site.title} /> : <h1> {site.title} </h1> }
-                    </Link>
+                  <Link to="/" className="mobile-logo">
+                    {site.logo ? <img src={site.logo} alt={site.title} /> : <h1> {site.title} </h1> }
+                  </Link>
                 </div> }
                 <Navigation data={site.navigation} navClass="site-nav-item" navType="home-nav" logo={site.icon} url={site.url} isHome={isHome} />
                 <div className={ isHome ? `home-container` : `container` }>
@@ -49,19 +51,19 @@ const DefaultLayout = ({ data, children, bodyClass, isHome, template }) => {
 }
 
 DefaultLayout.propTypes = {
-    children: PropTypes.node.isRequired,
-    bodyClass: PropTypes.string,
-    isHome: PropTypes.bool,
-    template: PropTypes.string,
-    data: PropTypes.shape({
-        allGhostSettings: PropTypes.object.isRequired,
-        allGhostTag: PropTypes.object.isRequired,
-    }).isRequired,
+  children: PropTypes.node.isRequired,
+  bodyClass: PropTypes.string,
+  isHome: PropTypes.bool,
+  template: PropTypes.string,
+  data: PropTypes.shape({
+    allGhostSettings: PropTypes.object.isRequired,
+    allGhostTag: PropTypes.object.isRequired,
+  }).isRequired,
 }
 
 const DefaultLayoutSettingsQuery = props => (
-    <StaticQuery
-        query={graphql`
+  <StaticQuery
+    query={graphql`
             query GhostSettings {
                 allGhostSettings {
                     edges {
@@ -89,8 +91,8 @@ const DefaultLayoutSettingsQuery = props => (
                 }
             }
         `}
-        render={data => <DefaultLayout data={data} {...props} />}
-    />
+    render={data => <DefaultLayout data={data} {...props} />}
+  />
 )
 
 export default DefaultLayoutSettingsQuery

@@ -4,15 +4,15 @@
     "version": "0.0.1",
     "author": "Ghost Foundation",
     "dependencies": {
-        "@babel/runtime": "7.5.5",
-        "bluebird": "3.5.5",
-        "sharp": "0.22.1"
+        "@babel/runtime": "7.9.2",
+        "bluebird": "3.7.2",
+        "sharp": "0.25.2"
     },
     "devDependencies": {
-        "@babel/cli": "7.5.5",
-        "@babel/core": "7.5.5",
-        "babel-preset-gatsby-package": "0.2.2",
-        "cross-env": "^5.1.4"
+        "@babel/cli": "7.8.4",
+        "@babel/core": "7.9.0",
+        "babel-preset-gatsby-package": "0.3.1",
+        "cross-env": "^7.0.2"
     },
     "keywords": [
         "gatsby",
@@ -26,7 +26,7 @@
     "license": "MIT",
     "main": "index.js",
     "peerDependencies": {
-        "gatsby": ">2.0.0-alpha"
+        "gatsby": ">2.20.7"
     },
     "scripts": {
         "build": "babel src --out-dir . --ignore **/__tests__",

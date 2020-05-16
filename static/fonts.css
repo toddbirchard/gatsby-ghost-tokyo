@@ -1,0 +1,22 @@
+@import url("//hello.myfonts.net/count/3b4460");
+
+@font-face {
+  src: url('./fonts/FFMarkWebProMedium.woff2') format('woff2'), url('./fonts/FFMarkWebProMedium.woff') format('woff');
+  font-display: swap;
+  font-family: 'FFMarkWebProMedium';
+}
+@font-face {
+  src: url('./fonts/AvenirNextLTPro-Medium.woff2') format('woff2'), url('./fonts/AvenirNextLTPro-Medium.woff') format('woff');
+  font-display: swap;
+  font-family: 'AvenirNextLTPro-Medium';
+}
+@font-face {
+  src: url('./fonts/FFMarkWebProBook.woff2') format('woff2'), url('./fonts/FFMarkWebProBook.woff') format('woff');
+  font-display: swap;
+  font-family: 'FFMarkWebProBook';
+}
+@font-face {
+  src: url('./fonts/AvenirNextLTPro-Regular.woff2') format('woff2'), url('./fonts/AvenirNextLTPro-Regular.woff') format('woff');
+  font-display: swap;
+  font-family: 'AvenirNextLTPro-Regular';
+}

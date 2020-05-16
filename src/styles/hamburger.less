@@ -1,81 +1,81 @@
 .bm-menu {
-    background: @color-primary;
-    padding: 2.5em 1.5em 0;
-    font-size: 1.15em;
+  padding: 2.5em 1.5em 0;
+  background: @color-primary;
+  font-size: 1.15em;
 
-    .bm-item-list {
-        color: #fff;
-        opacity: 1;
-        height: fit-content !important;
-        margin: auto;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
+  .bm-item-list {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: fit-content !important;
+    margin: auto;
+    color: #fff;
+    opacity: 1;
 
-        .bm-item {
-            display: inline-block;
-            text-decoration: none;
-            margin-bottom: 30px;
-            color: #fff;
-            font-size: 1.3em !important;
-            font-weight: 400;
-            transition: color 0.2s;
-            outline-color: transparent;
-            outline-style: none;
-            width: fit-content;
-            margin: 0 auto 20px;
+    .bm-item {
+      display: inline-block;
+      width: fit-content;
+      margin: 0 auto 20px;
+      margin-bottom: 30px;
+      outline-color: transparent;
+      outline-style: none;
+      color: #fff;
+      font-size: 1.3em !important;
+      font-weight: 400;
+      text-decoration: none;
+      transition: color 0.2s;
 
-            &:hover {
-                color: white;
-            }
-        }
+      &:hover {
+        color: white;
+      }
     }
+  }
 }
 
 .bm-burger-button {
-    position: absolute;
-    width: 32px;
-    height: 27px;
-    right: 35px;
-    top: 29px;
-    display: none;
-    outline-color: transparent;
-    outline-style: none;
+  display: none;
+  position: absolute;
+  top: 29px;
+  right: 35px;
+  width: 32px;
+  height: 27px;
+  outline-color: transparent;
+  outline-style: none;
 
-    .bm-burger-bars {
-        background: #373a47;
-        height: 15% !important;
-    }
+  .bm-burger-bars {
+    height: 15% !important;
+    background: #373a47;
+  }
 }
 
 .bm-cross-button {
-    height: 34px !important;
-    width: 34px !important;
-    right: 20px !important;
-    top: 13px !important;
+  top: 13px !important;
+  right: 20px !important;
+  width: 34px !important;
+  height: 34px !important;
 
-    .bm-cross {
-        background: #fff;
-        height: 30px !important;
-    }
+  .bm-cross {
+    height: 30px !important;
+    background: #fff;
+  }
 }
 
 .bm-morph-shape {
-    fill: #373a47;
+  fill: #373a47;
 }
 
 .bm-overlay {
-    background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.3);
 }
 @media(max-width: @mobile-breakpoint) {
-    .page-template .bm-burger-button,
-    .post-template .bm-burger-button {
-        display: block;
-    }
+  .page-template .bm-burger-button,
+  .post-template .bm-burger-button {
+    display: block;
+  }
 }
 
 .tag-template .bm-menu-wrap {
-    display: none;
+  display: none;
 }

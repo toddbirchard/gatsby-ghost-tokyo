@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { faUserEdit, faGlobe, faTwitter, faFacebook } from 'react-icons/fa'
+import { FaUserEdit, FaGlobe, FaTwitter, FaFacebook } from 'react-icons/fa'
 
 /**
 * Single post view (/:slug)
@@ -21,9 +21,9 @@ const PostAuthor = ({ author }) => {
                     <h4 className="post-author-name">{author.name}</h4>
                     {author.bio && <p className="post-author-bio">{author.bio}</p>}
                     <div className="post-author-meta">
-                        {author.website && <a className="post-author-item" href={author.website} target="_blank" rel="noopener noreferrer"><faGlobe />Website</a>}
-                        {authorTwitterUrl && <a className="post-author-item" href={ authorTwitterUrl } target="_blank" rel="noopener noreferrer"><faTwitter />Twitter</a>}
-                        {authorFacebookUrl && <a className="post-author-item" href={ authorFacebookUrl } target="_blank" rel="noopener noreferrer"><faFacebook />Facebook</a>}
+                        {author.website && <a className="post-author-item" href={author.website} target="_blank" rel="noopener noreferrer"><FaGlobe />Website</a>}
+                        {authorTwitterUrl && <a className="post-author-item" href={ authorTwitterUrl } target="_blank" rel="noopener noreferrer"><FaTwitter />Twitter</a>}
+                        {authorFacebookUrl && <a className="post-author-item" href={ authorFacebookUrl } target="_blank" rel="noopener noreferrer"><FaFacebook />Facebook</a>}
                     </div>
                 </div>
                 <div className="post-author-image">

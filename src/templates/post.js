@@ -4,7 +4,7 @@ import { Link, graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import { readingTime as readingTimeHelper } from '@tryghost/helpers'
 import { Tags } from '@tryghost/helpers-gatsby'
-import { faUserEdit, faEye, faTag } from 'react-icons/fa'
+import { FaUserEdit, FaEye, FaTag } from 'react-icons/fa'
 import { Layout } from '../components/common'
 import { MetaData } from '../components/common/meta'
 import { RecentPosts, PostAuthor } from '../components/common/posts'
@@ -42,9 +42,9 @@ const Post = ({ data, location }) => {
                     <section className="post-full-content">
                         <h1 className="content-title">{post.title}</h1>
                         <div className="post-meta">
-                            <div className="meta-item"> <Link to="/about"><faUserEdit /><span>{post.primary_author.name}</span></Link></div>
-                            <div className="meta-item"> <faTag />{post.tags && <Tags post={post} limit={1} visibility="public" autolink={false}/>} </div>
-                            <div className="meta-item"> <faEye /><span>{readingTime}</span></div>
+                            <div className="meta-item"> <Link to="/about"><FaUserEdit /><span>{post.primary_author.name}</span></Link></div>
+                            <div className="meta-item"> <FaTag />{post.tags && <Tags post={post} limit={1} visibility="public" autolink={false}/>} </div>
+                            <div className="meta-item"> <FaEye /><span>{readingTime}</span></div>
                         </div>
 
                         {/* The main post content */ }

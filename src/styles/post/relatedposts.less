@@ -23,7 +23,7 @@
             margin-bottom: 10px;
 
             img {
-                width: 30%;
+                width: 33%;
                 height: 77px;
             }
         }
@@ -42,9 +42,12 @@
         .related-post-title {
             width: -webkit-fill-available;
             margin: 0;
-            padding: 20px;
-            font-size: 1.5rem;
+            padding: 20px 15px;
+            font-size: .9em;
             line-height: 1.2;
+            @media(max-width: @mobile-breakpoint) {
+              padding: 15px;
+            }
         }
     }
 }
