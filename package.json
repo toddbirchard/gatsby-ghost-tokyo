@@ -67,7 +67,7 @@
     "gatsby-plugin-sharp": "2.6.3",
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "2.3.3",
-    "gatsby-source-ghost": "4.0.4",
+    "gatsby-source-ghost": "4.0.5",
     "gatsby-source-twitter": "^3.2.1",
     "gatsby-transformer-sharp": "2.5.2",
     "less": "^3.11.1",
