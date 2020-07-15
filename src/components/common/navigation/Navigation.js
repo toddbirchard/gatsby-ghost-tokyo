@@ -15,34 +15,34 @@ import { Hamburger, NavigationLinks } from '.'
 */
 
 const Navigation = ({ data, navClass, logo, isHome }) => (
-    <>
-        <nav className="navigation">
-            <Link to="/" className="nav-logo"><img src={logo} alt="logo" /></Link>
-            <div className="navigation-links">
-                <NavigationLinks data={data} navClass={navClass} />
-            </div>
-        </nav>
-        { isHome ? null : <Hamburger right data={data} navClass={navClass} />}
+  <>
+    <nav className="navigation">
+      <Link to="/" className="nav-logo"><img src={logo} alt="logo" /></Link>
+      <div className="navigation-links">
+        <NavigationLinks data={data} navClass={navClass} />
+      </div>
+    </nav>
+    { isHome ? null : <Hamburger right data={data} navClass={navClass} />}
 
-    </>
+  </>
 )
 
 Navigation.defaultProps = {
-    navClass: `site-nav-item`,
-    navType: `home-nav`,
+  navClass: `site-nav-item`,
+  navType: `home-nav`,
 }
 
 Navigation.propTypes = {
-    data: PropTypes.arrayOf(
-        PropTypes.shape({
-            label: PropTypes.string.isRequired,
-            url: PropTypes.string.isRequired,
-        }).isRequired,
-    ).isRequired,
-    isHome: PropTypes.string,
-    logo: PropTypes.string.isRequired,
-    navClass: PropTypes.string,
-    navType: PropTypes.string,
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired,
+    }).isRequired,
+  ).isRequired,
+  isHome: PropTypes.string,
+  logo: PropTypes.string.isRequired,
+  navClass: PropTypes.string,
+  navType: PropTypes.string,
 }
 
 export default Navigation

@@ -1,8 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
-import { FaTwitter, FaUsers, FaRetweet, FaHeartbeat, FaCalendar, FaReply } from 'react-icons/fa'
-
+import { FaRetweet, FaHeartbeat, FaCalendar } from 'react-icons/fa'
 
 const TwitterWidget = ({ data }) => {
   const tweets = data.tweets.edges

@@ -1,6 +1,5 @@
 import { graphql } from 'gatsby'
 
-
 // Used for tag archive pages
 export const ghostTagFields = graphql`
     fragment GhostTagFields on GhostTag {
@@ -25,7 +24,6 @@ export const ghostAuthorFields = graphql`
         location
         website
         twitter
-        facebook
     }
 `
 
@@ -69,7 +67,6 @@ export const ghostPostFields = graphql`
             # email
             profile_image
             twitter
-            facebook
             website
         }
         primary_author {
@@ -79,7 +76,6 @@ export const ghostPostFields = graphql`
             # email
             profile_image
             twitter
-            facebook
             website
         }
 
@@ -157,7 +153,6 @@ export const ghostPageFields = graphql`
             # email
             profile_image
             twitter
-            facebook
             website
         }
         primary_author {
@@ -167,7 +162,6 @@ export const ghostPageFields = graphql`
             # email
             profile_image
             twitter
-            facebook
             website
         }
 

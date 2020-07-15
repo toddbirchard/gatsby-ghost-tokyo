@@ -1,9 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, StaticQuery, graphql } from 'gatsby'
-import { faRss, faTag, faTwitter, faAngellist, faLinkedIn, faGithub, faQuora } from 'react-icons'
+import { faRss, faTwitter, faAngellist, faLinkedIn, faGithub, faQuora } from 'react-icons'
 import { TwitterWidget } from './'
-
 
 const Sidebar = ({ data }) => {
   const site = data.allGhostSettings.edges[0].node

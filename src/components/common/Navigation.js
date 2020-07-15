@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import { Menu, NavigationLinks } from '.'
 
-
 /**
 * Navigation component
 *
@@ -16,32 +15,32 @@ import { Menu, NavigationLinks } from '.'
 */
 
 const Navigation = ({ data, navClass, logo, isHome }) => (
-    <>
-        <nav className="navigation">
-            <Link to="/" className="nav-logo"><img src={logo} alt="logo" /></Link>
-            <div className="navigation-links">
-                <NavigationLinks data={data} navClass={navClass} />
-            </div>
-        </nav>
-        { isHome ? null : <Menu left data={data} navClass={navClass} />}
+  <>
+    <nav className="navigation">
+      <Link to="/" className="nav-logo"><img src={logo} alt="logo" /></Link>
+      <div className="navigation-links">
+        <NavigationLinks data={data} navClass={navClass} />
+      </div>
+    </nav>
+    { isHome ? null : <Menu left data={data} navClass={navClass} />}
 
-    </>
+  </>
 )
 
 Navigation.defaultProps = {
-    navClass: `site-nav-item`,
-    navType: `home-nav`,
+  navClass: `site-nav-item`,
+  navType: `home-nav`,
 }
 
 Navigation.propTypes = {
-    data: PropTypes.arrayOf(
-        PropTypes.shape({
-            label: PropTypes.string.isRequired,
-            url: PropTypes.string.isRequired,
-        }).isRequired,
-    ).isRequired,
-    navClass: PropTypes.string,
-    navType: PropTypes.string,
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired,
+    }).isRequired,
+  ).isRequired,
+  navClass: PropTypes.string,
+  navType: PropTypes.string,
 }
 
 export default Navigation

@@ -5,9 +5,6 @@ import { Link, StaticQuery, graphql } from 'gatsby'
 import { Navigation, Footer } from '.'
 import { Sidebar } from '../sidebar/'
 
-import config from '../../utils/siteConfig'
-
-// Styles
 import '../../styles/app.less'
 
 /**
@@ -22,32 +19,32 @@ import '../../styles/app.less'
 const DefaultLayout = ({ data, children, bodyClass, isHome, template }) => {
   const site = data.allGhostSettings.edges[0].node
 
-    return (
-        <>
-            <Helmet>
-                <html lang={site.lang} />
-                <style type="text/css">{`${site.codeinjection_styles}`}</style>
-                <body className={ template } />
-            </Helmet>
+  return (
+    <>
+      <Helmet>
+        <html lang={site.lang} />
+        <style type="text/css">{`${site.codeinjection_styles}`}</style>
+        <body className={ template } />
+      </Helmet>
 
-            <div className="viewport">
-                { isHome &&
+      <div className="viewport">
+        { isHome &&
                 <div>
                   <Link to="/" className="mobile-logo">
                     {site.logo ? <img src={site.logo} alt={site.title} /> : <h1> {site.title} </h1> }
                   </Link>
                 </div> }
-                <Navigation data={site.navigation} navClass="site-nav-item" navType="home-nav" logo={site.icon} url={site.url} isHome={isHome} />
-                <div className={ isHome ? `home-container` : `container` }>
-                    {/* All the main content gets inserted here, index.js, post.js */}
-                    { isHome ? <Sidebar /> : null}
-                    {children}
-                </div>
-            </div>
-            {/* The footer at the very bottom of the screen */}
-            <Footer title={ site.title } />
-        </>
-    )
+        <Navigation data={site.navigation} navClass="site-nav-item" navType="home-nav" logo={site.icon} url={site.url} isHome={isHome} />
+        <div className={ isHome ? `home-container` : `container` }>
+          {/* All the main content gets inserted here, index.js, post.js */}
+          { isHome ? <Sidebar /> : null}
+          {children}
+        </div>
+      </div>
+      {/* The footer at the very bottom of the screen */}
+      <Footer title={ site.title } />
+    </>
+  )
 }
 
 DefaultLayout.propTypes = {
