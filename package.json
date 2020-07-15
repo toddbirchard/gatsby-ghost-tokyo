@@ -71,7 +71,7 @@
     "gatsby-source-twitter": "^3.2.1",
     "gatsby-transformer-sharp": "2.5.2",
     "less": "^3.11.1",
-    "lodash": "4.17.15",
+    "lodash": "4.17.19",
     "react": "16.13.1",
     "react-burger-menu": "^2.6.13",
     "react-dom": "16.13.1",
