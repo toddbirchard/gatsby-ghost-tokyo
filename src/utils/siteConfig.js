@@ -1,7 +1,7 @@
 module.exports = {
   siteUrl: `https://toddbirchard.com`, // Site domain. Do not include a trailing slash!
 
-  postsPerPage: 5, // Number of posts shown on paginated pages (changes this requires sometimes to delete the cache)
+  postsPerPage: 8, // Number of posts shown on paginated pages (changes this requires sometimes to delete the cache)
 
   siteTitleMeta: `Todd Birchard: Engineering, Product, Technology.`, // This allows an alternative site title for meta data for pages.
   siteDescriptionMeta: `Giant reptile giving technology a good name. Occasional tangents of mass destruction. Made in Silicon Alley.`, // This allows an alternative site description for meta data for pages.
