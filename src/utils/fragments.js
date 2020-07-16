@@ -6,7 +6,6 @@ export const ghostTagFields = graphql`
         slug
         name
         visibility
-        feature_image
         description
         meta_title
         meta_description
