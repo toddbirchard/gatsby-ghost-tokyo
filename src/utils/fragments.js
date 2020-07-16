@@ -84,7 +84,6 @@ export const ghostPostFields = graphql`
             name
             slug
             description
-            feature_image
             meta_description
             meta_title
             visibility
@@ -93,7 +92,6 @@ export const ghostPostFields = graphql`
             name
             slug
             description
-            feature_image
             meta_description
             meta_title
             visibility
@@ -106,10 +104,6 @@ export const ghostPostFields = graphql`
         # Additional fields
         url
         uuid
-        page
-        codeinjection_foot
-        codeinjection_head
-        codeinjection_styles
         comment_id
     }
 `
@@ -170,7 +164,6 @@ export const ghostPageFields = graphql`
             name
             slug
             description
-            feature_image
             meta_description
             meta_title
             visibility
@@ -179,7 +172,6 @@ export const ghostPageFields = graphql`
             name
             slug
             description
-            feature_image
             meta_description
             meta_title
             visibility
@@ -193,9 +185,6 @@ export const ghostPageFields = graphql`
         url
         uuid
         page
-        codeinjection_foot
-        codeinjection_head
-        codeinjection_styles
         comment_id
     }
 `
@@ -212,9 +201,6 @@ export const ghostSettingsFields = graphql`
         twitter
         lang
         timezone
-        codeinjection_head
-        codeinjection_foot
-        codeinjection_styles
         navigation {
             label
             url

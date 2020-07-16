@@ -91,34 +91,34 @@ const TwitterQuery = props => (
               created_at
               id
               user {
-                name
-                url
-                profile_image_url_https
-                screen_name
-              }
-              entities {
-                urls {
-                  display_url
-                  expanded_url
-                }
-              }
-              user {
                 profile_image_url_https
                 url
                 screen_name
                 name
               }
               retweeted
+              entities {
+                user_mentions {
+                  screen_name
+                }
+                hashtags {
+                  text
+                }
+                urls {
+                  url
+                }
+              }
+              in_reply_to_screen_name
             }
           }
         }
         twitterProfile: twitterStatusesUserTimelineSiteTweets {
           user {
-          url
-          screen_name
-          profile_image_url_https
-          name
-          followers_count
+            url
+            screen_name
+            profile_image_url_https
+            name
+            followers_count
           }
         }
       }`

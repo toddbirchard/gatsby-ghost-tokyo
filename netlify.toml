@@ -17,6 +17,17 @@
         public'''
 
 [[headers]]
+  for = "/images/counter.svg"
+  [headers.values]
+    crossorigin = "anonymous"
+    type = "image/svg+xml"
+    cache-control = '''
+        max-age=0,
+        no-cache,
+        no-store,
+        must-revalidate'''
+
+[[headers]]
   for = "/rss.xml"
   [headers.values]
       content-type = "text/xml; charset=utf-8"
