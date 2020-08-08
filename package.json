@@ -34,10 +34,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "autoprefixer": "9.8.6",
-    "babel-eslint": "10.1.0",
-    "babel-preset-gatsby": "0.5.5",
-    "eslint": "6.6.0",
+    "autoprefixer": "^9.8.6",
+    "babel-eslint": "^10.1.0",
+    "babel-preset-gatsby": "^0.5.5",
+    "eslint": "6.8.0",
     "eslint-loader": "3.0.2",
     "eslint-plugin-ghost": "1.5.0",
     "eslint-plugin-node": "11.1.0",
