@@ -1,7 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, StaticQuery, graphql } from 'gatsby'
-import { faRss, faTwitter, faAngellist, faLinkedIn, faGithub, faQuora } from 'react-icons'
+import { FaRss,
+  FaTwitter,
+  FaAngellist,
+  FaLinkedinIn,
+  FaGithubAlt,
+  FaQuora,
+  FaMedium } from 'react-icons/fa'
 import { TwitterWidget } from './'
 
 const Sidebar = ({ data }) => {
@@ -20,12 +26,12 @@ const Sidebar = ({ data }) => {
         </div>
 
         <div className="widget social">
-          <a href={ twitterUrl } className="twitter"><faTwitter /></a>
-          <a href="https://angel.co/todd-birchard?public_profile=1" className="angellist"><faAngellist /></a>
-          <a href="https://www.linkedin.com/in/toddbirchard/" className="linkedin"><faLinkedIn/></a>
-          <a href="https://github.com/toddbirchard" className="github"><faGithub/></a>
-          <a href="https://www.quora.com/profile/Todd-Birchard" className="quora"><faQuora /></a>
-          <a href="{{@site.url}}/rss/" className="rss"><faRss /></a>
+          <a href={ twitterUrl } className="twitter"><FaTwitter /></a>
+          <a href="https://angel.co/todd-birchard?public_profile=1" className="angellist"><FaAngellist /></a>
+          <a href="https://www.linkedin.com/in/toddbirchard/" className="linkedin"><FaLinkedinIn /></a>
+          <a href="https://github.com/toddbirchard" className="github"><FaGithubAlt /></a>
+          <a href="https://www.quora.com/profile/Todd-Birchard" className="quora"><FaQuora /></a>
+          <a href="{{@site.url}}/rss/" className="rss"><FaRss /></a>
         </div>
 
         <div className="widget tags">

@@ -86,8 +86,8 @@ module.exports = {
         ghostConfig.production,
     },
     /**
-         *  Utility Plugins
-         */
+      *  Utility Plugins
+    */
     {
       resolve: `gatsby-plugin-ghost-manifest`,
       options: {
@@ -98,35 +98,31 @@ module.exports = {
         display: `minimal-ui`,
         icon: `static/${config.siteIcon}`,
         legacy: true,
-        query: `
-                {
-                    allGhostSettings {
-                        edges {
-                            node {
-                                title
-                                description
-                            }
-                        }
-                    }
-                }
-              `,
+        query: `{
+          allGhostSettings {
+            edges {
+              node {
+                title
+                description
+              }
+            }
+          }
+        }`,
       },
     },
     {
       resolve: `gatsby-plugin-feed`,
       options: {
-        query: `
-                {
-                    allGhostSettings {
-                        edges {
-                            node {
-                                title
-                                description
-                            }
-                        }
-                    }
-                }
-              `,
+        query: `{
+          allGhostSettings {
+            edges {
+              node {
+                title
+                description
+              }
+            }
+          }
+        }`,
         feeds: [
           generateRSSFeed(config),
         ],
@@ -135,49 +131,48 @@ module.exports = {
     {
       resolve: `gatsby-plugin-advanced-sitemap`,
       options: {
-        query: `
-                {
-                    allGhostPost {
-                        edges {
-                            node {
-                                id
-                                slug
-                                updated_at
-                                created_at
-                                feature_image
-                            }
-                        }
-                    }
-                    allGhostPage {
-                        edges {
-                            node {
-                                id
-                                slug
-                                updated_at
-                                created_at
-                                feature_image
-                            }
-                        }
-                    }
-                    allGhostTag {
-                        edges {
-                            node {
-                                id
-                                slug
-                                feature_image
-                            }
-                        }
-                    }
-                    allGhostAuthor {
-                        edges {
-                            node {
-                                id
-                                slug
-                                profile_image
-                            }
-                        }
-                    }
-                }`,
+        query: `{
+          allGhostPost {
+            edges {
+              node {
+                id
+                slug
+                updated_at
+                created_at
+                feature_image
+              }
+            }
+          }
+          allGhostPage {
+            edges {
+              node {
+                id
+                slug
+                updated_at
+                created_at
+                feature_image
+              }
+            }
+          }
+          allGhostTag {
+            edges {
+              node {
+                id
+                slug
+                feature_image
+              }
+            }
+          }
+          allGhostAuthor {
+            edges {
+              node {
+                id
+                slug
+                profile_image
+              }
+            }
+          }
+        }`,
         mapping: {
           allGhostPost: {
             sitemap: `posts`,
@@ -206,7 +201,12 @@ module.exports = {
       resolve: `gatsby-plugin-web-font-loader`,
       options: {
         custom: {
-          families: [`AvenirNextLTPro-Regular`, `FFMarkWebProBook`, `AvenirNextLTPro-Medium`, `FFMarkWebProMedium`],
+          families: [
+            `AvenirNextLTPro-Regular`,
+            `FFMarkWebProBook`,
+            `AvenirNextLTPro-Medium`,
+            `FFMarkWebProMedium`
+          ],
           urls: [`/css/fonts.css`],
         },
         timeout: 10000,
