@@ -50,8 +50,8 @@
   },
   "dependencies": {
     "react-icons": "^3.10.0",
-    "@tryghost/helpers": "1.1.29",
     "@tryghost/helpers-gatsby": "1.0.34",
+    "@tryghost/helpers": "1.1.30",
     "cheerio": "1.0.0-rc.3",
     "gatsby": "2.24.37",
     "gatsby-awesome-pagination": "0.3.6",
@@ -72,7 +72,7 @@
     "gatsby-source-twitter": "^3.2.2",
     "gatsby-transformer-sharp": "2.5.12",
     "less": "^3.12.2",
-    "lodash": "4.17.19",
+    "lodash": "4.17.20",
     "react": "16.13.1",
     "react-burger-menu": "^2.7.1",
     "react-dom": "16.13.1",
