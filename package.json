@@ -49,7 +49,7 @@
     "stylelint": "13.7.1"
   },
   "dependencies": {
-    "react-icons": "^3.10.0",
+    "react-icons": "^4.0.0",
     "@tryghost/helpers-gatsby": "1.0.34",
     "@tryghost/helpers": "1.1.30",
     "cheerio": "1.0.0-rc.3",
