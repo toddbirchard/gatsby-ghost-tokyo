@@ -46,7 +46,7 @@
     "stylelint-config-standard": "20.0.0",
     "less": "3.12.2",
     "qs": "6.9.4",
-    "stylelint": "13.7.1"
+    "stylelint": "13.11.0"
   },
   "dependencies": {
     "react-icons": "^3.10.0",
