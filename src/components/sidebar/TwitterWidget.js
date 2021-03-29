@@ -1,4 +1,4 @@
-import React from 'react'
+/*import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import { FaRetweet, FaHeartbeat, FaCalendar } from 'react-icons/fa'
@@ -127,3 +127,4 @@ const TwitterQuery = props => (
 )
 
 export default TwitterQuery
+*/
