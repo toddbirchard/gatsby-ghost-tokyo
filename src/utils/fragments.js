@@ -6,9 +6,11 @@ export const ghostTagFields = graphql`
         slug
         name
         visibility
+        feature_image
         description
         meta_title
         meta_description
+        accent_color
     }
 `
 
@@ -23,6 +25,11 @@ export const ghostAuthorFields = graphql`
         location
         website
         twitter
+        facebook
+        postCount
+        count {
+          posts
+        }
     }
 `
 
@@ -31,6 +38,7 @@ export const ghostPostFields = graphql`
     fragment GhostPostFields on GhostPost {
         # Main fields
         id
+        ghostId
         title
         slug
         featured
@@ -40,7 +48,7 @@ export const ghostPostFields = graphql`
 
         # Dates formatted
         created_at_pretty: created_at(formatString: "DD MMMM, YYYY")
-        published_at_pretty: published_at(formatString: "DD MMMM, YYYY")
+        published_at_pretty: published_at(formatString: "MMMM DD")
         updated_at_pretty: updated_at(formatString: "DD MMMM, YYYY")
 
         # Dates unformatted
@@ -63,7 +71,6 @@ export const ghostPostFields = graphql`
             name
             slug
             bio
-            # email
             profile_image
             twitter
             website
@@ -72,10 +79,12 @@ export const ghostPostFields = graphql`
             name
             slug
             bio
-            # email
             profile_image
             twitter
+            facebook
             website
+            location
+            postCount
         }
 
         # Tags
@@ -83,14 +92,17 @@ export const ghostPostFields = graphql`
             name
             slug
             description
+            feature_image
             meta_description
             meta_title
             visibility
+            accent_color
         }
         tags {
             name
             slug
             description
+            feature_image
             meta_description
             meta_title
             visibility
@@ -138,52 +150,29 @@ export const ghostPageFields = graphql`
         twitter_image
         twitter_title
 
-        # Authors
-        authors {
-            name
-            slug
-            bio
-            # email
-            profile_image
-            twitter
-            website
-        }
-        primary_author {
-            name
-            slug
-            bio
-            # email
-            profile_image
-            twitter
-            website
-        }
-
-        # Tags
-        primary_tag {
-            name
-            slug
-            description
-            meta_description
-            meta_title
-            visibility
-        }
-        tags {
-            name
-            slug
-            description
-            meta_description
-            meta_title
-            visibility
-        }
-
         # Content
         plaintext
         html
 
+        # Tags
+        primary_tag {
+          name
+          slug
+          description
+          feature_image
+          meta_description
+          meta_title
+          visibility
+        }
+        tags {
+          name
+          slug
+          visibility
+        }
+
         # Additional fields
         url
         uuid
-        page
         comment_id
     }
 `
