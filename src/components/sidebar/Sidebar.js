@@ -8,7 +8,7 @@ import { FaRss,
   FaGithubAlt,
   FaQuora,
   FaMedium } from 'react-icons/fa'
-import { TwitterWidget } from './'
+// import { TwitterWidget } from './'
 
 const Sidebar = ({ data }) => {
   const site = data.allGhostSettings.edges[0].node
@@ -40,7 +40,7 @@ const Sidebar = ({ data }) => {
           ))}
         </div>
 
-        <TwitterWidget />
+        {/*<TwitterWidget />*/}
       </aside>
     </>
   )

@@ -5,16 +5,17 @@ import { FaRetweet, FaHeartbeat, FaCalendar } from 'react-icons/fa'
 
 const TwitterWidget = ({ data }) => {
   const tweets = data.tweets.edges
-  const user = data.twitterProfile.user
+  const twitterProfile = data.twitterProfile.user
+  const twitterProfileURL = `https://twitter.com/${twitterProfile.screen_name}/`
 
   return (
     <>
       <div className="widget twitter">
         <div className="twitter-header">
-          <img src={user.profile_image_url_https} className="twitter-avatar" alt="twitter-avatar"/>
+          <img src={twitterProfileURL} className="twitter-avatar" alt="twitter-avatar"/>
           <div>
-            <a href={user.url} className="twitter-name" target="_blank" rel="noopener noreferrer">{user.name}</a>
-            <div className="twitter-user">@{user.screen_name}</div>
+            <a href={twitterProfile.url} className="twitter-name" target="_blank" rel="noopener noreferrer">{twitterProfile.name}</a>
+            <div className="twitter-user">@{twitterProfile.screen_name}</div>
           </div>
         </div>
         <div className="tweets">
@@ -42,37 +43,45 @@ const TwitterWidget = ({ data }) => {
 TwitterWidget.propTypes = {
   data: PropTypes.shape({
     tweets: PropTypes.shape({
-      full_text: PropTypes.string,
-      favorite_count: PropTypes.number,
-      retweet_count: PropTypes.number,
-      created_at: PropTypes.string,
-      id: PropTypes.string,
-      user: PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        url: PropTypes.string.isRequired,
-        profile_image_url: PropTypes.string.isRequired,
-        screen_name: PropTypes.string.isRequired,
-      }),
-      entities: PropTypes.shape({
-        urls: PropTypes.arrayOf(
-          PropTypes.shape({
-            url: PropTypes.string,
+      edges: PropTypes.arrayOf(
+        PropTypes.shape({
+          full_text: PropTypes.string,
+          favorite_count: PropTypes.number,
+          retweet_count: PropTypes.number,
+          created_at: PropTypes.string,
+          id: PropTypes.string,
+          retweeted: PropTypes.bool,
+          retweeted_status: PropTypes.object,
+          in_reply_to_screen_name: PropTypes.string,
+          user: PropTypes.shape({
+            name: PropTypes.string.isRequired,
+            url: PropTypes.string.isRequired,
+            profile_image_url_https: PropTypes.string.isRequired,
+            screen_name: PropTypes.string.isRequired,
           }),
-        ),
-        hashtags: PropTypes.arrayOf(
-          PropTypes.shape({
-            text: PropTypes.string,
+          entities: PropTypes.shape({
+            urls: PropTypes.arrayOf(
+              PropTypes.shape({
+                url: PropTypes.string,
+              }),
+            ),
+            hashtags: PropTypes.arrayOf(
+              PropTypes.shape({
+                text: PropTypes.string,
+              }),
+            ),
           }),
-        ),
-      }),
-    }).isRequired,
+        }).isRequired,
+      ),
+    }),
     twitterProfile: PropTypes.shape({
       user: PropTypes.shape({
         profile_image_url_https: PropTypes.string,
         name: PropTypes.string.isRequired,
-        url: PropTypes.string,
+        url: PropTypes.string.isRequired,
         display_url: PropTypes.string,
         screen_name: PropTypes.string.isRequired,
+        followers_count: PropTypes.number.isRequired,
       }).isRequired,
     }),
   }),
@@ -108,6 +117,15 @@ const TwitterQuery = props => (
                   url
                 }
               }
+              retweeted_status {
+                retweeted
+                user {
+                  screen_name
+                  url
+                  profile_image_url_https
+                }
+              }
+              source
             }
           }
         }
