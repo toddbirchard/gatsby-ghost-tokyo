@@ -13,7 +13,7 @@ const Index = ({ data, location, pageContext }) => {
 
   return (
     <>
-      <MetaData location={location} />
+      <MetaData location={location} pageContext={pageContext} />
       <Layout isHome={true} template="home-template">
         <main className="site-main">
           <section className="post-feed">
