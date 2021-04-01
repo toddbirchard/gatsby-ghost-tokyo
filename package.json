@@ -35,15 +35,15 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.13.14",
-    "autoprefixer": "^10.2.5",
-    "babel-preset-gatsby": "^1.1.0",
+    "autoprefixer": "10.2.5",
+    "babel-preset-gatsby": "1.2.0",
     "eslint": "7.23.0",
     "eslint-loader": "4.0.2",
     "eslint-plugin-ghost": "2.0.0",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-promise": "4.3.1",
     "eslint-plugin-react": "7.23.1",
-    "less": "^4.1.1",
+    "less": "4.1.1",
     "qs": "6.10.1",
     "stylelint": "13.12.0",
     "stylelint-config-standard": "21.0.0"
