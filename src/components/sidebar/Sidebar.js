@@ -40,7 +40,7 @@ const Sidebar = ({ data }) => {
           ))}
         </div>
 
-        <TwitterWidget />
+        {/*<TwitterWidget />*/}
       </aside>
     </>
   )
