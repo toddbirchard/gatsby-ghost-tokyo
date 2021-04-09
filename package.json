@@ -41,7 +41,7 @@
     "eslint-loader": "4.0.2",
     "eslint-plugin-ghost": "2.0.0",
     "eslint-plugin-node": "11.1.0",
-    "eslint-plugin-promise": "4.3.1",
+    "eslint-plugin-promise": "5.1.0",
     "eslint-plugin-react": "7.23.1",
     "less": "^4.1.1",
     "qs": "6.10.1",
