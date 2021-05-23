@@ -49,7 +49,7 @@ update:
 .PHONY: clean
 clean:
 	gatsby clean
-	find . -name 'package-lock.json' -delete
 	find . -name 'yarn.lock' -delete
 	find . -wholename '.yarn' -delete
 	find . -wholename '**/node_modules' -delete
+	find . -wholename '**/package-lock.json' -delete
