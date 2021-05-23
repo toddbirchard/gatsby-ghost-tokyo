@@ -8,6 +8,7 @@ Usage:
 make build           - Build site & Lambdas for production.
 make serve           - Build & serve production build locally.
 make reset           - Purge cache & reinstall modules.
+make clean           - Purge cache & modules.
 make update          - Update npm production dependencies.
 endef
 export HELP
@@ -18,7 +19,6 @@ all help:
 	@echo "$$HELP"
 
 build:
-	npm run-script build
 	mkdir -p functions
 	GOOS=linux
 	GOARCH=amd64
@@ -45,3 +45,11 @@ update:
 	ncu -u --dep=prod
 	npm i
 	npm audit fix
+
+.PHONY: clean
+clean:
+	gatsby clean
+	find . -name 'yarn.lock' -delete
+	find . -wholename '.yarn' -delete
+	find . -wholename '**/node_modules' -delete
+	find . -wholename '**/package-lock.json' -delete
