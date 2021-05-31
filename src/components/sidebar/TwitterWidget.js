@@ -23,13 +23,24 @@ const TwitterWidget = ({ data }) => {
             <div className="tweet" key={node.id}>
               <p className="tweet-content">{node.full_text.split(`#`)[0].split(`http`)[0]}</p>
               {node.entities.urls.map(({ display_url, expanded_url }) => (
-                <a href={expanded_url} className="tweet-link" key={`${node.id}-link`} rel="nofollow noreferrer">{ display_url }</a>
+                <a
+                  href={expanded_url}
+                  className="tweet-link"
+                  key={`${node.id}-link`}
+                  rel="nofollow noreferrer">{ display_url }
+                </a>
               ))}
               <div className="tweet-head">
                 <div className="tweet-footer">
-                  <div className="retweets meta-item"><FaRetweet /> <span>{node.retweet_count}</span></div>
-                  <div className="favorites meta-item"><FaHeartbeat /> <span>{node.favorite_count}</span></div>
-                  <div className="date meta-item"><FaCalendar /> {node.created_at.split(` `, 3).join(` `)}</div>
+                  <div className="retweets meta-item">
+                    <FaRetweet /> <span>{node.retweet_count}</span>
+                  </div>
+                  <div className="favorites meta-item">
+                    <FaHeartbeat /> <span>{node.favorite_count}</span>
+                  </div>
+                  <div className="date meta-item"><FaCalendar />
+                    {node.created_at.split(` `, 3).join(` `)}
+                  </div>
                 </div>
               </div>
             </div>
@@ -63,11 +74,6 @@ TwitterWidget.propTypes = {
             urls: PropTypes.arrayOf(
               PropTypes.shape({
                 url: PropTypes.string,
-              }),
-            ),
-            hashtags: PropTypes.arrayOf(
-              PropTypes.shape({
-                text: PropTypes.string,
               }),
             ),
           }),
@@ -109,9 +115,6 @@ const TwitterQuery = props => (
               entities {
                 user_mentions {
                   screen_name
-                }
-                hashtags {
-                  text
                 }
                 urls {
                   url
