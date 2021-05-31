@@ -174,8 +174,7 @@ export const ghostPageFields = graphql`
         url
         uuid
         comment_id
-    }
-`
+    }`
 
 // Used for settings
 export const ghostSettingsFields = graphql`
@@ -193,5 +192,4 @@ export const ghostSettingsFields = graphql`
             label
             url
         }
-    }
-`
+    }`

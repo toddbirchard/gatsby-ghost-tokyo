@@ -12,7 +12,7 @@
 
 Ghost theme suitable for creators focused on quality content. Lightweight yet tasteful collection of features intended to elevate authors. Live preview can be seen here: https://toddbirchard.com
 
-![Tokyo Theme](/static/images/tokyo.jpg)
+![Tokyo Theme](https://github.com/toddbirchard/gatsby-ghost-tokyo/.github/tokyo@2x.jpg)
 
 ## About
 
