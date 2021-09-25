@@ -58,7 +58,6 @@ exports.createPages = async ({ graphql, actions }) => {
               }
             }
           }
-        }
     `)
 
   // Check for any errors
