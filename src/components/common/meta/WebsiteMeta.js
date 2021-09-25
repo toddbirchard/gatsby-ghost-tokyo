@@ -15,10 +15,10 @@ const WebsiteMeta = ({ data, settings, canonical, title, description, image, pag
   const previousPagePath = pageContext ? pageContext.previousPagePath : null
   const nextPagePath = pageContext ? pageContext.nextPagePath : null
 
-  const publisherLogo = url.resolve(config.siteUrl, settings.logo) || config.images.siteIcon
-  let shareImage = image || data.feature_image || _.get(settings, `cover_image`, null)
+  const publisherLogo = settings.logo || config.images.siteIcon
+  let shareImage = image || data.feature_image || _.get(settings, `cover_image`, null) 
 
-  shareImage = shareImage ? url.resolve(config.siteUrl, shareImage) : null
+  shareImage = shareImage ? settings.images.shareImage : null
 
   description = description || data.meta_description || data.description || config.siteDescriptionMeta || settings.description
   title = `${title || data.meta_title || data.name || data.title}`
@@ -62,7 +62,7 @@ const WebsiteMeta = ({ data, settings, canonical, title, description, image, pag
                   "url": "${canonical}",
                   ${shareImage ? `"image": {
                           "@type": "ImageObject",
-                          "url": "${shareImage}",
+                          "url": "${settings.images.shareImage}",
                           "width": "${config.images.shareImageWidth}",
                           "height": "${config.images.shareImageHeight}"
                       },` : ``}
