@@ -21,6 +21,7 @@ module.exports = {
     siteIcon: `favicon.png`,
     mobileLogo: `/images/logo@2x.png`,
     buyMeACoffee: `/images/buymeacoffee.svg`,
+    shareImage: `cover.jpg`,
     shareImageWidth: 1000,
     shareImageHeight: 523,
   },
