@@ -31,6 +31,11 @@
   for = "/rss.xml"
   [headers.values]
       content-type = "text/xml; charset=utf-8"
+      
+[[headers]]
+  for = "*"
+  [headers.values]    
+      Access-Control-Allow-Origin = "*"
 
 [build.processing]
   skip_processing = false
