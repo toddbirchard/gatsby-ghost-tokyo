@@ -70,7 +70,7 @@
     "gatsby-source-ghost": "4.2.4",
     "gatsby-source-twitter": "^4.0.0",
     "gatsby-transformer-sharp": "^4.0.0",
-    "lodash": "4.17.21",
+    "lodash": "4.17.23",
     "react": "^17.0.0",
     "react-burger-menu": "^3.0.6",
     "react-dom": "^17.0.2",
